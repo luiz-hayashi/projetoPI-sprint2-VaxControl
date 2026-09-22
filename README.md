@@ -24,18 +24,6 @@ O **VaxControl** realiza a leitura e monitoramento contínuo da temperatura e um
 
 ---
 
-## 📐 Arquitetura da Solução
+## 📖 Biblioteca de arquivos do projeto
 
-  [ Câmera Fria / Geladeira ]
-               │
-               ▼
-   [ Sensor de Temperatura ]
-               │
-               ▼
-       [ Placa Arduino ]
-               │
-               ▼  
-     [ Banco de Dados MySQL ]
-               │
-               ▼ 
-  [ Dashboard Web / VaxControl ]  ──────► [ Alertas & Gráficos ]
+- **Link Drive: https://drive.google.com/drive/folders/1MEtD8dF-xYryM6lpOUlIG7QwhBOkZrbw?usp=drive_link**
