@@ -1,66 +1,100 @@
 .titulo {
-    color: black; /* Cor do texto */
-    font-size: 40px; /* tamanho */
-    font-family: Arial, Helvetica, sans-serif ; /*fonte*/
-    text-align: center; /*alinhamento*/
-    font-weight: bold; /*espessura*/
-    margin-bottom: 40px; /*espaço baixo*/
+  color: black; /* Cor do texto */
+  font-size: 40px; /* tamanho */
+  font-family: Arial, Helvetica, sans-serif; /*fonte*/
+  text-align: center; /*alinhamento*/
+  font-weight: bold; /*espessura*/
+  margin-bottom: 40px; /*espaço baixo*/
+}
+
+.titulo_inicio {
+  color: black;
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-weight: bold;
 }
 
 .body {
-    background-image: url(Calculadora_Financeira.jpg);
-    font-size: 20px; /*tamanho da fonte*/
-    font-family: Arial, Helvetica, sans-serif; /*fonte*/
-    margin: 40px; /*margem da pagina toda*/
+  background-image: url(Calculadora_Financeira.jpg);
+  font-size: 20px; /*tamanho da fonte*/
+  font-family: Arial, Helvetica, sans-serif; /*fonte*/
+  margin: 40px; /*margem da pagina toda*/
+}
+
+.body_inicio {
+  background-image: url(Calculadora_Financeira.jpg);
+  font-size: 20px; /*tamanho da fonte*/
+  font-family: Arial, Helvetica, sans-serif; /*fonte*/
+  margin: 40px; /*margem da pagina toda*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .input {
-    width: 100px; /* largura*/
-    padding: 12px;
-    border: solid 1px #008FD3;
-    border-radius: 10px; /*arredondamento da borda*/
-    font-size: 15px; /* tamanho */
+  width: 100px; /* largura*/
+  padding: 12px;
+  border: solid 1px #008fd3;
+  border-radius: 10px; /*arredondamento da borda*/
+  font-size: 15px; /* tamanho */
 }
 
-.input:focus { /* Ao clicar na input */
-    background-color: aliceblue; /*cor do fundo do input quando selecionado*/
-    border: 2px solid #008FD3; /*cor da borda quando selecionada*/
-    box-shadow: 0 0 5px #008FD3; /* sombra da borda quando selecionada*/
+.input:focus {
+  /* Ao clicar na input */
+  background-color: aliceblue; /*cor do fundo do input quando selecionado*/
+  border: 2px solid #008fd3; /*cor da borda quando selecionada*/
+  box-shadow: 0 0 5px #008fd3; /* sombra da borda quando selecionada*/
 }
-
 
 .button {
-    font-size: 18px;
-    width: 150px;
-    height: 50px;
-    border-radius: 10px;
-    background-color: white;
-    border: solid 2px #008FD3
+  font-size: 18px;
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  background-color: white;
+  border: solid 2px #008fd3;
 }
 
 .container {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 .div_textos {
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 20px;
-    padding: 20px;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.div_inicio {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 60%;
+}
+
+p {
+  margin-bottom: 0px; /* Define o tamanho do "pulo de linha" após o ponto final */
+  text-align: center; /* Mantém o texto centralizado como na imagem */
 }
 
 .msg {
-    max-width: 1000px; /* Máximo de largura definida */
-    width: 90%;
-    min-height: 100px; /* Minímo de altura definida */
-    height: auto;
-    margin: 20px auto;
-    border-radius: 20px;
-    padding: 20px;
-    border: 1px solid black;
-    background-color: white;
-    font-size: 18px;
-    line-height: 1.5; /* espaçamento entre as linhas */
-    box-sizing: border-box; /* mantém o tamanho fixo da caixa */
+  max-width: 1000px; /* Máximo de largura definida */
+  width: 90%;
+  min-height: 100px; /* Minímo de altura definida */
+  height: auto;
+  margin: 20px auto;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid black;
+  background-color: white;
+  font-size: 18px;
+  line-height: 1.5; /* espaçamento entre as linhas */
+  box-sizing: border-box; /* mantém o tamanho fixo da caixa */
 }
