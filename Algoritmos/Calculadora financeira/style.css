@@ -29,7 +29,7 @@
   margin: 40px; /*margem da pagina toda*/
   display: flex;
   justify-content: center;
-  align-items: center;
+  margin-top: 10%;
 }
 
 .input {
@@ -57,8 +57,11 @@
 }
 
 .container {
+  margin-top: 25px;
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-evenly;
+  
 }
 
 .div_textos {
