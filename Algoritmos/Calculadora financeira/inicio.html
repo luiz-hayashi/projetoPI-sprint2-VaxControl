@@ -16,7 +16,8 @@
             <p> <span class="titulo_inicio"> Como funciona?</span>
                 A Calculadora Financeira da Vax Control foi desenvolvida para estimar o possível impacto financeiro
                 de
-                perdas de vacinas causadas por excursões térmicas,auxiliando na compreensão dos riscos relacionados ao
+                perdas de vacinas HPV causadas por excursões térmicas,auxiliando na compreensão dos riscos relacionados
+                ao
                 armazenamento e à conservação do estoque. </p>
             <p> Para fazer uma simulação nesta calculadora financeira, você deve informar algumas características de
                 seu estoque, e com essas informações, a calculadora irá estimar uma possível quantidade de doses
@@ -28,11 +29,28 @@
                 para realizar a simulação, e você pode ver quais são esses dados apertando o botão "Saber mais".</p>
         </div>
         <div class="container">
-            <a href="calculadora-financeira.html"><button class="button">Simular Valores</button></a>
-            <button class="button">Saber mais</button>
+            <a href="calculadora-financeira.html">
+                <button class="button">Simular Valores</button>
+            </a>
+            <button onclick="exibirInformacoes()" class="button">Saber mais</button>
         </div>
     </div>
+    <div id="div_info"></div>
 </body>
 
 </html>
 </head>
+<script>
+    let exibir = false;
+    let informacoes = '<div class="div_informacoes"> <h2> Informações sobre as taxas </h2>  <p><b>Risco de exposição: 100%</b>, considerando que ambientes não monitorados tem constantes variações. É usado para converter as doses perdidas em um prejuízo financeiro. </p> <p> <b> Taxa de descarte: 41.4%</b>, com base em análises de rede de frio e documentadas na SciELO. É usada para calcular a quantidade de doses que precisarão ser descartadas com base em uma ocorrência com temperatura</p> </div> '
+    function exibirInformacoes() {
+        if (exibir == false ) {
+            exibir = true;
+            div_info.innerHTML = informacoes;
+        }
+        else {
+            exibir = false;
+            div_info.innerHTML = '';
+        }
+    }
+</script>

@@ -61,7 +61,6 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  
 }
 
 .div_textos {
@@ -80,6 +79,17 @@
   align-items: center;
   text-align: center;
   width: 60%;
+}
+
+.div_informacoes {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  height: 500px;
+  margin-left: 100px;
+  width: 500px;
+  text-align: center;
 }
 
 p {
