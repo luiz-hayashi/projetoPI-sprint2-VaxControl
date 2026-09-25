@@ -1,0 +1,133 @@
+ * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            border: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+            color: #333333;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .cabecalho {
+            display: flex;
+            justify-content: flex-end;
+            gap: 20px;
+            background-color: #008fd3;
+            padding: 1rem 2rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .container {
+            display: flex;
+            padding: 1rem 2rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navegador {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .botao {
+            background-color: #8cbad9;
+            padding: 0.6rem 1.5rem;
+            border-radius: 1rem;
+            color: white;
+        }
+
+        .botao.tipo1 {
+            background-color: #8cbad9;
+            margin-top: 15px;
+        }
+
+        .botao.tipo2 {
+            background-color: #008fd3;
+            padding: 0.6rem 3rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .painel {
+            background-color: #EFF5F8;
+            padding: 3rem 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .titulo {
+            color: #0090D0;
+            font-size: 24px;
+        }
+
+        .subtitulo {
+            font-size: 18px;
+            margin-top: 5px;
+            justify-content: center; 
+            margin-bottom: 20px;
+        }
+
+        .texto {
+            font-family: 'Trebuchet MS', sans-serif;
+            font-weight: lighter;
+            margin-top: 10px;
+        }
+
+        .imagem {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .caixa_texto {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .bloco {
+            background-color: darkgrey;
+            text-align: center;
+            padding: 2rem;
+            margin: 10px;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .footer_blocos {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .fundo, .pre_footer, .footer {
+            padding: 2rem;
+            text-align: center;
+        }
+        .container_body {
+            text-align: center; 
+            padding: 2rem 0;
+
+        }
+        .container_botao {
+            text-align: center; 
+            margin: 20px 0;
+        }
+        .container_bloco {
+            display: flex; 
+            justify-content: center; 
+            gap: 10px; 
+            flex-wrap: wrap;
+        }
