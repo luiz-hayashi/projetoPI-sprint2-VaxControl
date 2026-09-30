@@ -20,45 +20,29 @@ CONSTRAINT chCheck CHECK (acesso IN ('administrador', 'suporte', 'normal', 'clie
 FOREIGN KEY (idempresa) REFERENCES empresa(id) 
 );
 
-/* GRUPO NÃO ACHOU NECESSIDADE DESSA TABELA.
-CREATE TABLE camara(
-idcamara INT PRIMARY KEY AUTO_INCREMENT,
-identificacao VARCHAR(50) NOT NULL,
-comprimento_metros DECIMAL (4,2),
-temp_minima DECIMAL(4,2) DEFAULT 2.00,
-temp_maxima DECIMAL(4,2) DEFAULT 8.00,
-idempresa INT,
-FOREIGN KEY (idempresa) REFERENCES empresa(id)
-);
-*/
 
 CREATE TABLE sensor(
 idsensor INT PRIMARY KEY AUTO_INCREMENT,
-camara VARCHAR(10),
-status_ VARCHAR(20) DEFAULT 'ativo',
+identificacao VARCHAR(50) NOT NULL,
+status_ VARCHAR(20) DEFAULT 'ativo'
 CONSTRAINT chStatus CHECK (status_ IN ('ativo', 'inativo', 'concerto')),
 idempresa INT,
 FOREIGN KEY (idempresa) REFERENCES empresa(id)
 );
 
-
 CREATE TABLE leitura( 
 id INT PRIMARY KEY AUTO_INCREMENT, 
-temperatura DECIMAL(4,2),
+temperatura FLOAT,
 dtRegistros DATETIME DEFAULT CURRENT_TIMESTAMP,
 idsensor INT,
 FOREIGN KEY (idsensor) REFERENCES sensor(idsensor)
 );
 
-/*
-CRIAR A TABELA ENDEREÇO
-QUAIS DADOS COLOCAR?
-COM A OPINIÃO DE TODOS
-
-- NOME VARCHAR (45)
-- CEP CHAR (8)
-- NUMERO VARCHAR (10)
-- COMPLEMENTO VARCHAR (50)
-- BAIRRO VARCHAR (50)
-- CIDADE CHAR (2)
-*/
+CREATE TABLE endereco (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR (45),
+cep CHAR(8),
+numero VARCHAR (10),
+idempresa INT,
+FOREIGN KEY (idempresa) REFERENCES empresa(id)
+);
