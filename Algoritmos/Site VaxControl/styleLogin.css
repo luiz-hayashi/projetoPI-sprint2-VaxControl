@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  background-image: url("./imagens/Teladelogin.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+.divPrincipal {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 20px;
+}
+
+.divImagem {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+}
+
+.imgLogin {
+  padding-top: 15px;
+  padding-left: 25%;
+  width: 4000px;
+}
+
+.divCaixa {
+  width: 600px;
+  border-color: #4cb1de;
+  border-width: 2px;
+  border-style: solid;
+  min-height: 600px;
+  background-color: #f7f9fc;
+}
