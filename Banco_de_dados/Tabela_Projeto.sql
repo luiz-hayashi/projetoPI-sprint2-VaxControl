@@ -34,11 +34,11 @@ FOREIGN KEY (idempresa) REFERENCES empresa(id)
 
 CREATE TABLE sensor(
 idsensor INT PRIMARY KEY AUTO_INCREMENT,
-posicao_interna VARCHAR(50),
-status_ VARCHAR(20) DEFAULT 'ativo'
+camara VARCHAR(10),
+status_ VARCHAR(20) DEFAULT 'ativo',
 CONSTRAINT chStatus CHECK (status_ IN ('ativo', 'inativo', 'concerto')),
-idcamara INT,
-FOREIGN KEY (idcamara) REFERENCES camara(idcamara)
+idempresa INT,
+FOREIGN KEY (idempresa) REFERENCES empresa(id)
 );
 
 
