@@ -47,10 +47,25 @@ a {
     align-items: center;
 }
 
+
+.botao_home {
+    background-color: #26c2dd;
+    padding: 0.6rem 1.5rem;
+    border-radius: 1rem;
+    color: white;
+}
+
+.botao_home.tipo2 {
+    background-color: #008fd3;
+    text-align: center;
+    margin-top: 1.2rem;
+    margin-bottom: 5rem;
+}
+
 .botao {
     background-color: #8cbad9;
     padding: 0.6rem 1.5rem;
-    border-radius: 1rem;
+    border-radius: 0.5rem;
     color: white;
 }
 
@@ -58,14 +73,30 @@ a {
     background-color: #365cd8;
     border-radius: 0.5rem;
     margin-top: 15px;
-    width: 20rem;
+    width: 10rem;
 }
 
 .botao.tipo2 {
     background-color: #008fd3;
+    padding: 0.6rem 7rem;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5rem;
+}
+
+.botao.tipo3 {
+    background-color: #8cbad9;
     padding: 0.6rem 3rem;
     text-align: center;
     margin-top: 20px;
+}
+.botao_card{
+    background-color: #008fd3;
+    padding: 0.6rem 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    border-radius: 0.3rem;
 }
 
 .painel {
@@ -85,12 +116,65 @@ a {
     font-size: 24px;
 }
 
+.titulo_body {
+    color: #ffffff;
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: start;
+    padding-left: 12.5rem;
+    margin: 5rem;
+}
+
+.botao_body {
+    background-color: #150958;
+    color: white;
+    padding: 1rem 5rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    margin-left: -66rem;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
 .subtitulo {
     font-size: 1.4rem;
     margin-top: 0.7rem;
     justify-content: center;
     margin-bottom: 20px;
     font-weight: bolder;
+}
+.subtitulo_footer {
+    font-size: 1.4rem;
+    margin-top: 0.7rem;
+    margin-bottom: 20px;
+    font-weight: bolder;
+    text-align: center;
+}
+
+.subtitulo_body {
+    font-size: 2.5rem;
+    margin-top: 1rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    font-weight: lighter;
+}
+
+.subtitulo_main {
+    font-size: 2.5rem;
+    margin-top: 3rem;
+    margin-left: 20rem;
+    justify-content: center;
+    margin-bottom: 3rem;
+    font-weight: lighter;
+    text-align: left;
+}
+
+.subtitulo_fundo {
+    text-align: left;
+    font-size: 2.5rem;
+    margin-left: 20rem;
+    margin-top: 1rem;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .texto {
@@ -100,6 +184,23 @@ a {
     margin-top: 10px;
 }
 
+.texto_fundo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    width: 40rem;
+    margin-right: -10rem;
+}
+
+.texto_body {
+    margin-left: 23.5rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
 
 .caixa_texto {
     display: flex;
@@ -123,7 +224,7 @@ a {
 }
 
 .card {
-    width: 23rem;
+    width: 25rem;
     min-width: 20rem;
     background-color: #EFF5F8;
     padding: 3rem 2rem;
@@ -131,8 +232,7 @@ a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    text-align: left;
+    text-align: center;
     margin: 0.5rem;
 }
 
@@ -142,11 +242,6 @@ a {
     margin-top: 2rem;
     gap: 1rem;
     margin: 1rem 0;
-}
-
-.fundo {
-    background-color: #150958;
-    color: white;
 }
 
 .container_body {
@@ -161,16 +256,28 @@ a {
 }
 
 .fundo {
+    background-color: #150958;
+    color: white;
+    margin-left: -5rem;
     display: flex;
     flex-direction: row-reverse;
+    justify-content: left;
+    text-align: center;
 }
+
+.fundo_subtitulo {
+    margin-left: 20rem;
+}
+
 .fundo_body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: right;
     gap: 1rem;
-    margin: -50px;
     text-align: left;
+    margin: 0 20rem;
+    border-left: 2px solid #00e1ff;
+    padding-left: 1.5rem;
 }
 
 .botao.tipo3 {
@@ -178,6 +285,10 @@ a {
     padding: 0.6rem 5rem;
     text-align: center;
     margin-top: 20px;
+}
+
+.imagem_fundo {
+    margin-right: 10rem;
 }
 
 .fundo,
@@ -204,6 +315,7 @@ a {
 .footer {
     background-color: #4CB1DE;
     padding: 4rem;
+    text-align: left;
 }
 
 .footer_texto {
