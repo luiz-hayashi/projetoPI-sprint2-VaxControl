@@ -21,7 +21,7 @@
         <div class="topbar">
             <!-- Navegação (Logo e menu) -->
             <img class="logo" src="../Site VaxControl/imagens/logo.png" alt="Vaxcontrol logo">
-            
+
             <nav class="navegador">
                 <a href="../site-vaxcontrol/sobre.html">Quem nós somos</a>
                 <a href="../Site VaxControl/CalculadoraFinanceira/inicio.html">Calculadora Financeira</a>
@@ -29,11 +29,11 @@
                 <a href="../site-vaxcontrol/contato.html">Fale Conosco</a>
             </nav>
 
-            <!-- mudar classe cabecalho -> cabecalho-topbar -->
+            <!-- mudar classe cabecalho -> container cabecalho-topbar -->
             <div class="cabecalho-topbar">
-                <!-- mudar classe botao_home -> botao topbar -->
-                <button class="botao topbar">Cadastre-se</button>
-                <button class="botao topbar">Já sou cliente</button>
+                <!-- mudar classe botao_home -> botao home -->
+                <button class="botao-topbar">Cadastre-se</button>
+                <button class="botao-topbar">Já sou cliente</button>
             </div>
         </div>
     </header>
@@ -45,14 +45,12 @@
         <!-- mudar classe painel -> banner-home -->
         <!-- criado a sessao-home -->
         <section class="sessao-home">
-            <div>
-                <img class="imagem" src="../Site VaxControl/imagens/imagem1-home.png" alt="Profissional de saúde">
-            </div>
+            <img class="imagem" src="../Site VaxControl/imagens/imagem1-home.png" alt="Profissional de saúde">
             <!-- mudar classe caixa_texto -> box-texto-home -->
             <div class="box-texto-home">
                 <!-- mudar classe titulo, card-titulo, texto pra titulo-home (add "-home" no final de todos)  -->
                 <h1 class="titulo-home">CONTROLE TÉRMICO EM CÂMARAS FRIAS</h1>
-                <h2 class="card-titulo-home">Monitoramento de temperatura contínuo para a preservação de vacinas HPV
+                <h2 class="subtitulo-home">Monitoramento de temperatura contínuo para a preservação de vacinas HPV
                 </h2>
                 <p class="texto-home">Solução automatizada com alertas em tempo real para garantir a estabilidade
                     térmica e a
@@ -66,19 +64,17 @@
         <!-- criado a sessao beneficios -->
         <section class="sessao-beneficios">
             <!-- criado a div container e sua sub classe cetnralizar texto -->
-            <div class="container centralizar-texto">
                 <h2 class="subtitulo_main">Todos os dias, a VaxControl eleva os níveis de segurança e <br> eficiência de
                     quem
                     se
                     dedica à saúde no
                     Brasil.</h2>
-            </div>
             <div>
                 <!-- mudar classe main_card -> container main_card -->
                 <div class="container main_card">
                     <!-- cartão 1 -->
                     <div class="card">
-                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco1-imagem"
+                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco1-imagem.png"
                             alt="Imagem ilustrativa">
                         <!-- mudar classe titulo -> card-titulo -->
                         <h3 class="card-titulo">Sistema de Monitoramento</h3>
@@ -88,7 +84,7 @@
                     </div>
                     <!-- cartão 2 -->
                     <div class="card">
-                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco2-imagem"
+                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco2-imagem.png"
                             alt="Imagem ilustrativa">
                         <h3 class="card-titulo">Alarmes</h3>
                         <p class="texto">Envio de alertas que atendem
@@ -98,7 +94,7 @@
                     <!-- cartao 3 -->
                     <div class="card">
                         <div>
-                            <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco3-imagem"
+                            <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco3-imagem.png"
                                 alt="Imagem ilustrativa">
                         </div>
                         <h3 class="card-titulo">Mais tempo para agir e prevenir perdas</h3>
@@ -111,7 +107,7 @@
                     <!-- add uma sub classe card-linha-2 -->
                     <!-- cartao 4 -->
                     <div class="card card-linha2">
-                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco4-imagem"
+                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco4-imagem.png"
                             alt="Imagem ilustrativa">
                         <h3 class="card-titulo">Conformidade garantida</h3>
                         <p class="texto">Tecnologia projetada para atender aos padrões e níveis
@@ -119,7 +115,7 @@
                     </div>
                     <!-- cartao 5 -->
                     <div class="card card-linha2">
-                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco5-imagem"
+                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco5-imagem.png"
                             alt="Imagem ilustrativa">
                         <h3 class="card-titulo">Monitoramento proativo</h3>
                         <p class="texto">Acompanhamento site disponivel 24h por dia, 7 dias por semana, desde a
@@ -133,42 +129,39 @@
         <!-- sessao azul escuro : TECNOLOGIA E INTELIGÊNCIA-->
         <!-- criado a sessao com a nova classe -->
         <section class="sessao-tecnologia">
-            <!-- criado o container com subclasse fundo-cor para add cor de fundo -->
-            <div class="container fundo-cor">
-                <!-- mudar classe fundo -> alinhar-texto -->
-                <div class="alinhar-texto">
-
-                    <!-- mudar classe subtitulo_fundo -> titulo-fundo -->
-                    <h2 class="titulo-fundo"><b>Tecnologia e inteligência</b> para garantir a segurança <br>no
-                        monitoramento de
-                        temperatura de suas
-                        vacinas</h2>
-
-                    <!-- fundo_body -> fundo-lista  -->
-                    <div class="fundo-lista">
-                        <div>
-                            <h3>Para Centros de Distribuição</h3>
-                            <!-- removido a classe texto_fundo -->
-                            <p>Mitigação de riscos operacionais e prejuízos financeiros por meio do
-                                monitoramento
-                                térmico 24/7 em câmaras frigoríficas. Alertas automáticos
-                                para variações fora da faixa de 2°C a 8°C, garantindo a integridade dos lotes de
-                                Gardasil.
-                            </p>
+            
+            <!-- mudar classe subtitulo_fundo -> titulo-fundo -->
+            <h4 class="titulo-fundo"><span style="font-weight: 900;">Tecnologia e inteligência</span> para garantir a segurança no <br>
+                monitoramento de
+                temperatura de suas
+                vacinas</h4>
+                <div class="borda">
+        <div class="alinhar-borda">
+                        <div class="fundo-imagem">
+                            <div class="fundo-lista">
+                                <!-- fundo_body -> fundo-lista  -->
+                                <div>
+                                    <h3>Para Centros de Distribuição</h3><br>
+                                    <p>Mitigação de riscos operacionais e prejuízos financeiros por meio do
+                                        monitoramento
+                                        térmico 24/7 em câmaras frigoríficas. Alertas automáticos
+                                        para variações fora da faixa de 2°C a 8°C, garantindo a integridade dos lotes de
+                                    Gardasil.
+                                </p>
+                            </div>
+                            <li>Para a Indústria Farmacêutica</li>
+                            <br>
+                            <li>Para Responsáveis Técnicos</li>
+                            <br>
+                            <li>Para Equipes de Qualidade e Auditoria</li>
                         </div>
-                        <p>Para a Indústria Farmacêutica</p>
-                        <br>
-                        <p>Para Responsáveis Técnicos</p>
-                        <br>
-                        <p>Para Equipes de Qualidade e Auditoria</p>
+                        <!-- mudar classe fundo -> fundo-imagem  -->
+                        <!-- mudar classe imagem_fundo -> imagem-lado  -->
+                        <img class="imagem-medica" src="imagens/hospital-ilustracao.png" alt="medico vendo">
                     </div>
+                    
                     <!-- mudar classe botao tipo 1 -> botao-info  -->
                     <button class="botao-info">SAIBA MAIS</button>
-                </div>
-                <!-- mudar classe fundo -> fundo-imagem  -->
-                <div class="fundo-imagem">
-                    <!-- mudar classe imagem_fundo -> imagem-medica  -->
-                    <img class="imagem-medica" src="imagens/hospital-ilustracao.png" alt="medico vendo">
                 </div>
             </div>
         </section>
@@ -177,13 +170,13 @@
         <!-- sessao de banner : antes dos ultimos 3 cards  -->
         <section class="sessao-banner">
             <!-- mudar classe container_body -> container cards-container  -->
-            <div class="container banner-container">
+            <div class="banner-container">
 
                 <!-- mudar classe titulo_body -> titulo-banner  -->
                 <p class="titulo-banner">A tecnologia <b>correta para sua empresa.</b></p>
                 <!-- mudar classe imagem_seta -> imagem_banner -->
-                <img class="imagem-banner" src="../Site VaxControl/imagens/seta.png" alt="Imagens background">
             </div>
+            <img class="imagem-banner" src="../Site VaxControl/imagens/seta.png" alt="Imagens background">
         </section>
 
         <!-- sessão pré footer : parte fundo branco com 3 cards -->

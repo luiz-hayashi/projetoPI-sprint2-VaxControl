@@ -18,56 +18,30 @@ a {
     text-decoration: none;
     color: black;
 }
- 
 
-/* CABECALHO DO SITE  */
-
-.topbar {
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.cabecalho-topbar {
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
-    padding: 1rem 2rem;
-    font-family: 'Courier New', Courier, monospace;
-}
+/* TIPOS DE BOTÃO */
 
-.logo {
-    margin-left: 5rem;
-}
-
-.navegador {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-    align-items: center;
-}
-
-
-.botao_home {
-    background-color: #26c2dd;
+.botao-topbar {
+    background-color: #268bdd;
     padding: 0.6rem 1.5rem;
-    border-radius: 1rem;
+    border-radius: 20px;
     color: white;
 }
 
-
-/* INICIO DO CORPO DO SITE */
-
-.sessao-home {
-    display: flex;
-}
-.botao_home.tipo2 {
+.botao-home {
     background-color: #008fd3;
     text-align: center;
     margin-top: 1.2rem;
     margin-bottom: 5rem;
+    padding: 1rem 3rem;
+    border-radius: 20px;
+    color: white;
 }
 
 .botao {
@@ -77,11 +51,12 @@ a {
     color: white;
 }
 
-.botao.tipo1 {
-    background-color: #365cd8;
-    border-radius: 0.5rem;
-    margin-top: 15px;
-    width: 10rem;
+.botao-info {
+    background-color: #008fd3;
+    text-align: center;
+    padding: 1rem 4rem;
+    border-radius: 5px;
+    color: white;
 }
 
 .botao.tipo2 {
@@ -98,7 +73,8 @@ a {
     text-align: center;
     margin-top: 20px;
 }
-.botao_card{
+
+.botao_card {
     background-color: #008fd3;
     padding: 0.6rem 1.5rem;
     text-align: center;
@@ -107,30 +83,84 @@ a {
     border-radius: 0.3rem;
 }
 
-.painel {
+/* CABECALHO DO SITE  */
+
+.topbar {
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navegador {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.cabecalho-topbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    font-family: 'Courier New', Courier, monospace;
+    max-width: 1200px;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* INICIO DO CORPO DO SITE */
+
+/* SESSÃO HOME */
+.sessao-home {
     display: flex;
     flex-direction: row;
-    background-color: #EFF5F8;
+    align-items: center;
+    margin-bottom: 3%;
 }
 
 .imagem {
-    width: 48rem;
-    max-width: 50rem;
-    height: 40rem;
+    width: 40rem;
+    height: 35rem;
 }
 
-.titulo {
+.box-texto-home {
+    padding-left: 10em;
+}
+
+.titulo-home {
     color: #0090D0;
-    font-size: 24px;
+    font-size: 20px;
+    max-width: 40em;
 }
 
-.titulo_body {
-    color: #ffffff;
+.subtitulo-home {
+    margin-top: 10px;
+    color: #000000;
     font-size: 2rem;
     font-family: Arial, Helvetica, sans-serif;
-    text-align: start;
-    padding-left: 12.5rem;
-    margin: 5rem;
+    font-weight: lighter;
+    max-width: 13em;
+}
+
+.texto-home {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: lighter;
+    font-size: 1rem;
+    margin-top: 10px;
+    max-width: 28em;
+}
+
+
+
+/* SESSÃO BENEFICIOS */
+.sessao-beneficios {
+    padding: 60px 0;
 }
 
 .botao_body {
@@ -144,37 +174,115 @@ a {
     margin-bottom: 5rem;
 }
 
-.subtitulo {
-    font-size: 1.4rem;
-    margin-top: 0.7rem;
-    justify-content: center;
-    margin-bottom: 20px;
+.subtitulo_main {
+    text-align: center;
+    font-size: 2rem;
     font-weight: bolder;
+    font-weight: lighter;
+    margin-bottom: 5%;
 }
+
+/* CARTÕES - BENEFICIOS */
+.main_card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 20px;
+}
+
+.card {
+    background-color: #f5f8fa;
+    border-radius: 10px;
+    padding: 30px 20px;
+    width: 30%;
+    text-align: center;
+}
+
+.card-linha2 {
+    width: 30%
+}
+
+.imagem_card {
+    height: 50px;
+    margin-bottom: 15px;
+}
+
+.card-titulo {
+    font-size: 1.1rem;
+    font-weight: bolder;
+    margin-bottom: 15px;
+    color: black;
+}
+
+.texto {
+    font-size: 0.9rem;
+    font-weight: lighter;
+}
+
+
+/* TECNOLOGIA E INTELIGÊNCIA (parte escura) */
+
+.sessao-tecnologia {
+    display: flex;
+    flex-direction: column;
+    background-color: #150958;
+    color: white;
+    padding: 80px;
+}
+.borda {
+    border-left: 2px solid rgb(0, 255, 255);
+    margin-left: 50px;
+}
+.alinhar-borda {
+    padding: 30px;
+}
+
+.titulo-fundo {
+    padding-bottom: 2rem;
+    font-weight: lighter;
+    font-size: 2.3rem;
+    margin-left: 80px;
+}
+
+.fundo-lista {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.10rem;
+    max-width: 100em;
+    padding-right: 50px;
+}
+li {
+    list-style: none;
+    padding: 20px 0px;
+}
+.fundo-imagem {
+    display: flex;
+    margin-right: 50px;
+}
+.imagem-medica {
+    max-height: 120%;
+    max-width: 110%;
+}
+
+
+/* SESSAO BANNER */
 .subtitulo_footer {
     font-size: 1.4rem;
-    margin-top: 0.7rem;
-    margin-bottom: 20px;
     font-weight: bolder;
     text-align: center;
 }
 
 .subtitulo_body {
     font-size: 2.5rem;
-    margin-top: 1rem;
     justify-content: center;
-    margin-bottom: 3rem;
     font-weight: lighter;
 }
 
-.subtitulo_main {
-    font-size: 2.5rem;
-    margin-top: 3rem;
-    margin-left: 20rem;
-    justify-content: center;
-    margin-bottom: 3rem;
-    font-weight: lighter;
-    text-align: left;
+.painel {
+    display: flex;
+    flex-direction: row;
+    background-color: #EFF5F8;
 }
 
 .subtitulo_fundo {
@@ -185,12 +293,6 @@ a {
     font-family: 'Montserrat', sans-serif;
 }
 
-.texto {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
 
 .texto_fundo {
     font-family: 'Montserrat', sans-serif;
@@ -201,48 +303,8 @@ a {
     margin-right: -10rem;
 }
 
-.texto_body {
-    margin-left: 23.5rem;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: lighter;
-    font-size: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-}
 
-.caixa_texto {
-    display: flex;
-    flex-direction: column;
-    margin: 0rem 22rem;
-    justify-content: center;
-    align-items: flex-start;
-}
 
-.main_card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    padding: 2rem;
-    margin: 0 15rem;
-}
-
-.imagem_card {
-    width: 100px;
-}
-
-.card {
-    width: 25rem;
-    min-width: 20rem;
-    background-color: #EFF5F8;
-    padding: 3rem 2rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    margin: 0.5rem;
-}
 
 .footer_card {
     display: flex;
@@ -259,8 +321,19 @@ a {
     padding: 2rem 0;
 }
 
-.imagem_seta {
+.sessao-banner {
     display: flex;
+    margin: 0;
+    background-color: #008fd3;
+    padding: 40px;
+}
+
+.banner-container {
+    margin: 0;
+}
+
+.imagem-banner {
+    width: 80%;
 }
 
 .fundo {
