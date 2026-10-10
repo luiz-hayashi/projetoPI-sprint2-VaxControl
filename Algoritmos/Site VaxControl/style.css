@@ -1,3 +1,4 @@
+/* CONFIGURAÇẼOS INCIAIS */
 @import url('https://googleapis.com');
 
 * {
@@ -17,33 +18,34 @@ a {
     text-decoration: none;
     color: black;
 }
+ 
+
+/* CABECALHO DO SITE  */
+
 .topbar {
-    display: flex;
     padding: 1rem 2rem;
+    display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: #ffffff;
 }
 
 .cabecalho-topbar {
     display: flex;
     justify-content: flex-end;
     gap: 20px;
-    background-color: #008fd3;
     padding: 1rem 2rem;
     font-family: 'Courier New', Courier, monospace;
 }
 
-
 .logo {
-    display: flex;
-    flex-direction: row;
     margin-left: 5rem;
 }
 
 .navegador {
     display: flex;
     justify-content: space-around;
-    gap: 20px;
+    gap: 2rem;
     align-items: center;
 }
 
@@ -55,6 +57,12 @@ a {
     color: white;
 }
 
+
+/* INICIO DO CORPO DO SITE */
+
+.sessao-home {
+    display: flex;
+}
 .botao_home.tipo2 {
     background-color: #008fd3;
     text-align: center;
