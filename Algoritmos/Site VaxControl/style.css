@@ -31,7 +31,7 @@ a {
     background-color: #268bdd;
     padding: 0.6rem 1.5rem;
     border-radius: 20px;
-    color: white;
+    color: white
 }
 
 .botao-home {
@@ -67,20 +67,20 @@ a {
     margin-bottom: 5rem;
 }
 
-.botao.tipo3 {
-    background-color: #8cbad9;
-    padding: 0.6rem 3rem;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.botao_card {
-    background-color: #008fd3;
+.botao-card {
+    background-color: #000763;
     padding: 0.6rem 1.5rem;
     text-align: center;
     margin-top: 20px;
     color: white;
     border-radius: 0.3rem;
+}
+
+.botao.tipo3 {
+    background-color: #150958;
+    padding: 0.6rem 5rem;
+    text-align: center;
+    margin-top: 20px;
 }
 
 /* CABECALHO DO SITE  */
@@ -122,6 +122,7 @@ a {
     flex-direction: row;
     align-items: center;
     margin-bottom: 3%;
+    background-color: #f7f7f7;
 }
 
 .imagem {
@@ -230,10 +231,12 @@ a {
     color: white;
     padding: 80px;
 }
+
 .borda {
     border-left: 2px solid rgb(0, 255, 255);
     margin-left: 50px;
 }
+
 .alinhar-borda {
     padding: 30px;
 }
@@ -252,14 +255,17 @@ a {
     max-width: 100em;
     padding-right: 50px;
 }
+
 li {
     list-style: none;
     padding: 20px 0px;
 }
+
 .fundo-imagem {
     display: flex;
     margin-right: 50px;
 }
+
 .imagem-medica {
     max-height: 120%;
     max-width: 110%;
@@ -267,139 +273,85 @@ li {
 
 
 /* SESSAO BANNER */
-.subtitulo_footer {
-    font-size: 1.4rem;
-    font-weight: bolder;
-    text-align: center;
-}
-
-.subtitulo_body {
-    font-size: 2.5rem;
-    justify-content: center;
-    font-weight: lighter;
-}
-
-.painel {
-    display: flex;
-    flex-direction: row;
-    background-color: #EFF5F8;
-}
-
-.subtitulo_fundo {
-    text-align: left;
-    font-size: 2.5rem;
-    margin-left: 20rem;
-    margin-top: 1rem;
-    font-family: 'Montserrat', sans-serif;
-}
-
-
-.texto_fundo {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: lighter;
-    font-size: 1.2rem;
-    margin-top: 10px;
-    width: 40rem;
-    margin-right: -10rem;
-}
-
-
-
-
-.footer_card {
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 2rem;
-    gap: 1rem;
-    margin: 1rem 0;
-}
-
-.container_body {
-    background-color: #0090D0;
-    color: white;
-    text-align: center;
-    padding: 2rem 0;
-}
-
 .sessao-banner {
     display: flex;
     margin: 0;
     background-color: #008fd3;
     padding: 40px;
+    flex-direction: column;
+    margin-left: -40px;
+    padding-bottom: 150px;
 }
 
 .banner-container {
-    margin: 0;
+    margin: 3%;
+}
+
+.titulo-banner {
+    text-align: left;
+    margin-left: 10rem;
+    font-size: 2.25rem;
+    color: white;
 }
 
 .imagem-banner {
     width: 80%;
 }
 
-.fundo {
-    background-color: #150958;
-    color: white;
-    margin-left: -5rem;
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: left;
+/* SESSAO PRE FOOTER  */
+.sessao-pre-footer {
     text-align: center;
+    padding: 80px;
 }
 
-.fundo_subtitulo {
-    margin-left: 20rem;
+.titulo-pre-footer {
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 50px;
 }
 
-.fundo_body {
-    display: flex;
-    flex-direction: column;
-    justify-content: right;
-    gap: 1rem;
-    text-align: left;
-    margin: 0 20rem;
-    border-left: 2px solid #00e1ff;
-    padding-left: 1.5rem;
-}
-
-.botao.tipo3 {
-    background-color: #150958;
-    padding: 0.6rem 5rem;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.imagem_fundo {
-    margin-right: 10rem;
-}
-
-.fundo,
-.pre_footer,
-.footer {
-    padding: 2rem;
-    text-align: center;
-}
-
-.container_botao {
-    text-align: center;
-    margin: 1rem 10rem;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.container_card {
+.footer_cards-container {
     display: flex;
     justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.footer {
-    background-color: #4CB1DE;
-    padding: 4rem;
-    text-align: left;
-}
-
-.footer_texto {
+.card-footer {
     display: flex;
-    justify-content: space-evenly;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 50px;
+    background-color: #EFF5F8;
+    padding: 50px 50px;
+    border-radius: 10px;
+    width: 25%;
+    text-align: center;
+}
+
+.titulo-card-footer {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+
+/* OUTRO  */
+.footer-principal {
+    padding: 80px;
+    background-color: #37aef3;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-texto {
+    text-align:left;
+    font-size: 1rem;
+}
+
+.logo_footer {
+    margin-left: 7px;
+    width: 100px;
 }
