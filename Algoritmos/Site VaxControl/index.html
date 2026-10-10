@@ -14,12 +14,19 @@
 </head>
 
 <body>
+
+    <!-- CABECALHO DO SITE -->
     <header>
-        <div class="cabecalho">
-            <button class="botao_home">Já sou cliente</button>
-            <button class="botao_home">Cadastre-se</button>
-        </div>
-        <div class="container">
+        <!-- mudar classe container -> topbar -->
+        <div class="topbar">
+            <!-- mudar classe cabecalho -> cabecalho-topbar -->
+            <div class="cabecalho-topbar">
+                <!-- mudar classe botao_home -> botao topbar -->
+                <button class="botao topbar">Cadastre-se</button>
+                <button class="botao topbar">Já sou cliente</button>
+            </div>
+
+            <!-- Navegação (Logo e menu) -->
             <img class="logo" src="../Site VaxControl/imagens/logo.png" alt="Vaxcontrol logo">
             <nav class="navegador">
                 <a href="../site-vaxcontrol/sobre.html">Quem nós somos</a>
@@ -28,156 +35,227 @@
                 <a href="../site-vaxcontrol/contato.html">Fale Conosco</a>
             </nav>
         </div>
-        <div class="painel">
-            <div>
-                <img class="imagem" src="../Site VaxControl/imagens/imagem1-home.png" alt="Imagem ilustrativa">
-            </div>
-            <div class="caixa_texto">
-                <h1 class="titulo">CONTROLE TÉRMICO EM CÂMARAS FRIAS</h1>
-                <h2 class="subtitulo">Monitoramento de temperatura contínuo para a preservação de vacinas HPV</h2>
-                <p class="texto">Solução automatizada com alertas em tempo real para garantir a estabilidade térmica e a
-                    eficácia imunológica da sua cadeia de frio.</p>
-                <button class="botao_home tipo2">VER SOLUÇÃO DE MONITORAMENTO</button>
-            </div>
-        </div>
     </header>
 
+
+    <!-- INICIO DO CORPO DO SITE  -->
     <main>
-        <div>
-            <p class="subtitulo_main">Todos os dias, a VaxControl eleva os níveis de segurança e <br> eficiência de quem se
-                dedica à saúde no
-                Brasil.</p>
-        </div>
-        <div>
-            <div class="main_card">
-                <div class="card">
-                    <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco1-imagem"
-                        alt="Imagem ilustrativa">
-                    <p class="subtitulo">Sistema de Monitoramento</p>
-                    <p class="texto">Sistema para mitigar falhas, com
-                        processamento e armazenamento
-                        de dados contínuos.</p>
-                </div>
-                <div class="card">
-                    <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco2-imagem"
-                        alt="Imagem ilustrativa">
-                    <p class="subtitulo">Alarmes</p>
-                    <p class="texto">Envio de alertas que atendem
-                        diferentes níveis, eliminando riscos
-                        de perdas relacionada a temperatura.</p>
-                </div>
-                <div class="card">
-                    <div>
-                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco3-imagem"
+        <!-- section pois é semantica, quer dizer, é importante pro SEO do google, bom pro site ser encontrado  -->
+        <!-- mudar classe painel -> banner-home -->
+        <!-- criado a sessao-home -->
+        <section class="sessao-home">
+            <div>
+                <img class="imagem" src="../Site VaxControl/imagens/imagem1-home.png" alt="Profissional de saúde">
+            </div>
+            <!-- mudar classe caixa_texto -> box-texto-home -->
+            <div class="box-texto-home">
+                <!-- mudar classe titulo, card-titulo, texto pra titulo-home (add "-home" no final de todos)  -->
+                <h1 class="titulo-home">CONTROLE TÉRMICO EM CÂMARAS FRIAS</h1>
+                <h2 class="card-titulo-home">Monitoramento de temperatura contínuo para a preservação de vacinas HPV
+                </h2>
+                <p class="texto-home">Solução automatizada com alertas em tempo real para garantir a estabilidade
+                    térmica e a
+                    eficácia imunológica da sua cadeia de frio.</p>
+                <!-- mudar classe botao_home tipo2 -> botao-home -->
+                <button class="botao-home">VER SOLUÇÃO DE MONITORAMENTO</button>
+            </div>
+        </section>
+
+        <!-- sessão de beneficios - cartoes com textos introdutorios -->
+        <!-- criado a sessao beneficios -->
+        <section class="sessao-beneficios">
+            <!-- criado a div container e sua sub classe cetnralizar texto -->
+            <div class="container centralizar-texto">
+                <h2 class="subtitulo_main">Todos os dias, a VaxControl eleva os níveis de segurança e <br> eficiência de
+                    quem
+                    se
+                    dedica à saúde no
+                    Brasil.</h2>
+            </div>
+            <div>
+                <!-- mudar classe main_card -> container main_card -->
+                <div class="container main_card">
+                    <!-- cartão 1 -->
+                    <div class="card">
+                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco1-imagem"
                             alt="Imagem ilustrativa">
+                        <!-- mudar classe titulo -> card-titulo -->
+                        <h3 class="card-titulo">Sistema de Monitoramento</h3>
+                        <p class="texto">Sistema para mitigar falhas, com
+                            processamento e armazenamento
+                            de dados contínuos.</p>
                     </div>
-                    <p class="subtitulo">Mais tempo para agir e prevenir perdas</p>
-                    <p class="texto">Solução que proporciona visibilidade sobre os registros de temperatura e para ações
-                        corretivas..</p>
+                    <!-- cartão 2 -->
+                    <div class="card">
+                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco2-imagem"
+                            alt="Imagem ilustrativa">
+                        <h3 class="card-titulo">Alarmes</h3>
+                        <p class="texto">Envio de alertas que atendem
+                            diferentes níveis, eliminando riscos
+                            de perdas relacionada a temperatura.</p>
+                    </div>
+                    <!-- cartao 3 -->
+                    <div class="card">
+                        <div>
+                            <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco3-imagem"
+                                alt="Imagem ilustrativa">
+                        </div>
+                        <h3 class="card-titulo">Mais tempo para agir e prevenir perdas</h3>
+                        <p class="texto">Solução que proporciona visibilidade sobre os registros de temperatura e para
+                            ações
+                            corretivas..</p>
+                    </div>
+
+                    <!-- ALINHAMENTO DOS CARTOES  -->
+                    <!-- add uma sub classe card-linha-2 -->
+                    <!-- cartao 4 -->
+                    <div class="card card-linha2">
+                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco4-imagem"
+                            alt="Imagem ilustrativa">
+                        <h3 class="card-titulo">Conformidade garantida</h3>
+                        <p class="texto">Tecnologia projetada para atender aos padrões e níveis
+                            de qualidade da sau empresa.</p>
+                    </div>
+                    <!-- cartao 5 -->
+                    <div class="card card-linha2">
+                        <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco5-imagem"
+                            alt="Imagem ilustrativa">
+                        <h3 class="card-titulo">Monitoramento proativo</h3>
+                        <p class="texto">Acompanhamento site disponivel 24h por dia, 7 dias por semana, desde a
+                            implantação,
+                            garantindo total segurança dos seus
+                            insumos.</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco4-imagem"
-                        alt="Imagem ilustrativa">
-                    <p class="subtitulo">Conformidade garantida</p>
-                    <p class="texto">Tecnologia projetada para atender aos padrões e níveis
-                        de qualidade da sau empresa.</p>
+        </section>
+
+        <!-- sessao azul escuro : TECNOLOGIA E INTELIGÊNCIA-->
+        <!-- criado a sessao com a nova classe -->
+        <section class="sessao-tecnologia">
+            <!-- criado o container com subclasse fundo-cor para add cor de fundo -->
+            <div class="container fundo-cor">
+                <!-- mudar classe fundo -> alinhar-texto -->
+                <div class="alinhar-texto">
+
+                    <!-- mudar classe subtitulo_fundo -> titulo-fundo -->
+                    <h2 class="titulo-fundo"><b>Tecnologia e inteligência</b> para garantir a segurança <br>no
+                        monitoramento de
+                        temperatura de suas
+                        vacinas</h2>
+
+                    <!-- fundo_body -> fundo-lista  -->
+                    <div class="fundo-lista">
+                        <div>
+                            <h3>Para Centros de Distribuição</h3>
+                            <!-- removido a classe texto_fundo -->
+                            <p>Mitigação de riscos operacionais e prejuízos financeiros por meio do
+                                monitoramento
+                                térmico 24/7 em câmaras frigoríficas. Alertas automáticos
+                                para variações fora da faixa de 2°C a 8°C, garantindo a integridade dos lotes de
+                                Gardasil.
+                            </p>
+                        </div>
+                        <p>Para a Indústria Farmacêutica</p>
+                        <br>
+                        <p>Para Responsáveis Técnicos</p>
+                        <br>
+                        <p>Para Equipes de Qualidade e Auditoria</p>
+                    </div>
+                    <!-- mudar classe botao tipo 1 -> botao-info  -->
+                    <button class="botao-info">SAIBA MAIS</button>
                 </div>
-                <div class="card">
-                    <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco5-imagem"
-                        alt="Imagem ilustrativa">
-                    <p class="subtitulo">Monitoramento proativo</p>
-                    <p class="texto">Acompanhamento site disponivel 24h por dia, 7 dias por semana, desde a implantação,
-                        garantindo total segurança dos seus
-                        insumos.</p>
+                <!-- mudar classe fundo -> fundo-imagem  -->
+                <div class="fundo-imagem">
+                    <!-- mudar classe imagem_fundo -> imagem-medica  -->
+                    <img class="imagem-medica" src="imagens/hospital-ilustracao.png" alt="medico vendo">
                 </div>
             </div>
-            <div class="container_botao">
-                <button class="botao tipo2">NOS CONTATE!</button>
+        </section>
+
+        <!-- criada a sessao com classe sessao-banner  -->
+        <!-- sessao de banner : antes dos ultimos 3 cards  -->
+        <section class="sessao-banner">
+            <!-- mudar classe container_body -> container cards-container  -->
+            <div class="container banner-container">
+
+                <!-- mudar classe titulo_body -> titulo-banner  -->
+                <p class="titulo-banner">A tecnologia <b>correta para sua empresa.</b></p>
+                <!-- mudar classe imagem_seta -> imagem_banner -->
+                <img class="imagem-banner" src="../Site VaxControl/imagens/seta.png" alt="Imagens background">
+            </div>
+        </section>
+
+        <!-- sessão pré footer : parte fundo branco com 3 cards -->
+        <!-- sessao criado chamado classe nova sessao-pre-footer -->
+        <section class="sessao-pre-footer">
+            <div class="container">
+
+                <!-- titulo-pre-footer  -->
+                <h2 class="titulo-pree-footer">Garanta monitoramento de ponta e tenha controle
+                    da sua operação de saúde com as soluções da VaxControl
+                </h2>
             </div>
 
-            <div class="fundo">
-                <p class="subtitulo_fundo"><b>Tecnologia e inteligência</b> para garantir a segurança <br>no
-                    monitoramento de
-                    temperatura de suas
-                    vacinas</p>
-            </div>
-            <div class="fundo">
-                <img class="imagem_fundo" src="../Site VaxControl/imagens/hospital-ilustracao.png" alt="medico vendo">
-                <div class="fundo_body">
-                    <p>Para Centros de Distribuição</p>
-                    <p class="texto_fundo">Mitigação de riscos operacionais e prejuízos financeiros por meio do monitoramento
-                        térmico 24/7 em câmaras frigoríficas. Alertas automáticos
-                        para variações fora da faixa de 2°C a 8°C, garantindo a integridade dos lotes de Gardasil.
-                    </p>
-                    <br>
-                    <p>Para a Indústria Farmacêutica</p>
-                    <br>
-                    <p>Para Responsáveis Técnicos</p>
-                    <br>
-                    <p>Para Equipes de Qualidade e Auditoria</p>
-                    <button class="botao tipo1">SAIBA MAIS</button>
+            <!-- mudar classe footer-cards-container  -->
+            <div class="footer_cards-container">
+
+                <!-- mudar classe card -> card-footer  -->
+                <div class="card-footer">
+
+                    <!-- mudar classe subtitulo -> titulo-card-footer -->
+                    <h3 class="titulo-card-footer">Monitoramento de Temperatura</h3>
+                    <p class="texto">Acompanhe a temperatura de vacinas, insumos e medicamentos 24/7 em tempo real com
+                        alertas
+                        instantâneos para evitar perdas.</p>
+                    <!-- mudar classe botao_card -> botao card  -->
+                    <button class="botao card">CONHEÇA O Vaxcontrol</button>
+                </div>
+                <div class="card">
+                    <h3 class="titulo-card-footer">VaxControl</h3>
+                    <p class="texto">Ganhe velocidade nos inventários, controle a perda de ativos e garanta relatórios
+                        precisos para as suas auditorias.</p>
+                    <button class="botao card">CONHEÇA O Vaxcontrol</button>
+                </div>
+                <div class="card">
+                    <h3 class="titulo-card-footer">Conformidade e Auditoria</h3>
+                    <p class="texto">Elimine o controle manual em papel, automatize relatórios e garanta 100% de
+                        conformidade com as normas da Anvisa.</p>
+                    <button class="botao card">CONHEÇA O Vaxcontrol</button>
                 </div>
             </div>
-
-            <div class="container_body">
-                <p class="titulo_body">A tecnologia <b>correta para sua empresa.</b></p>
-                <img class="imagem_seta" src="../Site VaxControl/imagens/seta.png" alt="Imagens background">
-                <button class="botao_body">FALE COM UM ESPECIALISTA</button>
-            </div>
+        </section>
     </main>
 
-    <footer>
-        <div class="pre_footer">
-            <p class="subtitulo_body">Garanta monitoramento de ponta e tenha controle
-                <br> da sua operação de saúde com as soluções da VaxControl
-            </p>
-        </div>
-        <div class="footer_card">
-            <div class="card">
-                <p class="subtitulo_footer">Monitoramento de Temperatura</p>
-                <p class="texto">Acompanhe a temperatura de vacinas, insumos e medicamentos 24/7 em tempo real com alertas
-                    instantâneos para evitar perdas.</p>
-                <button class="botao_card">CONHEÇA O Vaxcontrol</button>
-            </div>
-            <div class="card">
-                <p class="subtitulo_footer">VaxControl</p>
-                <p class="texto">Ganhe velocidade nos inventários, controle a perda de ativos e garanta relatórios
-                    precisos para as suas auditorias.</p>
-                <button class="botao_card">CONHEÇA O Vaxcontrol</button>
-            </div>
-            <div class="card">
-                <p class="subtitulo_footer">Conformidade e Auditoria</p>
-                <p class="texto">Elimine o controle manual em papel, automatize relatórios e garanta 100% de
-                    conformidade com as normas da Anvisa.</p>
-                <button class="botao_card">CONHEÇA O Vaxcontrol</button>
-            </div>
-        </div>
-        <div class="footer">
+
+    <!-- RODAPÉ DO SITE -->
+    <!-- add classe no footer -->
+    <footer class="footer principal">
+        <!-- mudar classe footer -> container footer-container -->
+        <div class="container footer-container">
             <div class="footer_texto">
 
-                <p class="footer texto">VaxControl Serviços
-                    em Tecnologia <br><br>
-                    da Informação S/Abr <br><br>
-                    CNPJ: 29.851.832/0001-01 <br><br>
-                    Rua haddock lobo, 595, 7º <br><br>
-                    andar – Consolação, São Paulo, SP</p>
-                <p class="footer texto">
-                    Soluções <br><br>
-                    Para Centros de Distribuição <br><br>
-                    Para a Indústria Farmacêutica <br><br>
-                    Para Responsáveis Técnicos <br><br>
-                    Para Controle de Qualidade e Auditoria
-                </p>
-                <p class="footer texto">
-                    Clientes <br><br>
-                    Quem somos <br><br>
-                    Fale conosco <br><br>
-                    Nossas Políticas
-                </p>
-                <p class="footer texto">
-                    Termos de Uso <br><br>
-                    <img class="imagem_card" src="../Site VaxControl/imagens/logo_imagem.png" alt="Logo Vaxcontrol">
-                </p>
+                <p>VaxControl Serviços
+                <p><strong>Soluções</strong></p>
+                <ul>
+                    <li><a href="#">Para Centros de Distribuição</a></li>
+                    <li><a href="#">Para a Indústria Farmacêutica</a></li>
+                    <li><a href="#">Para Responsáveis Técnicos</a></li>
+                    <li><a href="#">Para Controle de Qualidade e Auditoria</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-texto">
+                <p><strong>Clientes</strong></p>
+                <ul>
+                    <li><a href="#">Quem somos</a></li>
+                    <li><a href="#">Fale conosco</a></li>
+                    <li><a href="#">Nossas Políticas</a></li>
+                </ul>
+            </div>
+            <!-- aqu item que ver como vai se comportar -->
+            <div class="footer texto">
+                <p><strong>Termos de Uso</strong></p><br><br>
+                <img class="imagem_card" src="../Site VaxControl/imagens/logo_imagem.png" alt="Logo Vaxcontrol">
             </div>
         </div>
     </footer>
