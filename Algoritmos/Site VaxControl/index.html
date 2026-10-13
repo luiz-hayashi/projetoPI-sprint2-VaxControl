@@ -17,9 +17,7 @@
 
     <!-- CABECALHO DO SITE -->
     <header>
-        <!-- mudar classe container -> topbar -->
         <div class="topbar">
-            <!-- Navegação (Logo e menu) -->
             <img class="logo" src="../Site VaxControl/imagens/logo.png" alt="Vaxcontrol logo">
 
             <nav class="navegador">
@@ -28,12 +26,8 @@
                 <a href="../site-vaxcontrol/dashboard.html">Dashboard</a>
                 <a href="../site-vaxcontrol/contato.html">Fale Conosco</a>
             </nav>
-
-            <!-- mudar classe cabecalho -> container cabecalho-topbar -->
-            <div class="cabecalho-topbar">
-                <!-- mudar classe botao_home -> botao home -->
-                <button class="botao-topbar">Cadastre-se</button>
-                <button class="botao-topbar">Já sou cliente</button>
+                <!-- <button class="botao-topbar">Cadastre-se</button> -->
+                <button class="botao-topbar">Entrar</button>
             </div>
         </div>
     </header>
@@ -42,20 +36,15 @@
     <!-- INICIO DO CORPO DO SITE  -->
     <main>
         <!-- section pois é semantica, quer dizer, é importante pro SEO do google, bom pro site ser encontrado  -->
-        <!-- mudar classe painel -> banner-home -->
-        <!-- criado a sessao-home -->
         <section class="sessao-home">
             <img class="imagem" src="../Site VaxControl/imagens/imagem1-home.png" alt="Profissional de saúde">
-            <!-- mudar classe caixa_texto -> box-texto-home -->
             <div class="box-texto-home">
-                <!-- mudar classe titulo, card-titulo, texto pra titulo-home (add "-home" no final de todos)  -->
                 <h1 class="titulo-home">CONTROLE TÉRMICO EM CÂMARAS FRIAS</h1>
                 <h2 class="subtitulo-home">Monitoramento de temperatura contínuo para a preservação de vacinas HPV
                 </h2>
                 <p class="texto-home">Solução automatizada com alertas em tempo real para garantir a estabilidade
                     térmica e a
                     eficácia imunológica da sua cadeia de frio.</p>
-                <!-- mudar classe botao_home tipo2 -> botao-home -->
                 <button class="botao-home">VER SOLUÇÃO DE MONITORAMENTO</button>
             </div>
         </section>
@@ -63,20 +52,18 @@
         <!-- sessão de beneficios - cartoes com textos introdutorios -->
         <!-- criado a sessao beneficios -->
         <section class="sessao-beneficios">
-            <!-- criado a div container e sua sub classe cetnralizar texto -->
             <h2 class="subtitulo_main">Todos os dias, a VaxControl eleva os níveis de segurança e <br> eficiência de
                 quem
                 se
                 dedica à saúde no
                 Brasil.</h2>
             <div>
-                <!-- mudar classe main_card -> container main_card -->
+
                 <div class="container main_card">
                     <!-- cartão 1 -->
                     <div class="card">
                         <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco1-imagem.png"
                             alt="Imagem ilustrativa">
-                        <!-- mudar classe titulo -> card-titulo -->
                         <h3 class="card-titulo">Sistema de Monitoramento</h3>
                         <p class="texto">Sistema para mitigar falhas, com
                             processamento e armazenamento
@@ -104,7 +91,6 @@
                     </div>
 
                     <!-- ALINHAMENTO DOS CARTOES  -->
-                    <!-- add uma sub classe card-linha-2 -->
                     <!-- cartao 4 -->
                     <div class="card card-linha2">
                         <img class="imagem_card" src="../Site VaxControl/imagens/main-bloco4-imagem.png"
@@ -127,10 +113,8 @@
         </section>
 
         <!-- sessao azul escuro : TECNOLOGIA E INTELIGÊNCIA-->
-        <!-- criado a sessao com a nova classe -->
         <section class="sessao-tecnologia">
 
-            <!-- mudar classe subtitulo_fundo -> titulo-fundo -->
             <h4 class="titulo-fundo"><span style="font-weight: 900;">Tecnologia e inteligência</span> para garantir a
                 segurança no <br>
                 monitoramento de
@@ -140,7 +124,6 @@
                 <div class="alinhar-borda">
                     <div class="fundo-imagem">
                         <div class="fundo-lista">
-                            <!-- fundo_body -> fundo-lista  -->
                             <div>
                                 <h3>Para Centros de Distribuição</h3><br>
                                 <p>Mitigação de riscos operacionais e prejuízos financeiros por meio do
@@ -156,48 +139,30 @@
                             <br>
                             <li>Para Equipes de Qualidade e Auditoria</li>
                         </div>
-                        <!-- mudar classe fundo -> fundo-imagem  -->
-                        <!-- mudar classe imagem_fundo -> imagem-lado  -->
                         <img class="imagem-medica" src="imagens/hospital-ilustracao.png" alt="medico vendo">
                     </div>
 
-                    <!-- mudar classe botao tipo 1 -> botao-info  -->
                     <button class="botao-info">SAIBA MAIS</button>
                 </div>
             </div>
         </section>
 
-        <!-- criada a sessao com classe sessao-banner  -->
-        <!-- sessao de banner : antes dos ultimos 3 cards  -->
         <section class="sessao-banner">
-            <!-- mudar classe container_body -> container banner-container  -->
             <div class="banner-container">
 
-                <!-- mudar classe titulo_body -> titulo-banner  -->
                 <p class="titulo-banner">A tecnologia <b>correta para sua empresa.</b></p>
-                <!-- mudar classe imagem_seta -> imagem_banner -->
             </div>
             <img class="imagem-banner" src="../Site VaxControl/imagens/seta.png" alt="Imagens background">
         </section>
-
-
-        <!-- sessão pré footer : parte fundo branco com 3 cards -->
-        <!-- sessao criado chamado classe nova sessao-pre-footer -->
         <section class="sessao-pre-footer">
             <div class="container">
-
-                <!-- titulo-pre-footer  -->
                 <h2 class="titulo-pre-footer">Garanta monitoramento de ponta e tenha controle
                     da sua operação de saúde com as soluções da VaxControl
                 </h2>
             </div>
 
-            <!-- mudar classe footer-cards-container  -->
             <div class="footer_cards-container">
 
-                <!-- mudar classe card -> card-footer  -->
-
-                <!-- mudar classe subtitulo -> titulo-card-footer -->
                 <div class="card-footer">
                     <h3 class="titulo-card-footer">Monitoramento de Temperatura</h3>
                     <p class="texto">Acompanhe a temperatura de vacinas, insumos e medicamentos 24/7 em tempo real com
@@ -205,7 +170,6 @@
                         instantâneos para evitar perdas.</p>
                     <button class="botao-card">CONHEÇA O Vaxcontrol</button>
                 </div>
-                <!-- mudar classe botao_card -> botao card  -->
                 <div class="card-footer">
                     <h3 class="titulo-card-footer">VaxControl</h3>
                     <p class="texto">Ganhe velocidade nos inventários, controle a perda de ativos e garanta relatórios
@@ -224,9 +188,7 @@
 
 
     <!-- RODAPÉ DO SITE -->
-    <!-- add classe no footer -->
     <footer class="footer-principal">
-        <!-- mudar classe footer -> container footer-container -->
         <div class="container footer-container">
             <div class="footer-texto">
                 <p><strong>VaxControl Serviços em<br>Tecnologia da<br>Informação S/A</strong><br>
@@ -254,7 +216,6 @@
                     <li><a href="#">Nossas Políticas</a></li>
                 </ul>
             </div>
-            <!-- aqu item que ver como vai se comportar -->
             <div class="footer-texto">
                 <p><strong>Termos de Uso</p><br>
                 <img class="logo_footer" src="../Site VaxControl/imagens/logo_imagem.png" alt="Logo Vaxcontrol">
