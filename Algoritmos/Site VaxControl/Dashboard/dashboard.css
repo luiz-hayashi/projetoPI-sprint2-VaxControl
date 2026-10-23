@@ -1,0 +1,14 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu {
+    padding: 0px 300px;
+}
+
+
+.barra-lateral {
+    padding: 500px 0px;
+    border-left: black solid 1px;
+}
