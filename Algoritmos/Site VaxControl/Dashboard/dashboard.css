@@ -2,3 +2,86 @@
     padding: 0px;
     margin: 0px;
 }
+
+body {
+    background-color: rgb(224, 223, 223);
+}
+
+/* caixa de info do usuario  */
+.box-user {
+    margin: 10px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 1000px;
+    padding: 20px;
+}
+
+.texto-user {
+    font-size: 20px;
+}
+
+/* caixa de info  */
+.box-info {
+    margin: 10px 10px;
+    background-color: rgba(128, 184, 96, 0.432);
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    border: rgb(194, 194, 194) solid 2px;
+}
+
+.status-info {
+    margin-top: 10px;
+}
+.box-texto {
+    margin-left: 20px;
+}
+
+
+/* bolinha de status  */
+span {
+    background-color: green;
+    border-radius: 25px;
+    padding: 7px 16px;
+}
+
+
+/* divisoria dos cards kpi */
+.cards-kpi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.kpi {
+    background-color: white;
+    padding: 15px 90px;
+    border-radius: 25px;
+    border: rgb(194, 194, 194) solid 2px;
+}
+
+.kpi-titulo {
+    font-size: 20px;
+}
+
+.kpi-camara {
+    margin-top: 70px;
+}
+
+.kpi-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.kpi-sensor {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+}
+
+.numero-kpi-camara {
+    font-size: 50px;
+}
+

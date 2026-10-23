@@ -9,49 +9,94 @@
   <body>
     <!-- divisoria aonde terá o nome do usuario e foto  -->
     <div class="box-user">
-      <p>Bem vindo usuario!</p>
-      <p>usuario - FOTO</p>
+      <p class="texto-user">Bem vindo usuario!</p>
+      <p class="texto-user">usuario - FOTO</p>
     </div>
 
     <!-- divisoria onde terá uma caixa de informação -->
     <div class="box-info">  
       <div class="status-info">
-        <span>BOLA CIRCULAR</span>
+        <span></span>
       </div>
-      <p>Faixa segura: 2°C a 8°C</p>
-      <p>O sistema avisa quando a temperatura sai do limite.</p>
+      <div class="box-texto">
+        <strong>Faixa segura: 2°C a 8°C</strong>
+        <p>O sistema avisa quando a temperatura sai do limite.</p>
+      </div>
     </div>
 
+    <!-- divisoria para as kpis  -->
     <div class="cards-kpi">
 
       <div class="kpi">
-        <p>CÂMARAS MONITORADAS</p>
-      <p>04</p>
-      <div>
-        <a href="camaras.html">visualizar todas as camaras</a>
+        <div class="box-texto-kpi">
+          <p class="kpi-titulo">CÂMARAS MONITORADAS</p>
+          <p class="numero-kpi-camara">04</p>
+          <div class="kpi-camara">
+            <a href="camaras.html">visualizar todas as câmaras</a>
+          </div>
+        </div>
       </div>
 
       <div class="kpi">
-        <p>PICO DE TEMPERATURA</p>
-        <p>1° C</p>
-        <div class="kpi-info">
+        <div class="box-texto-kpi">
+          <p class="kpi-titulo">PICO DE TEMPERATURA</p>
+        </div>
+          <p class="numero-kpi-temp">1° C</p>
+          <div class="kpi-info">
           <p>10/10/2026</p>
           <p>Câmara 2AB</p>
           <p>12:45</p>
         </div>
+      </div>
         
         <div class="kpi">
-          <p>QUANTIDADE DE SENSORES</p>
-          <p>16</p>
+          <div class="box-texto-kpi">
+          <p class="kpi-titulo">QUANTIDADE DE SENSORES</p>
+          <p class="numero-kpi-sensor">16</p>
           
-          <div>
-            <p>Sensores ativo: 13</p>
-            <p>Sensores inativo: 3</p>
-          </div>
-          <div>
-            <a href="sensores.html">Visualizar sensores</a>
+          <div class="kpi-sensor">
+            <div>
+              <p>Sensores ativo: 13</p>
+              <p>Sensores inativo: 3</p>
+            </div>
+            <div>
+              <a href="sensores.html">Visualizar sensores</a>
+            </div>
           </div>
         </div>
       </div>
+      </div>
+    
+
+      <!-- aqui estará dashboard  -->
+      <div class="dashboard">
+        <p class="kpi-titulo">Histórico de temperatura</p>
+        <select id="slt_camaras">APARENTEMTNE  ISTO MUDARA</select>
+        <!-- aqui estará a dashboard -->
+      </div>
+
+      <!-- divisoria de alertas -->
+      <div class="alertas-recentes">
+        <p>Alertas recentes</p>
+
+        <div class="card-alerta camara">
+          <p>Câmara 2AB</p>
+          <p>Temperatura: 9.5°C</p>
+          <p>Acima da faixa segura</p> 
+        </div>
+
+        <div class="card-alerta sensor">
+          <p>Sensor 01</p>
+          <p>Sensor mudou para status "inativo"</p>
+          <p>Sensor localizado na camâra 2ABss</p> 
+        </div>
+
+        <div class="card-alerta camara">
+          <p>Sensor 01</p>
+          <p>Sensor mudou para status "inativo"</p>
+          <p>Sensor localizado na camâra 2ABss</p> 
+        </div>
+      </div>
+
       </body>
 </html>
