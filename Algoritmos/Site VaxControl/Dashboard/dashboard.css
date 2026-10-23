@@ -7,6 +7,11 @@ body {
     background-color: rgb(224, 223, 223);
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 /* caixa de info do usuario  */
 .box-user {
     margin: 10px 0px;
@@ -18,6 +23,7 @@ body {
 
 .texto-user {
     font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* caixa de info  */
@@ -35,6 +41,7 @@ body {
     margin-top: 10px;
 }
 .box-texto {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-left: 20px;
 }
 
@@ -56,32 +63,112 @@ span {
 
 .kpi {
     background-color: white;
-    padding: 15px 90px;
+    padding: 15px 90px; 
     border-radius: 25px;
     border: rgb(194, 194, 194) solid 2px;
 }
 
 .kpi-titulo {
     font-size: 20px;
+    color: rgb(48, 47, 47);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .kpi-camara {
-    margin-top: 70px;
+    margin-top: 30px;
 }
 
 .kpi-info {
     display: flex;
     justify-content: space-between;
-    margin-top: 70px;
+    margin-top: 30px;
 }
 
 .kpi-sensor {
     display: flex;
     justify-content: space-between;
-    margin-top: 70px;
+    margin-top: 30px;
 }
 
+/* numeros das KPIs  */
 .numero-kpi-camara {
     font-size: 50px;
+    text-align: center;
+    margin: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.numero-kpi-temp {
+    font-size: 50px;
+    text-align: center;
+    margin: 10px;
+    color: red;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.numero-kpi-sensor {
+    font-size: 50px;
+    text-align: center;
+    margin: 10px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* container responsavel por dividir as div dashboard e alertas  */
+.container {
+    display: flex;
+}
+
+/* divisoria da dashboard  */
+.dashboard {
+    background-color: white;
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+}
+
+/* divisoria de alertas recentes  */
+.alertas-recentes {
+    background-color: white;
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+}
+
+.titulo-alerta {
+    font-size: 30px;
+    margin: 10px;
+}
+
+/* cards de alertas  */
+.card-alerta {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px
+}
+
+/* card de alerta sensor  */
+.sensor {
+    border: 1px #A94D2A solid;
+    background-color: rgba(252, 97, 97, 0.61);
+}
+
+/* card de alerta camara  */
+.camara {
+    border:1px #A94D2A solid;
+    background-color: rgba(255, 210, 210, 0.61);
+}
+
+.titulo-card-camara {
+    color: #A94D2A;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titulo-card-sensor {
+    color: #700000;
+    font-weight: bold;
+    font-size: 20px;    
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

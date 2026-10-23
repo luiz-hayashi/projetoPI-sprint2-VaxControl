@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dashboard | Vaxcontrol</title>
     <link rel="stylesheet" href="dashboard.css" />
+    <link rel="preconnect" href="https://googleapis.com" />
+    <link rel="preconnect" href="https://gstatic.com" crossorigin />
+    <link
+      href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <!-- divisoria aonde terá o nome do usuario e foto  -->
@@ -14,7 +20,7 @@
     </div>
 
     <!-- divisoria onde terá uma caixa de informação -->
-    <div class="box-info">  
+    <div class="box-info">
       <div class="status-info">
         <span></span>
       </div>
@@ -26,7 +32,6 @@
 
     <!-- divisoria para as kpis  -->
     <div class="cards-kpi">
-
       <div class="kpi">
         <div class="box-texto-kpi">
           <p class="kpi-titulo">CÂMARAS MONITORADAS</p>
@@ -41,62 +46,66 @@
         <div class="box-texto-kpi">
           <p class="kpi-titulo">PICO DE TEMPERATURA</p>
         </div>
-          <p class="numero-kpi-temp">1° C</p>
-          <div class="kpi-info">
+        <p class="numero-kpi-temp">1° C</p>
+        <div class="kpi-info">
           <p>10/10/2026</p>
           <p>Câmara 2AB</p>
           <p>12:45</p>
         </div>
       </div>
-        
-        <div class="kpi">
-          <div class="box-texto-kpi">
+
+      <div class="kpi">
+        <div class="box-texto-kpi">
           <p class="kpi-titulo">QUANTIDADE DE SENSORES</p>
           <p class="numero-kpi-sensor">16</p>
-          
+
           <div class="kpi-sensor">
             <div>
               <p>Sensores ativo: 13</p>
               <p>Sensores inativo: 3</p>
             </div>
             <div>
-              <a href="sensores.html">Visualizar sensores</a>
+              <a class="sensor-link" href="sensores.html"
+                >Visualizar sensores</a
+              >
             </div>
           </div>
         </div>
       </div>
-      </div>
-    
+    </div>
 
+    <div class="container">
       <!-- aqui estará dashboard  -->
       <div class="dashboard">
         <p class="kpi-titulo">Histórico de temperatura</p>
-        <select id="slt_camaras">APARENTEMTNE  ISTO MUDARA</select>
+        <select id="slt_camaras">
+          APARENTEMTNE ISTO MUDARA
+        </select>
         <!-- aqui estará a dashboard -->
       </div>
 
       <!-- divisoria de alertas -->
       <div class="alertas-recentes">
-        <p>Alertas recentes</p>
+        <p class="titulo-alerta">Alertas recentes</p>
 
         <div class="card-alerta camara">
-          <p>Câmara 2AB</p>
+          <p class="titulo-card-camara">Câmara 2AB</p>
           <p>Temperatura: 9.5°C</p>
-          <p>Acima da faixa segura</p> 
+          <p>Acima da faixa segura</p>
         </div>
 
         <div class="card-alerta sensor">
-          <p>Sensor 01</p>
+          <p class="titulo-card-sensor">Sensor 01</p>
           <p>Sensor mudou para status "inativo"</p>
-          <p>Sensor localizado na camâra 2ABss</p> 
+          <p>Sensor localizado na camâra 2ABss</p>
         </div>
 
         <div class="card-alerta camara">
-          <p>Sensor 01</p>
+          <p class="titulo-card-camara">Sensor 01</p>
           <p>Sensor mudou para status "inativo"</p>
-          <p>Sensor localizado na camâra 2ABss</p> 
+          <p>Sensor localizado na camâra 2ABss</p>
         </div>
       </div>
-
-      </body>
+    </div>
+  </body>
 </html>
