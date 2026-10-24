@@ -23,12 +23,6 @@
 
     <label for="ipt_doses">Insira o valor das doses:</label>
     <input placeholder="Valor das doses" id="ipt_doses"><br>
-    <label for="ipt_desconto">Você faz parte do programa "Receita de Vida"</label>
-    <select name="Receita_de_Vida" id="ipt_desconto">
-        <option value=""> </option>
-        <option value="Sim">Sim</option>
-        <option value="Nao">Não</option>
-    </select>
 
     <h2>Dados Produto</h2>
 
@@ -58,14 +52,7 @@
         // Alem que a MSD ela tem um programa chamado "Receita de Vida" que concede
         // um valor fixo de 50 reais por dose.
 
-        let desconto = 0;
-
-        if (ipt_desconto.value === 'Sim') {
-            desconto = 50;
-        }
-
-        let vacinas = Number(ipt_vacinas.value); // Quantidade de vacinas por lote
-        // para o cliente saber quantas doses de cada lote está sob refrigeração.
+        let vacinas = Number(ipt_vacinas.value);
 
         let camara = Number(ipt_camara.value); // Mostra os produtos dentro da câmara.
         // em lotes.
@@ -85,46 +72,35 @@
         // Gardasil 9 ocupa de 0,04 litros em média.
 
         let preco_bruto = (camara * vacinas) * valor_doses
-        let preco_liquido_descontado = valor_doses - desconto;
-        // Custo real do valor gasto nas doses.
-
-        let economia_total = total_doses * desconto;
 
         let patrimonio_bruto = total_doses * valor_doses;
         // Patrimônio financeiro armazenado nas câmaras.
 
-        let patrimonio_liquido = total_doses * preco_liquido_descontado;
 
         let valor_afetado = doses_afetadas * valor_doses;
         //Doses que foram afetadas por negligências ou que poderia causar
 
-        let valor_afetado_desconto = doses_afetadas * (valor_doses - desconto);
-        // Caso tenha desconto
-
-        if(doses_afetadas < 0 || doses_afetadas > total_doses){
+        if (doses_afetadas < 0 || doses_afetadas > total_doses) {
             alert("Erro! informe uma quantidade de doses afetadas entre 0 e o total armazenado.");
         }
-        if(litros <= 0){
+        if (litros <= 0) {
             alert("Informe uma capacidade acima de 0 para a câmara.")
         }
         div_mensagem.innerHTML =
-        `Relatorio Análitico da Câmara<br>
-        Atualmente, O preço líquido pago à MSD: R$${preco_liquido_descontado.toFixed(2)} por dose.<br>
-        Total de Vacinas na Câmara: ${total_doses.toFixed(2)}.<br>
-        Economia Gerada pelo Desconto: R$${economia_total.toFixed(2)}<br>
-        Patrimônio Financeiro Armazenado R$${patrimonio_liquido.toFixed(2)}<br><br>
-        Ocupação Física: ${espaco_litros.toFixed(2)} utilizados dos ${litros.toFixed(2)} litros totais (${percentual_ocupacao.toFixed(2)}% de ocupação)<br>
+            `Relatorio Análitico da Câmara:<br>
+        Atualmente, O preço líquido pago à MSD: R$${valor_doses.toFixed(2)} por dose.<br>
+        Total de doses na Câmara: ${total_doses.toFixed(2)}.<br>
+        Patrimônio Financeiro Armazenado R$${patrimonio_bruto.toFixed(2)}<br><br>
+        Ocupação Física: ${espaco_litros.toFixed(2)} litros utilizados dos ${litros.toFixed(2)} litros totais (${percentual_ocupacao.toFixed(2)}% de ocupação)<br>
         <br>
-        Relatório de Danos<br>
+        Relatório de Danos:<br>
         Doses Afetadas: ${doses_afetadas}<br>
         Valor original das doses afetadas R$${valor_afetado.toFixed(2)}<br>
-        Custo das doses afetadas com desconto: R$${valor_afetado_desconto.toFixed(2)}<br>
         Doses preservadas: ${total_doses - doses_afetadas}<br>`
     }
     //RELATÓRIO ANÁLITICO, EXPLICAÇÃO:
     // Preço líquido por dose depois do desconto(caso tenha pelo programa do MSD)
     // Quantidade total de doses armazenadas nas câmaras lembrando que 10 doses equivale a 0,04 litros.
-    // Valor total economizado pelo desconto do programa de r$50 por dose.
     // Valor total do patrimonio armazenado considerando o desconto.
     // Quantidade de litros ocupados pelas vacinas.
 
