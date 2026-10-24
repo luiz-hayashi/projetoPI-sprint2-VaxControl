@@ -12,8 +12,63 @@ a {
     color: black;
 }
 
-/* caixa de info do usuario  */
+main {
+    flex: 1;
+    max-width: 1700px;
+}
 
+.container-body {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    /* Garante que o container ocupe toda a altura da tela */
+}
+
+/* navbar - menu lateral*/
+.navegacao {
+    background-color: #173A5A;
+    padding: 20px;
+    width: 250px;
+    min-width: 250px;
+    min-height: 90vh;
+}
+
+/* menu lateral opçoes */
+.navegacao ul,
+li,
+h1 {
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    list-style: none;
+}
+
+.titulo-nav {
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.opcao-dashboard {
+    padding: 10px 0;
+    background-image: url('caminho/para/imagem.jpg');
+}
+.opcao-camaras {
+    padding: 10px 0;
+    background-image: url('caminho/para/imagem.jpg');
+}
+.opcao-sensores {
+    padding: 10px 0;
+    background-image: url('caminho/para/imagem.jpg');
+}
+.opcao-alertas {
+    padding: 10px 0;
+    background-image: url('caminho/para/imagem.jpg');
+}
+
+
+
+
+
+/* caixa de info do usuario  */
 .box-user {
     margin: 0px 5px;
     display: flex;
@@ -27,10 +82,10 @@ a {
     font-family: 'Inter', sans-serif;
 }
 
-/* caixa de info -- "Fixa segura de 8º graus"*/
+/* caixa de info -- "Fixa segura de 8   º graus"*/
 .box-info {
     margin: 5px 20px;
-    background-color: #CDEBDD;
+    background-color: #cdebddbe;
     border-radius: 12px;
     padding: 10px;
     display: flex;
@@ -70,7 +125,7 @@ span {
 /* os cards de KPIs  */
 .kpi {
     background-color: white;
-    padding: 10px 80px;
+    padding: 10px 60px;
     border-radius: 25px;
     border: #E1E8EF solid 2px;
 }
@@ -83,19 +138,19 @@ span {
 }
 
 .kpi-camara {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .kpi-info {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .kpi-sensor {
     display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 5px;
 }
 
 /* numeros das KPIs  */

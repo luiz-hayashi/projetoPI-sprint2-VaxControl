@@ -1,32 +1,43 @@
 <!doctype html>
 <html lang="pt-br">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard | Vaxcontrol</title>
-
-  <!-- pagina de estilização css  -->
-  <link rel="stylesheet" href="dashboard.css" />
-
-  <!-- importa as fontes de texto externas  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Vaxcontrol</title>
+    
+    <!-- pagina de estilização css  -->
+    <link rel="stylesheet" href="dashboard.css" />
+    
+    <!-- importa as fontes de texto externas  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-
+  
   <!-- importa a biblioteca chart.js  -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-
 <body>
+  <div class="container-body">
+    <nav class="navegacao">
+      <h1>Vaxcontrol</h1><br>
+      <p class="titulo-nav">Menu</p>
+      <ul>
+        <li class="opcao-dashboard">Dashboard</li>
+        <li class="opcao-camaras">Câmaras</li>
+        <li class="opcao-sensores">Sensores</li>
+        <li class="opcao-alertas">Alertas</li>
+      </ul>
+    </nav>
+
   <main>
     <!-- divisoria aonde terá o nome do usuario e foto  -->
       <div class="box-user">
         <p class="texto-user">Bem vindo usuario!</p>
         <p class="texto-user">usuario - FOTO</p>
       </div>
-
-    <!-- divisoria onde terá uma caixa de informação -->
+      
+      <!-- divisoria onde terá uma caixa de informação -->
       <div class="box-info">
         <div class="status-info">
           <span></span>
@@ -36,7 +47,7 @@
           <p>O sistema avisa quando a temperatura sai do limite.</p>
         </div>
       </div>
-
+      
     <!-- divisoria para as kpis  -->
     <div class="cards-kpi">
       <div class="kpi">
@@ -65,7 +76,7 @@
         <div class="box-texto-kpi">
           <p class="kpi-titulo">QUANTIDADE DE SENSORES</p>
           <p class="numero-kpi-sensor">16</p>
-
+          
           <div class="kpi-sensor">
             <div>
               <p>Sensores ativo: 13</p>
@@ -86,8 +97,8 @@
         <select id="slt_camaras">
           APARENTEMTNE ISTO MUDARA
         </select>
-
-
+        
+        
         <div class="dashboard">
           <!-- canvas: meio que uma tela de pintura -->
           <canvas id="grafico-variacao" class="graficos"></canvas>
@@ -95,7 +106,7 @@
 
         <!-- aqui estará a dashboard -->
       </div>
-
+      
       <!-- divisoria de alertas -->
       <div class="box-alertas-recentes">
         <p class="titulo-alerta">Alertas recentes</p>
@@ -119,9 +130,9 @@
         </div>
       </div>
     </div>
+  </div>
   </main>
 </body>
-
 </html>
 <script>
 
