@@ -90,10 +90,6 @@ main {
   color: #718296;
 }
 
-.foto-perfil {
-  width: 35px;
-}
-
 /* caixa de info -- "Fixa segura de 8   º graus"*/
 .box-info-status {
   margin: 0px 20px;
@@ -331,10 +327,6 @@ main {
 }
 
 /* CSS de tela de detalheSensores*/
-.foto-perfil-detalhes {
-  width: 35px;
-  background-color: red;
-}
 .div-pai-detalhes-sensor {
   display: flex;
   min-height: 100vh;
@@ -342,12 +334,47 @@ main {
 .conteudo-principal-detalhes {
   display: flex;
   flex: 1;
+  flex-direction: column;
 }
 .linha-titulo-detalhes {
   display: flex;
+  position: relative;
   justify-content: center;
-  gap: 100px;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
+  border-bottom: 2px solid #53aadb;
+  padding: 10px 0;
 }
+
+.foto-perfil-detalhes {
+  width: 35px;
+  height: 35px;
+  margin-left: auto;
+}
+
+.botao-voltar-detalhes {
+  position: absolute; 
+  left: 20px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 10px;
+  border: #e1e8ef solid 2px;
+}
+
+.titulo-sensor-detalhes {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+  font-size: larger;
+  color: #102d72;
+  font-weight: bold;
+}
+
 /* PAGINA ALERTAS  */
