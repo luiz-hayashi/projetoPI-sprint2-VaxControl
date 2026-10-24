@@ -13,8 +13,7 @@ a {
 }
 
 main {
-    flex: 1;
-    max-width: 1700px;
+    flex: 1;    
 }
 
 /* para encaixar tudo do site  */
@@ -22,7 +21,6 @@ main {
     display: flex;
     flex-direction: row;
     min-height: 100vh;
-    /* Garante que o container ocupe toda a altura da tela */
 }
 
 /* navbar - menu lateral*/
@@ -34,27 +32,46 @@ main {
     min-height: 90vh;
 }
 
+/* este futuramente vai ser substituido por imagem  */
 .navegacao h1 {
     color: #ffffff;
     font-family: 'Inter', sans-serif;
     list-style: none;
 }
 
-.titulo-nav {
+/* nome do menu  */
+.menu {
     color: #ffffff;
-    margin-bottom: 20px;
     font-family: 'Inter', sans-serif;
+    margin-bottom: 10px;
+    margin-left: 18px;
+    margin-top: 10px;
 }
 
-/* menu lateral opçoes */
+/* substuido div por link para item-menu */
+/* aqui as opções do menu  */
 .item-menu {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-top: 30px;
+    gap: 15px;
+    padding: 12px 20px;
     font-family: 'Inter', sans-serif;
-    color: white;
+    color: white;   
+    border-radius: 8px;
 }
+
+/* animação para cada opção do menu, quando passa o mouse na opção*/
+.item-menu:hover {
+    background-color: #285879;
+    color: #00fff2;
+}
+
+/* Tamanho controlado e fixo para os ícones */
+.item-menu img {
+    width: 22px;
+    height: 22px;
+}
+
 
 /* caixa de info do usuario  */
 .box-user {
@@ -92,7 +109,7 @@ main {
 
 
 /* bolinha de status  */
-span {
+.bola-verde {
     background-color: #28A779;
     border-radius: 25px;
     padding: 2px 13px;

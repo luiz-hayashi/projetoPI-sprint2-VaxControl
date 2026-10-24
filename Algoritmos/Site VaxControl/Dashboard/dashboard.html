@@ -22,30 +22,33 @@
   <div class="container-body">
     <nav class="navegacao">
 
-      <!-- obs: aqui sera colocado imagem da vaxcontrol  -->
-      <h1>Vaxcontrol</h1><br>
-      <p class="titulo-nav">Menu</p>
+  <!-- obs: aqui sera colocado imagem da vaxcontrol  -->
+  <h1>Vaxcontrol</h1>
+  <p class="menu">Menu</p>
 
-      <div class="item-menu">
-        <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
-        <a class="opcoes-menu" href="dashboard.html">Dashboard</a>
-      </div>
+  <!-- O link <a> agora fica por fora, criando uma linha 100% clicável -->
+  <a href="dashboard.html" class="item-menu">
+    <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
+    <span>Dashboard</span>
+  </a>
 
-      <div class="item-menu">
-        <img src="dashboard-img/camaras.png" alt="icone de camaras">
-        <a href="camaras.html">Câmaras</a>
-      </div>
+  <a href="camaras.html" class="item-menu">
+    <img src="dashboard-img/camaras.png" alt="icone de camaras">
+    <span>Câmaras</span>
+  </a>
 
-      <div class="item-menu">
-        <img src="dashboard-img/sensores.png" alt="icone de sensores">
-        <a href="sensores.html">Sensores</a>
-      </div>
+  <a href="sensores.html" class="item-menu">
+    <img src="dashboard-img/sensores.png" alt="icone de sensores">
+    <span>Sensores</span>
+  </a>
 
-      <div class="item-menu">
-        <img src="dashboard-img/alerta.png" alt="icone de alertas">
-        <a href="alertas.html">Alertas</a>
-      </div>
-    </nav>
+  <a href="alertas.html" class="item-menu">
+    <img src="dashboard-img/alerta.png" alt="icone de alertas">
+    <span>Alertas</span>
+  </a>
+
+</nav>
+
 
     <main>
       <!-- divisoria aonde terá o nome do usuario e foto  -->
@@ -57,7 +60,7 @@
       <!-- divisoria onde terá uma caixa de informação -->
       <div class="box-info">
         <div class="status-info">
-          <span></span>
+          <span class="bola-verde"></span>
         </div>
         <div class="box-texto">
           <strong>Faixa segura: 2°C a 8°C</strong>
