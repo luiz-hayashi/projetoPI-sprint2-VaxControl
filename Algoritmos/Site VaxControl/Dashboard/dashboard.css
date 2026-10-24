@@ -33,23 +33,23 @@ main {
     min-height: 90vh;
 }
 
-/* este futuramente vai ser substituido por imagem  */
-.navegacao h1 {
-    color: #ffffff;
-    font-family: 'Inter', sans-serif;
-    list-style: none;
+
+.logo-img {
+    width: 200px;
+    margin-bottom: 30px;
 }
 
 /* nome do menu  */
 .menu {
-    color: #ffffff;
+    color: #91ADC3;
     font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: bold;
     margin-bottom: 10px;
     margin-left: 18px;
     margin-top: 10px;
 }
 
-/* substuido div por link para item-menu */
 /* aqui as opções do menu  */
 .item-menu {
     display: flex;
@@ -181,7 +181,7 @@ main {
     font-size: 11px;
 
     a {
-        color: #a0aec0;
+        color: #535353;
         text-decoration: none;
         font-family: 'Inter', sans-serif;
     }
@@ -192,7 +192,7 @@ main {
     justify-content: space-between;
     margin-top: auto;
     font-size: 11px;
-    color: #a0aec0;
+    color: #5a5a5a;
     font-family: 'Inter', sans-serif;
 }
 
@@ -200,13 +200,13 @@ main {
     display: flex;
     justify-content: space-between;
     font-size: 11px;
-    color: #a0aec0;
+    color: #5a5a5a;
     align-items: flex-end;
     font-family: 'Inter', sans-serif;
 }
 
 .sensor-link a {
-    color: #a0aec0;
+    color: #5a5a5a;
     text-decoration: none;
     font-family: 'Inter', sans-serif;
 }
@@ -297,7 +297,7 @@ main {
 }
 
 /* opcoes de camaras  */
-.seletor-camara {   
+.seletor-camara {
     border-radius: 8px;
     min-width: 100px;
     border: 2px solid #E1E8EF;
@@ -319,7 +319,4 @@ main {
 .dashboard {
     display: flex;
     justify-content: center;
-}
-b {
-    color: rgb(0, 255, 242);
 }
