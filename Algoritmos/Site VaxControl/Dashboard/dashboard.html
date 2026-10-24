@@ -108,10 +108,14 @@
       <div class="container">
         <!-- aqui está a dashboard  -->
         <div class="box-dashboard">
-          <p class="dashboard-titulo">Histórico de temperatura</p>
-          <select id="slt_camaras">
-            APARENTEMTNE ISTO MUDARA
-          </select>
+          <div class="box-alinhar">
+            <p class="dashboard-titulo">Quebra de Margem Segura</p>
+            <select class="seletor-camara" id="slt_camaras">
+              <option selected value="1">Todas as câmeras</option>
+              <option value="2">Câmara 1AB</option>
+              <option value="3">Câmara 2AB</option>
+            </select>
+          </div>
 
           <div class="dashboard">
             <!-- canvas: meio que uma tela de pintura -->
@@ -152,12 +156,13 @@
   // vetor que add as metricas do eixo X
   // grafico 1
   const labels = [
-    '12:00',
-    '13:00',
-    '14:00',
-    '15:00',
-    '16:00',
-    '17:00'
+    '12:30',
+    '12:35',
+    '12:40',
+    '12:45',
+    '12:50',
+    '12:55',
+    '13:00'
   ];
 
   // vetores, receber as metricas do eixo X e colocar titulo, além estilizar a cor do grafico e quais dados serão mostrados
@@ -165,11 +170,18 @@
   const data = {
     labels: labels,
     datasets: [{
-      label: 'Temperatura',
+      label: 'Camara 1AB',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [30, 29, 28, 25, 22, 23],
+      data: [1, 2, 5, 4, 3, 4, 5],
+    },
+    {
+      label: 'Camara 2AB',
+      backgroundColor: 'rgb(0, 255, 255)',
+      borderColor: 'rgb(0, 255, 255)',
+      data: [4, 3, 5, 6, 3, 1, -1],
     }]
+    
   };
 
   // mudança do tipo e recebimento dos dados

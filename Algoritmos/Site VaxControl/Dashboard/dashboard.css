@@ -230,7 +230,7 @@ main {
 }
 
 .titulo-alerta {
-    font-size: 20px;
+    font-size: 18px;
     margin: 10px;
     font-family: 'Inter', sans-serif;
     font-weight: bold;
@@ -288,8 +288,26 @@ main {
 .dashboard-titulo {
     font-family: 'Inter', sans-serif;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 18px;
 }
+
+.box-alinhar {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* opcoes de camaras  */
+.seletor-camara {   
+    border-radius: 8px;
+    min-width: 100px;
+    border: 2px solid #E1E8EF;
+    background-color: white;
+    box-shadow: 0px 3px 0px 0px #d4d7da;
+    padding: 8px 20px;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
 
 /* grafico em linhas */
 .graficos {
@@ -301,4 +319,7 @@ main {
 .dashboard {
     display: flex;
     justify-content: center;
+}
+b {
+    color: rgb(0, 255, 242);
 }
