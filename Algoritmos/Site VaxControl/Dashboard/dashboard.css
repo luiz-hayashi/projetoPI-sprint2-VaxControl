@@ -1,4 +1,4 @@
-*{
+* {
     padding: 0px;
     margin: 0px;
 }
@@ -40,6 +40,7 @@ a {
 .status-info {
     margin-top: 10px;
 }
+
 .box-texto {
     font-family: 'Inter', sans-serif;
     margin-left: 20px;
@@ -63,9 +64,9 @@ span {
 
 .kpi {
     background-color: white;
-    padding: 15px 90px; 
+    padding: 15px 90px;
     border-radius: 25px;
-    border: #E1E8EF  solid 2px;
+    border: #E1E8EF solid 2px;
 }
 
 .kpi-titulo {
@@ -113,21 +114,17 @@ span {
     font-family: 'Inter', sans-serif;
 }
 
+
+
 /* container responsavel por dividir as div dashboard e alertas  */
 .container {
     display: flex;
 }
 
-/* divisoria da dashboard  */
-.dashboard {
-    background-color: white;
-    flex: 1;
-    margin: 20px;
-    padding: 20px;
-}
-
 /* divisoria de alertas recentes  */
 .alertas-recentes {
+    border-radius: 25px;
+    border: #E1E8EF solid 2px;
     background-color: white;
     flex: 1;
     margin: 20px;
@@ -142,8 +139,8 @@ span {
 /* cards de alertas  */
 .card-alerta {
     border-radius: 10px;
+    margin: 10px;
     padding: 30px;
-    margin: 10px
 }
 
 /* card de alerta sensor  */
@@ -154,7 +151,7 @@ span {
 
 /* card de alerta camara  */
 .camara {
-    border:1px #A94D2A solid;
+    border: 1px #A94D2A solid;
     background-color: #FFF4EF;
 }
 
@@ -168,7 +165,29 @@ span {
 .titulo-card-sensor {
     color: #700000;
     font-weight: bold;
-    font-size: 20px;    
+    font-size: 20px;
     font-family: 'Inter', sans-serif;
 }
 
+
+
+/* divisoria da dashboard  */
+.box-dashboard {
+    background-color: white;
+    flex: 1;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 25px;
+    border: #E1E8EF solid 2px;
+}
+
+.dashboard {
+    margin: 10px;
+    height: 400px;
+    width: 700px;
+}
+
+.graficos {
+    height: 5px;
+    width: 5px;
+}
