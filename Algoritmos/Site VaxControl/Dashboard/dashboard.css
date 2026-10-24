@@ -86,6 +86,7 @@ main {
 .user {
     font-size: 25px;
     font-family: 'Inter', sans-serif;
+    color: #718296;
 }
 .foto-perfil {
     width: 35px;
@@ -106,9 +107,18 @@ main {
     margin-top: 8px;
 }
 
+.titulo {
+    color: black;
+    font-weight:700;
+}
+
+.texto {
+    color: #718296;
+}
 .box-texto {
     font-family: 'Inter', sans-serif;
     margin-left: 20px;
+    padding: 1px 0px;
 }
 
 
