@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Vaxcontrol</title>
+
+  <!-- pagina de estilização css  -->
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/navbar.css" />
+  <link rel="stylesheet" href="./css/detalhesSensores.css" />
+
+  <!-- importa as fontes de texto externas  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="div-pai-detalhes-sensor">
+    <nav class="navegacao">
+      <!-- obs: aqui sera colocado imagem da vaxcontrol  -->
+      <img class="logo-img" src="dashboard-img/vaxcontrol-bg.png" alt="vaxcontrol logo">
+      <p class="menu">MENU</p>
+      <!-- O link <a> agora fica por fora, criando uma linha 100% clicável -->
+      <a href="dashboard.html" class="item-menu">
+        <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
+        <span>Dashboard</span>
+      </a>
+      <a href="camaras.html" class="item-menu">
+        <img src="dashboard-img/camaras.png" alt="icone de camaras">
+        <span>Câmaras</span>
+      </a>
+      <a href="sensores.html" class="item-menu">
+        <img src="dashboard-img/sensores.png" alt="icone de sensores">
+        <span>Sensores</span>
+      </a>
+      <a href="alertas.html" class="item-menu">
+        <img src="dashboard-img/alerta.png" alt="icone de alertas">
+        <span>Alertas</span>
+      </a>
+    </nav>
+    <div class="conteudo-principal-detalhes">
+      <img class="user foto-perfil" src="dashboard-img/perfil.png" alt="foto de perfil do usuario">
+      <div class="linha-titulo-detalhes">
+        <button>Voltar</button>
+        <span>Sensor1</span>
+        <div class="linha-azul-detalhes"></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

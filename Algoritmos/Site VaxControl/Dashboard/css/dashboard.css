@@ -1,99 +1,4 @@
-* {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-}
-
-body {
-    background-color: #F5F8FB;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
-main {
-    flex: 1;
-}
-
 /* ----------- PAGINA DASHBOARD  ------------------*/
-
-/* para encaixar tudo do site  */
-.container-body {
-    display: flex;
-    flex-direction: row;
-    min-height: 100vh;
-}
-
-/* navbar - menu lateral*/
-.navegacao {
-    background-color: #173A5A;
-    padding: 20px;
-    width: 250px;
-    min-width: 250px;
-    min-height: 90vh;
-}
-
-/* logo da empresa  */
-.logo-img {
-    width: 200px;
-    margin-bottom: 30px;
-}
-
-/* nome do menu  */
-.menu {
-    color: #91ADC3;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-left: 18px;
-    margin-top: 10px;
-}
-
-/* aqui as opções do menu  */
-.item-menu {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    padding: 12px 20px;
-    font-family: 'Inter', sans-serif;
-    color: white;
-    border-radius: 8px;
-}
-
-/* animação para cada opção do menu, quando passa o mouse na opção*/
-.item-menu:hover {
-    background-color: #285879;
-    color: #00fff2;
-}
-
-/* Tamanho controlado e fixo para os ícones */
-.item-menu img {
-    width: 22px;
-    height: 22px;
-}
-
-/* caixa de info do usuario  */
-.box-user {
-    margin: 0px 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 20px;
-}
-
-.user {
-    font-size: 25px;
-    font-family: 'Inter', sans-serif;
-    color: #718296;
-}
-
-.foto-perfil {
-    width: 35px;
-}
-
 /* caixa de info -- "Fixa segura de 8   º graus"*/
 .box-info-status {
     margin: 0px 20px;
@@ -108,7 +13,6 @@ main {
 .status-info {
     margin-top: 8px;
 }
-
 
 .box-texto-status {
     font-family: 'Inter', sans-serif;
