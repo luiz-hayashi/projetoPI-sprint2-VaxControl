@@ -4,7 +4,7 @@
 }
 
 body {
-    background-color: rgb(224, 223, 223);
+    background-color: #F5F8FB;
 }
 
 a {
@@ -23,32 +23,32 @@ a {
 
 .texto-user {
     font-size: 20px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* caixa de info  */
 .box-info {
     margin: 10px 10px;
-    background-color: rgba(128, 184, 96, 0.432);
+    background-color: #CDEBDD;
     border-radius: 20px;
     padding: 20px;
     display: flex;
     flex-direction: row;
-    border: rgb(194, 194, 194) solid 2px;
+    border: #E1E8EF solid 2px;
 }
 
 .status-info {
     margin-top: 10px;
 }
 .box-texto {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
     margin-left: 20px;
 }
 
 
 /* bolinha de status  */
 span {
-    background-color: green;
+    background-color: #28A779;
     border-radius: 25px;
     padding: 7px 16px;
 }
@@ -65,13 +65,13 @@ span {
     background-color: white;
     padding: 15px 90px; 
     border-radius: 25px;
-    border: rgb(194, 194, 194) solid 2px;
+    border: #E1E8EF  solid 2px;
 }
 
 .kpi-titulo {
     font-size: 20px;
     color: rgb(48, 47, 47);
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .kpi-camara {
@@ -95,7 +95,7 @@ span {
     font-size: 50px;
     text-align: center;
     margin: 10px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .numero-kpi-temp {
@@ -103,14 +103,14 @@ span {
     text-align: center;
     margin: 10px;
     color: red;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .numero-kpi-sensor {
     font-size: 50px;
     text-align: center;
     margin: 10px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 /* container responsavel por dividir as div dashboard e alertas  */
@@ -142,33 +142,33 @@ span {
 /* cards de alertas  */
 .card-alerta {
     border-radius: 10px;
-    padding: 20px;
+    padding: 30px;
     margin: 10px
 }
 
 /* card de alerta sensor  */
 .sensor {
     border: 1px #A94D2A solid;
-    background-color: rgba(252, 97, 97, 0.61);
+    background-color: #FAC9C9;
 }
 
 /* card de alerta camara  */
 .camara {
     border:1px #A94D2A solid;
-    background-color: rgba(255, 210, 210, 0.61);
+    background-color: #FFF4EF;
 }
 
 .titulo-card-camara {
     color: #A94D2A;
     font-weight: bold;
     font-size: 20px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .titulo-card-sensor {
     color: #700000;
     font-weight: bold;
     font-size: 20px;    
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 

@@ -1,18 +1,18 @@
 <!doctype html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dashboard | Vaxcontrol</title>
-    <link rel="stylesheet" href="dashboard.css" />
-    <link rel="preconnect" href="https://googleapis.com" />
-    <link rel="preconnect" href="https://gstatic.com" crossorigin />
-    <link
-      href="https://googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Vaxcontrol</title>
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" /> 
+</head>
+
+<body>
+  <main>
     <!-- divisoria aonde terá o nome do usuario e foto  -->
     <div class="box-user">
       <p class="texto-user">Bem vindo usuario!</p>
@@ -65,9 +65,7 @@
               <p>Sensores inativo: 3</p>
             </div>
             <div>
-              <a class="sensor-link" href="sensores.html"
-                >Visualizar sensores</a
-              >
+              <a class="sensor-link" href="sensores.html">Visualizar sensores</a>
             </div>
           </div>
         </div>
@@ -97,15 +95,17 @@
         <div class="card-alerta sensor">
           <p class="titulo-card-sensor">Sensor 01</p>
           <p>Sensor mudou para status "inativo"</p>
-          <p>Sensor localizado na camâra 2ABss</p>
+          <p>Sensor localizado na camâra 2AB</p>
         </div>
 
         <div class="card-alerta camara">
-          <p class="titulo-card-camara">Sensor 01</p>
-          <p>Sensor mudou para status "inativo"</p>
-          <p>Sensor localizado na camâra 2ABss</p>
+          <p class="titulo-card-camara">Câmara 2AB</p>
+          <p>Temperatura:1,1°C</p>
+          <p>Abaixo da faixa segura.</p>
         </div>
       </div>
     </div>
-  </body>
+  </main>
+</body>
+
 </html>
