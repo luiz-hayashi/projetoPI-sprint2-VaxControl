@@ -49,19 +49,19 @@ h1 {
 
 .opcao-dashboard {
     padding: 10px 0;
-    background-image: url('caminho/para/imagem.jpg');
+    background-image: url('/dashboard-img/dasboard.png');
 }
 .opcao-camaras {
     padding: 10px 0;
-    background-image: url('caminho/para/imagem.jpg');
+    background-image: url('/dashboard-img/camaras.png');
 }
 .opcao-sensores {
     padding: 10px 0;
-    background-image: url('caminho/para/imagem.jpg');
+    background-image: url('/dashboard-img/sensores.png');
 }
 .opcao-alertas {
     padding: 10px 0;
-    background-image: url('caminho/para/imagem.jpg');
+    background-image: url('/dashboard-img/alertas.png');
 }
 
 
