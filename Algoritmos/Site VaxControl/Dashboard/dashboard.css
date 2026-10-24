@@ -83,10 +83,13 @@ main {
     padding: 20px;
 }
 
-.texto-user {
-    font-size: 20px;
+.user {
+    font-size: 25px;
     font-family: 'Inter', sans-serif;
 }
+.foto-perfil {
+    width: 35px;
+}   
 
 /* caixa de info -- "Fixa segura de 8   º graus"*/
 .box-info {
