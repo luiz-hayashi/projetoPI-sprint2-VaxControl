@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Vaxcontrol</title>
+
+  <!-- pagina de estilização css  -->
+  <link rel="stylesheet" href="dashboard.css" />
+
+  <!-- importa as fontes de texto externas  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- importa a biblioteca chart.js  -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="container-body">
+    <nav class="navegacao">
+
+      <!-- obs: aqui sera colocado imagem da vaxcontrol  -->
+      <h1>Vaxcontrol</h1><br>
+      <p class="titulo-nav">Menu</p>
+
+      <div class="item-menu">
+        <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
+        <a class="opcoes-menu" href="dashboard.html">Dashboard</a>
+      </div>
+
+      <div class="item-menu">
+        <img src="dashboard-img/camaras.png" alt="icone de camaras">
+        <a href="camaras.html">Câmaras</a>
+      </div>
+
+      <div class="item-menu">
+        <img src="dashboard-img/sensores.png" alt="icone de sensores">
+        <a href="sensores.html">Sensores</a>
+      </div>
+
+      <div class="item-menu">
+        <img src="dashboard-img/alerta.png" alt="icone de alertas">
+        <a href="alertas.html">Alertas</a>
+      </div>
+    </nav>
+
+    <main>
+      <!-- divisoria aonde terá o nome do usuario e foto  -->
+      <div class="box-user">
+        <p class="texto-user">Bem vindo usuario!</p>
+        <p class="texto-user">usuario - FOTO</p>
+      </div>
+
+      <!-- divisoria onde terá uma caixa de informação -->
+      <div class="box-info">
+        <div class="status-info">
+          <span></span>
+        </div>
+        <div class="box-texto">
+          <strong>Faixa segura: 2°C a 8°C</strong>
+          <p>O sistema avisa quando a temperatura sai do limite.</p>
+        </div>
+      </div>
+
+      <!-- divisoria para as kpis  -->
+      <div class="cards-kpi">
+        <div class="kpi">
+          <div class="box-texto-kpi">
+            <p class="kpi-titulo">CÂMARAS MONITORADAS</p>
+            <p class="numero-kpi-camara">04</p>
+            <div class="kpi-camara">
+              <a href="camaras.html">visualizar todas as câmaras</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="kpi">
+          <div class="box-texto-kpi">
+            <p class="kpi-titulo">PICO DE TEMPERATURA</p>
+          </div>
+          <p class="numero-kpi-temp">1° C</p>
+          <div class="kpi-info">
+            <p>10/10/2026</p>
+            <p>Câmara 2AB</p>
+            <p>12:45</p>
+          </div>
+        </div>
+
+        <div class="kpi">
+          <div class="box-texto-kpi">
+            <p class="kpi-titulo">QUANTIDADE DE SENSORES</p>
+            <p class="numero-kpi-sensor">16</p>
+
+            <div class="kpi-sensor">
+              <div>
+                <p>Sensores ativo: 13</p>
+                <p>Sensores inativo: 3</p>
+              </div>
+              <div>
+                <a class="sensor-link" href="sensores.html">Visualizar sensores</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <!-- aqui estará dashboard  -->
+        <div class="box-dashboard">
+          <p class="dashboard-titulo">Histórico de temperatura</p>
+          <select id="slt_camaras">
+            APARENTEMTNE ISTO MUDARA
+          </select>
+
+
+          <div class="dashboard">
+            <!-- canvas: meio que uma tela de pintura -->
+            <canvas id="grafico-variacao" class="graficos"></canvas>
+          </div>
+
+          <!-- aqui estará a dashboard -->
+        </div>
+
+        <!-- divisoria de alertas -->
+        <div class="box-alertas-recentes">
+          <p class="titulo-alerta">Alertas recentes</p>
+
+          <div class="card-alerta camara">
+            <p class="titulo-card-camara">Câmara 2AB</p>
+            <p class="texto-card">Temperatura: 9.5°C</p>
+            <p class="texto-card">Acima da faixa segura</p>
+          </div>
+
+          <div class="card-alerta sensor">
+            <p class="titulo-card-sensor">Sensor 01</p>
+            <p class="texto-card">Sensor mudou para status "inativo"</p>
+            <p class="texto-card">Sensor localizado na camâra 2AB</p>
+          </div>
+
+          <div class="card-alerta camara">
+            <p class="titulo-card-camara">Câmara 2AB</p>
+            <p class="texto-card">Temperatura:1,1°C</p>
+            <p class="texto-card">Abaixo da faixa segura.</p>
+          </div>
+        </div>
+      </div>
+  </div>
+  </main>
+</body>
+
+</html>
+<script>
+
+  // vetor que add as metricas do eixo X
+  // grafico 1
+  const labels = [
+    '12:00',
+    '13:00',
+    '14:00',
+    '15:00',
+    '16:00',
+    '17:00'
+  ];
+
+  // vetores, receber as metricas do eixo X e colocar titulo, além estilizar a cor do grafico e quais dados serão mostrados
+  // grafico 1
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'Temperatura',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [30, 29, 28, 25, 22, 23],
+    }]
+  };
+
+  // mudança do tipo e recebimento dos dados
+  // grafico 1
+  const config_line = {
+    type: 'line',
+    data: data,
+    options: {}
+  };
+
+  // mostrar grafico de temperatura em linha
+  // grafico 1
+  const grafico_temperatura = new Chart(
+    document.getElementById('grafico-variacao'),
+    config_line
+  );
+</script>
