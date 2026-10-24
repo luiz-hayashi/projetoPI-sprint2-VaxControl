@@ -34,6 +34,17 @@ main {
     color: #718296;
 }
 
-.foto-perfil {
-    width: 35px;
+.alinhar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    font-family: 'Inter', sans-serif;
+    color: #718296;
+    font-weight: 700;
+
+    .foto-perfil {
+        width: 35px;
+    }
+
 }
