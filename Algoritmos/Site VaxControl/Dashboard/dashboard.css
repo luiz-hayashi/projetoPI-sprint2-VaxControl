@@ -17,6 +17,8 @@ main {
     flex: 1;
 }
 
+/* ----------- PAGINA DASHBOARD  ------------------*/
+
 /* para encaixar tudo do site  */
 .container-body {
     display: flex;
@@ -33,7 +35,7 @@ main {
     min-height: 90vh;
 }
 
-
+/* logo da empresa  */
 .logo-img {
     width: 200px;
     margin-bottom: 30px;
@@ -73,7 +75,6 @@ main {
     height: 22px;
 }
 
-
 /* caixa de info do usuario  */
 .box-user {
     margin: 0px 5px;
@@ -88,37 +89,40 @@ main {
     font-family: 'Inter', sans-serif;
     color: #718296;
 }
+
 .foto-perfil {
     width: 35px;
-}   
+}
 
 /* caixa de info -- "Fixa segura de 8   º graus"*/
-.box-info {
+.box-info-status {
     margin: 0px 20px;
     background-color: #cdebddbe;
     border-radius: 12px;
     padding: 10px;
     display: flex;
     flex-direction: row;
-    border: #E1E8EF solid 2px;
+    border: #b1d6c5 solid 2px;
 }
 
 .status-info {
     margin-top: 8px;
 }
 
-.titulo {
-    color: black;
-    font-weight:700;
-}
 
-.texto {
-    color: #718296;
-}
-.box-texto {
+.box-texto-status {
     font-family: 'Inter', sans-serif;
     margin-left: 20px;
     padding: 1px 0px;
+
+    .titulo-status {
+        color: black;
+        font-weight: 700;
+    }
+
+    .texto-status {
+        color: #718296;
+    }
 }
 
 
@@ -333,3 +337,9 @@ main {
     display: flex;
     justify-content: center;
 }
+
+
+
+
+
+/* PAGINA ALERTAS  */
