@@ -42,6 +42,10 @@
     <label for="ipt_litros">Insira quantidade de litros por câmara em m³:</label>
     <input placeholder="Quantidades de litros" id="ipt_litros"><br><br>
 
+    <h2>Danos em Câmaras</h2>
+    <label for="ipt_afetados">Insira quantidade de doses afetadas</label>
+    <input placeholder="Quantidade de doses afetadas" id="ipt_afetados"><br><br>
+
     <button onclick="vaxcontrol()">Calcular</button><br>
     <div id="div_mensagem"></div><br>
 </body>
@@ -68,6 +72,8 @@
 
         let litros = Number(ipt_litros.value); // Diz o tamanho disponível dentro
         // da câmara, o cliente sabe o limite físico.
+
+        let doses_afetadas = Number(ipt_afetados.value);
         div_mensagem.innerHTML = ``;
 
         let total_doses = vacinas * camara; // Quantidade total de doses.
@@ -76,7 +82,7 @@
         let espaco_litros = total_doses * 0.04;
         let percentual_ocupacao = (espaco_litros / litros) * 100
         // Considerando o padrão de mercado de uma caixa com 10 doses de
-        // Gardasil 9 ocupa de 0,4 litros em média.
+        // Gardasil 9 ocupa de 0,04 litros em média.
 
         let preco_bruto = (camara * vacinas) * valor_doses
         let preco_liquido_descontado = valor_doses - desconto;
@@ -89,23 +95,42 @@
 
         let patrimonio_liquido = total_doses * preco_liquido_descontado;
 
+        let valor_afetado = doses_afetadas * valor_doses;
+        //Doses que foram afetadas por negligências ou que poderia causar
+
+        let valor_afetado_desconto = doses_afetadas * (valor_doses - desconto);
+        // Caso tenha desconto
+
+        if(doses_afetadas < 0 || doses_afetadas > total_doses){
+            alert("Erro! informe uma quantidade de doses afetadas entre 0 e o total armazenado.");
+        }
+        if(litros <= 0){
+            alert("Informe uma capacidade acima de 0 para a câmara.")
+        }
         div_mensagem.innerHTML =
-            `Relatorio Análitico da Câmara<br>
+        `Relatorio Análitico da Câmara<br>
         Atualmente, O preço líquido pago à MSD: R$${preco_liquido_descontado.toFixed(2)} por dose.<br>
         Total de Vacinas na Câmara: ${total_doses.toFixed(2)}.<br>
         Economia Gerada pelo Desconto: R$${economia_total.toFixed(2)}<br>
-        Patrimônio Financeiro Armazenado R$${patrimonio_liquido.toFixed(2)}<br>        Ocupação Física: ${espaco_litros.toFixed(2)} utilizados dos ${litros.toFixed(2)} litros totais (${percentual_ocupacao.toFixed(2)}% de ocupação)<br>`
+        Patrimônio Financeiro Armazenado R$${patrimonio_liquido.toFixed(2)}<br><br>
+        Ocupação Física: ${espaco_litros.toFixed(2)} utilizados dos ${litros.toFixed(2)} litros totais (${percentual_ocupacao.toFixed(2)}% de ocupação)<br>
+        <br>
+        Relatório de Danos<br>
+        Doses Afetadas: ${doses_afetadas}<br>
+        Valor original das doses afetadas R$${valor_afetado.toFixed(2)}<br>
+        Custo das doses afetadas com desconto: R$${valor_afetado_desconto.toFixed(2)}<br>
+        Doses preservadas: ${total_doses - doses_afetadas}<br>`
     }
+    //RELATÓRIO ANÁLITICO, EXPLICAÇÃO:
+    // Preço líquido por dose depois do desconto(caso tenha pelo programa do MSD)
+    // Quantidade total de doses armazenadas nas câmaras lembrando que 10 doses equivale a 0,04 litros.
+    // Valor total economizado pelo desconto do programa de r$50 por dose.
+    // Valor total do patrimonio armazenado considerando o desconto.
+    // Quantidade de litros ocupados pelas vacinas.
 
-        if (ipt_desconto.value === 'Nao') {
-            desconto = 0;
-        }
-
-        div_mensagem.innerHTML =
-            `Relatorio Análitico da Câmara<br>
-        Atualmente, O preço líquido pago à MSD: R$${patrimonio_bruto.toFixed(2)} por dose.<br>
-        Total de Vacinas na Câmara: ${total_doses.toFixed(2)}.<br>
-        Economia Gerada pelo Desconto: R$00.00<br>
-        Patrimônio Financeiro Armazenado R$${patrimonio_liquido.toFixed(2)}<br>
-        Ocupação Física: ${espaco_litros.toFixed(2)} utilizados dos ${litros.toFixed(2)} litros totais (${percentual_ocupacao.toFixed(2)}% de ocupação)<br>`
+    //RELATÓRIO DE DANOS, EXPLICAÇÃO:
+    // Possiveis quantidade de doses afetadas por alguma ocorrência.
+    // Valor das doses afetadas calculado pelo preço original, sem o desconto.
+    // Custo estidamo das doses afetadas.
+    // Quantidade de doses que não foram informadas como afetadas.
 </script>
