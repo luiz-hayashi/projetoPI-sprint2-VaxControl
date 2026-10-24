@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
 }
 
 body {
@@ -135,7 +136,6 @@ main {
     display: flex;
     flex-direction: column;
     padding: 25px;
-    box-sizing: border-box;
     min-height: 200px;
 }
 
