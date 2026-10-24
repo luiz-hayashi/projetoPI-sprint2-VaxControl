@@ -13,11 +13,12 @@ a {
 }
 
 /* caixa de info do usuario  */
+
 .box-user {
-    margin: 10px 0px;
+    margin: 0px 5px;
     display: flex;
     flex-direction: row;
-    gap: 1000px;
+    justify-content: space-between;
     padding: 20px;
 }
 
@@ -26,19 +27,19 @@ a {
     font-family: 'Inter', sans-serif;
 }
 
-/* caixa de info  */
+/* caixa de info -- "Fixa segura de 8º graus"*/
 .box-info {
-    margin: 10px 10px;
+    margin: 5px 20px;
     background-color: #CDEBDD;
-    border-radius: 20px;
-    padding: 20px;
+    border-radius: 12px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     border: #E1E8EF solid 2px;
 }
 
 .status-info {
-    margin-top: 10px;
+    margin-top: 8px;
 }
 
 .box-texto {
@@ -51,7 +52,8 @@ a {
 span {
     background-color: #28A779;
     border-radius: 25px;
-    padding: 7px 16px;
+    padding: 2px 13px;
+    margin-left: 15px;
 }
 
 
@@ -59,48 +61,55 @@ span {
 .cards-kpi {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
+/* os cards de KPIs  */
 .kpi {
     background-color: white;
-    padding: 15px 90px;
+    padding: 10px 80px;
     border-radius: 25px;
     border: #E1E8EF solid 2px;
 }
 
 .kpi-titulo {
-    font-size: 20px;
+    font-size: 15px;
+    text-align: center;
     color: rgb(48, 47, 47);
     font-family: 'Inter', sans-serif;
 }
 
 .kpi-camara {
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .kpi-info {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 .kpi-sensor {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-top: 10px;
 }
 
 /* numeros das KPIs  */
 .numero-kpi-camara {
-    font-size: 50px;
+    font-size: 35px;
     text-align: center;
     margin: 10px;
     font-family: 'Inter', sans-serif;
+    font-weight: bolder;
 }
 
 .numero-kpi-temp {
-    font-size: 50px;
+    font-size: 35px;
+    font-weight: bolder;
     text-align: center;
     margin: 10px;
     color: red;
@@ -108,10 +117,11 @@ span {
 }
 
 .numero-kpi-sensor {
-    font-size: 50px;
+    font-size: 35px;
     text-align: center;
     margin: 10px;
     font-family: 'Inter', sans-serif;
+    font-weight: bolder;
 }
 
 
@@ -119,10 +129,11 @@ span {
 /* container responsavel por dividir as div dashboard e alertas  */
 .container {
     display: flex;
+    flex-direction: row;
 }
 
 /* divisoria de alertas recentes  */
-.alertas-recentes {
+.box-alertas-recentes {
     border-radius: 25px;
     border: #E1E8EF solid 2px;
     background-color: white;
@@ -132,15 +143,17 @@ span {
 }
 
 .titulo-alerta {
-    font-size: 30px;
+    font-size: 20px;
     margin: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
 }
 
 /* cards de alertas  */
 .card-alerta {
     border-radius: 10px;
     margin: 10px;
-    padding: 30px;
+    padding: 10px;
 }
 
 /* card de alerta sensor  */
@@ -158,18 +171,22 @@ span {
 .titulo-card-camara {
     color: #A94D2A;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Inter', sans-serif;
 }
 
 .titulo-card-sensor {
     color: #700000;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 15px;
     font-family: 'Inter', sans-serif;
 }
 
-
+.texto-card {
+    font-size: 10px;
+    font-family: 'Inter', sans-serif;
+    font-weight: lighter;
+}
 
 /* divisoria da dashboard  */
 .box-dashboard {
@@ -181,13 +198,20 @@ span {
     border: #E1E8EF solid 2px;
 }
 
-.dashboard {
-    margin: 10px;
-    height: 400px;
-    width: 700px;
+.dashboard-titulo {
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
 }
 
+/* grafico em linhas */
 .graficos {
-    height: 5px;
-    width: 5px;
+    position: relative;
+    max-height: 50vw;
+    max-width: 50vw;
+}
+
+.dashboard {
+    display: flex;
+    justify-content: center;
 }

@@ -5,11 +5,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dashboard | Vaxcontrol</title>
-  
+
   <!-- pagina de estilização css  -->
   <link rel="stylesheet" href="dashboard.css" />
 
-<!-- importa as fontes de texto externas  -->
+  <!-- importa as fontes de texto externas  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -21,21 +21,21 @@
 <body>
   <main>
     <!-- divisoria aonde terá o nome do usuario e foto  -->
-    <div class="box-user">
-      <p class="texto-user">Bem vindo usuario!</p>
-      <p class="texto-user">usuario - FOTO</p>
-    </div>
+      <div class="box-user">
+        <p class="texto-user">Bem vindo usuario!</p>
+        <p class="texto-user">usuario - FOTO</p>
+      </div>
 
     <!-- divisoria onde terá uma caixa de informação -->
-    <div class="box-info">
-      <div class="status-info">
-        <span></span>
+      <div class="box-info">
+        <div class="status-info">
+          <span></span>
+        </div>
+        <div class="box-texto">
+          <strong>Faixa segura: 2°C a 8°C</strong>
+          <p>O sistema avisa quando a temperatura sai do limite.</p>
+        </div>
       </div>
-      <div class="box-texto">
-        <strong>Faixa segura: 2°C a 8°C</strong>
-        <p>O sistema avisa quando a temperatura sai do limite.</p>
-      </div>
-    </div>
 
     <!-- divisoria para as kpis  -->
     <div class="cards-kpi">
@@ -82,7 +82,7 @@
     <div class="container">
       <!-- aqui estará dashboard  -->
       <div class="box-dashboard">
-        <p class="kpi-titulo">Histórico de temperatura</p>
+        <p class="dashboard-titulo">Histórico de temperatura</p>
         <select id="slt_camaras">
           APARENTEMTNE ISTO MUDARA
         </select>
@@ -97,25 +97,25 @@
       </div>
 
       <!-- divisoria de alertas -->
-      <div class="alertas-recentes">
+      <div class="box-alertas-recentes">
         <p class="titulo-alerta">Alertas recentes</p>
 
         <div class="card-alerta camara">
           <p class="titulo-card-camara">Câmara 2AB</p>
-          <p>Temperatura: 9.5°C</p>
-          <p>Acima da faixa segura</p>
+          <p class="texto-card">Temperatura: 9.5°C</p>
+          <p class="texto-card">Acima da faixa segura</p>
         </div>
 
         <div class="card-alerta sensor">
           <p class="titulo-card-sensor">Sensor 01</p>
-          <p>Sensor mudou para status "inativo"</p>
-          <p>Sensor localizado na camâra 2AB</p>
+          <p class="texto-card">Sensor mudou para status "inativo"</p>
+          <p class="texto-card">Sensor localizado na camâra 2AB</p>
         </div>
 
         <div class="card-alerta camara">
           <p class="titulo-card-camara">Câmara 2AB</p>
-          <p>Temperatura:1,1°C</p>
-          <p>Abaixo da faixa segura.</p>
+          <p class="texto-card">Temperatura:1,1°C</p>
+          <p class="texto-card">Abaixo da faixa segura.</p>
         </div>
       </div>
     </div>
