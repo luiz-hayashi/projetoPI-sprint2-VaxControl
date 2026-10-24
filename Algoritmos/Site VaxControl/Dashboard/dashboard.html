@@ -22,32 +22,32 @@
   <div class="container-body">
     <nav class="navegacao">
 
-  <!-- obs: aqui sera colocado imagem da vaxcontrol  -->
-  <h1>Vaxcontrol</h1>
-  <p class="menu">Menu</p>
+      <!-- obs: aqui sera colocado imagem da vaxcontrol  -->
+      <h1>Vaxcontrol</h1>
+      <p class="menu">Menu</p>
 
-  <!-- O link <a> agora fica por fora, criando uma linha 100% clicável -->
-  <a href="dashboard.html" class="item-menu">
-    <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
-    <span>Dashboard</span>
-  </a>
+      <!-- O link <a> agora fica por fora, criando uma linha 100% clicável -->
+      <a href="dashboard.html" class="item-menu">
+        <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
+        <span>Dashboard</span>
+      </a>
 
-  <a href="camaras.html" class="item-menu">
-    <img src="dashboard-img/camaras.png" alt="icone de camaras">
-    <span>Câmaras</span>
-  </a>
+      <a href="camaras.html" class="item-menu">
+        <img src="dashboard-img/camaras.png" alt="icone de camaras">
+        <span>Câmaras</span>
+      </a>
 
-  <a href="sensores.html" class="item-menu">
-    <img src="dashboard-img/sensores.png" alt="icone de sensores">
-    <span>Sensores</span>
-  </a>
+      <a href="sensores.html" class="item-menu">
+        <img src="dashboard-img/sensores.png" alt="icone de sensores">
+        <span>Sensores</span>
+      </a>
 
-  <a href="alertas.html" class="item-menu">
-    <img src="dashboard-img/alerta.png" alt="icone de alertas">
-    <span>Alertas</span>
-  </a>
+      <a href="alertas.html" class="item-menu">
+        <img src="dashboard-img/alerta.png" alt="icone de alertas">
+        <span>Alertas</span>
+      </a>
 
-</nav>
+    </nav>
 
 
     <main>
@@ -71,19 +71,15 @@
       <!-- divisoria para as kpis  -->
       <div class="cards-kpi">
         <div class="kpi">
-          <div class="box-texto-kpi">
-            <p class="kpi-titulo">CÂMARAS MONITORADAS</p>
-            <p class="numero-kpi-camara">04</p>
-            <div class="kpi-camara">
-              <a href="camaras.html">visualizar todas as câmaras</a>
-            </div>
+          <p class="kpi-titulo">CÂMARAS MONITORADAS</p>
+          <p class="numero-kpi-camara">04</p>
+          <div class="kpi-camara">
+            <a href="camaras.html">visualizar todas as câmaras</a>
           </div>
         </div>
 
         <div class="kpi">
-          <div class="box-texto-kpi">
-            <p class="kpi-titulo">PICO DE TEMPERATURA</p>
-          </div>
+          <p class="kpi-titulo">PICO DE TEMPERATURA</p>
           <p class="numero-kpi-temp">1° C</p>
           <div class="kpi-info">
             <p>10/10/2026</p>
@@ -93,38 +89,34 @@
         </div>
 
         <div class="kpi">
-          <div class="box-texto-kpi">
-            <p class="kpi-titulo">QUANTIDADE DE SENSORES</p>
-            <p class="numero-kpi-sensor">16</p>
-
-            <div class="kpi-sensor">
-              <div>
-                <p>Sensores ativo: 13</p>
-                <p>Sensores inativo: 3</p>
-              </div>
-              <div>
-                <a class="sensor-link" href="sensores.html">Visualizar sensores</a>
-              </div>
+          <p class="kpi-titulo">QUANTIDADE DE SENSORES</p>
+          <p class="numero-kpi-sensor">16</p>
+          <div class="kpi-sensor-footer">
+            <div>
+              <p>Sensores ativos: 13</p>
+              <p>Sensores inativos: 3</p>
+            </div>
+            <div class="sensor-link">
+              <a href="sensores.html">Visualizar sensores</a>
             </div>
           </div>
         </div>
       </div>
 
+
+      <!-- container para dividir a pagina ao meio -->
       <div class="container">
-        <!-- aqui estará dashboard  -->
+        <!-- aqui está a dashboard  -->
         <div class="box-dashboard">
           <p class="dashboard-titulo">Histórico de temperatura</p>
           <select id="slt_camaras">
             APARENTEMTNE ISTO MUDARA
           </select>
 
-
           <div class="dashboard">
             <!-- canvas: meio que uma tela de pintura -->
             <canvas id="grafico-variacao" class="graficos"></canvas>
           </div>
-
-          <!-- aqui estará a dashboard -->
         </div>
 
         <!-- divisoria de alertas -->
