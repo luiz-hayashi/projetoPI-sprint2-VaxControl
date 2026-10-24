@@ -1,0 +1,39 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F8FB;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+main {
+    flex: 1;
+}
+
+/* ----------- BOAS VINDAS AO USUARIO ------------- */
+
+/* caixa de info do usuario  */
+.box-user {
+    margin: 0px 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.user {
+    font-size: 25px;
+    font-family: 'Inter', sans-serif;
+    color: #718296;
+}
+
+.foto-perfil {
+    width: 35px;
+}
