@@ -5,8 +5,57 @@ li {
 
 
 
-/* botao para filtrar camaras  */
-.btn-filtrar-camaras {
+
+/* --------------   CONTEUDO PRINCIPAL - TABELA ------------------  */
+.container {
+    margin: 0px 20px
+}
+
+.tabela-camara {
+    width: 100%;
+    border-collapse: collapse;   /* mescla borda ; se juntam  */
+    
+}
+
+.tabela-camara thead {
+    background-color: #e9ecef;
+    border-bottom: 2px solid #3498db;
+}
+
+.tabela-camara th {
+    text-align: left;
+    padding: 12px 16px;
+    color: #495057;
+    font-weight: 600;
+}
+
+.tabela-camara tbody tr {
+    border-bottom: 5px solid #e9ecef;
+}
+
+.tabela-camara td {
+    padding: 14px 16px;
+    color: #333;
+}
+
+.td-botao {
+    text-align: right;
+}
+
+.detalhes {
+    padding: 6px 12px;
+    border-radius: 6px; 
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+}
+
+
+
+/* ------------- BOTOES E CAIXA DE PESQUISA -------------- */
+
+/* botao para filtrar camara  */
+.btn-filtrar-camara {
     background-color: white;
     padding: 10px 0px;
     border-radius: 10px;
@@ -20,7 +69,7 @@ li {
 }
 
 /* caixa de pesquisa  */
-.pesquisar-camaras {
+.pesquisar-camara {
     flex: 1;
     padding: 10px 0px;
     text-align: center;
