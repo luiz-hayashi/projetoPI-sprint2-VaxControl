@@ -5,47 +5,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora fincanceira VaxControl</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="calculadora.css">
+    <link rel="stylesheet" href="../navbar-index.css">
 
-<body class="body_inicio">
+    <!-- importa as fontes de texto externas  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navegador">
+            <div class="topbar">
+                <img class="logo" src="../imagens/logo.png" alt="Vaxcontrol logo">
+                <span class="alinhar-texto-navbar">
+                    <a class="links" href="sobre.html">Quem nós somos</a>
+                    <a class="links" href="CalculadoraFinanceira/inicio.html">Calculadora Financeira</a>
+                    <a class="links" href="Login/login.html">Dashboard</a>
+                    <a class="links" href="contato.html">Fale Conosco</a>
+                </span>
+                <!-- <button class="botao-topbar">Cadastre-se</button> -->
+                <span class="alinhar-botao-navbar">
+                    <button class="botao-topbar" onclick="window.location.href='Login/cadastro.html'">Cadastrar</button>
+                    <button class="botao-topbar" onclick="window.location.href='Login/login.html'">Entrar</button>
+                </span>
+            </div>
+        </nav>
+    </header>
+    <main class="body_inicio">
 
         <div class="div_inicio">
             <div class="div_conteudo_inicio">
-            <img src="logo_vax_control.png" alt="">
 
-            <h1>Seja bem-vindo a calculadora financeira da Vax Control!</h1>
-            <p> <span class="titulo_inicio"> Como funciona?</span>
-                A Calculadora Financeira da Vax Control foi desenvolvida para estimar o possível impacto financeiro
-                de
-                perdas de vacinas HPV causadas por excursões térmicas,auxiliando na compreensão dos riscos relacionados
-                ao
-                armazenamento e à conservação do estoque. </p>
-            <p> Para fazer uma simulação nesta calculadora financeira, você deve informar algumas características de
-                seu estoque, e com essas informações, a calculadora irá estimar uma possível quantidade de doses
-                perdidas,
-                calculando o impacto financeiro que um descarte poderia causar. </p>
+                <h1>Seja bem-vindo a calculadora financeira da Vax Control!</h1>
+                <p> <span class="titulo_inicio"> Como funciona?</span>
+                    A Calculadora Financeira da Vax Control foi desenvolvida para estimar o possível impacto financeiro
+                    de
+                    perdas de vacinas HPV causadas por excursões térmicas,auxiliando na compreensão dos riscos
+                    relacionados
+                    ao
+                    armazenamento e à conservação do estoque. </p>
+                <p> Para fazer uma simulação nesta calculadora financeira, você deve informar algumas características de
+                    seu estoque, e com essas informações, a calculadora irá estimar uma possível quantidade de doses
+                    perdidas,
+                    calculando o impacto financeiro que um descarte poderia causar. </p>
                 <p>O objetivo desta calculadora é demonstrar como perda de vacinas HPV relacionadas à convservação
                     inadequada
-                pode representar um grade impacto financeiro, e para isso, a calculadora usa dados e taxas de referência
-                para realizar a simulação, e você pode ver quais são esses dados apertando o botão "Saber mais".</p>
+                    pode representar um grade impacto financeiro, e para isso, a calculadora usa dados e taxas de
+                    referência
+                    para realizar a simulação, e você pode ver quais são esses dados apertando o botão "Saber mais".</p>
+            </div>
+            <div class="container">
+                <a href="calculadora-financeira.html">
+                    <button class="button">Simular Valores</button>
+                </a>
+                <button onclick="exibirInformacoes()" class="button">Saber mais</button>
+            </div>
         </div>
-        <div class="container">
-            <a href="calculadora-financeira.html">
-                <button class="button">Simular Valores</button>
-            </a>
-            <button onclick="exibirInformacoes()" class="button">Saber mais</button>
-        </div>
-    </div>
-    <div id="div_info"></div>
+        <div id="div_info"></div>
+    </main>
 </body>
-
 </html>
-</head>
 <script>
     let exibir = false;
     let informacoes = '<div class="div_informacoes"> <h2> Informações sobre as taxas </h2>  <p><b>Risco de exposição: 100%</b>, considerando que ambientes não monitorados tem constantes variações. É usado para converter as doses perdidas em um prejuízo financeiro. </p> <p> <b> Taxa de descarte: 41.4%</b>, com base em análises de rede de frio e documentadas na SciELO. É usada para calcular a quantidade de doses que precisarão ser descartadas com base em uma ocorrência com temperatura</p> </div> '
     function exibirInformacoes() {
-        if (exibir == false ) {
+        if (exibir == false) {
             exibir = true;
             div_info.innerHTML = informacoes;
         }
