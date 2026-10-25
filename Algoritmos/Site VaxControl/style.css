@@ -36,13 +36,6 @@ a {
     color: white;
 }
 
-.botao {
-    background-color: #8cbad9;
-    padding: 0.6rem 1.5rem;
-    border-radius: 0.5rem;
-    color: white;
-}
-
 .botao-info {
     background-color: #008fd3;
     text-align: center;
@@ -59,6 +52,15 @@ a {
     color: white;
     border-radius: 0.3rem;
 }
+
+/* animações basicas dos botoes institucionais  */
+.botao-home:hover,
+.botao-info:hover,
+.botao-card:hover{
+    background-color: blue;
+    transition: 0.7s;
+}
+
 
 /* INICIO DO CORPO DO SITE */
 
