@@ -1,0 +1,44 @@
+main {
+  flex: 1;
+  padding: 30px 24px;
+  background: #f4f8fb;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #193c70;
+  margin-bottom: 20px;
+}
+
+.filtros {
+  text-align: right;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 6px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  background: white;
+}
+
+table {
+  width: 100%;
+  background: white;
+  border-collapse: collapse;
+}
+
+th {
+  background: #eee;
+  padding: 10px 5px;
+  font-weight: normal;
+}
+
+td {
+  background: #f6c9cd;
+  border: 1px solid #d88b91;
+  padding: 5px;
+  text-align: center;
+  font-size: 12px;
+}

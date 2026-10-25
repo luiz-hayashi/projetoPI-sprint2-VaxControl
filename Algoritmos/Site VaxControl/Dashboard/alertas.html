@@ -47,13 +47,75 @@
     </nav>
 <main>
 
-  <div class="box-user">
-    <p class="user">Bem vindo(a) Usuario!</p>
-        <span class="alinhar">
-          <p>Usuario</p>
-          <img class="user foto-perfil" src="dashboard-img/perfil.png" alt="foto de perfil do usuario">
-        </span>
-      </div>
-    </div>
-  </main>
+ <main>
+  <h1>Alertas</h1>
+
+  <div class="filtros">
+    <select id="camara">
+      <option value="Todas">Câmara</option>
+      <option value="2AB">2AB</option>
+      <option value="3DC">3DC</option>
+    </select>
+
+    <select id="tempo">
+      <option value="24">24 Horas</option>
+      <option value="12">12 Horas</option>
+      <option value="1">1 Hora</option>
+    </select>
+  </div>
+
+  <table>
+    <tr>
+      <th>Temperatura</th>
+      <th>Câmara</th>
+      <th>Sensor</th>
+      <th>Data</th>
+      <th>Horário</th>
+      <th>Descrição</th>
+    </tr>
+
+    <tbody id="alertas"></tbody>
+  </table>
+</main>
+
+<script>
+  let camaras = ["2AB", "3DC"];
+  let temperaturas = ["1 C", "10 C"];
+  let sensores = ["Sensor1", "Sensor2"];
+  let datas = ["10/10/2026", "10/10/2026"];
+  let horarios = ["12:45", "01:20"];
+  let descricoes = [
+    "Sensor mudou para status inativo",
+    "Acima da margem segura"
+  ];
+
+  function mostrarAlertas() {
+    let tabela = document.getElementById("alertas");
+    let camara = document.getElementById("camara").value;
+
+    tabela.innerHTML = "";
+
+    for (let i = 0; i < camaras.length; i++) {
+      if (camara == "Todas" || camara == camaras[i]) {
+        tabela.innerHTML += `
+          <tr>
+            <td>${temperaturas[i]}</td>
+            <td>${camaras[i]}</td>
+            <td>${sensores[i]}</td>
+            <td>${datas[i]}</td>
+            <td>${horarios[i]}</td>
+            <td>${descricoes[i]}</td>
+          </tr>`;
+      }
+    }
+  }
+
+  document.getElementById("camara").onchange = mostrarAlertas;
+
+  mostrarAlertas();
+</script>
+</body>
+</html>
+
+</main>
 </html>
