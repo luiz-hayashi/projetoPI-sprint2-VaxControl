@@ -65,7 +65,7 @@
               <th>Quantidade de sensores</th>
               <th>
                 <div class="box-seletor-pesquisa">
-                  <button class="btn-filtrar-camara" id="btn_ordenar_cam">Filtrar por A-Z 🡫</button>
+                  <button class="btn-filtrar-camara" id="btn_ordenar_cam" >Filtrar por A-Z 🡫</button>
                   <input class="pesquisar-camara" type="text" placeholder="Pesquisar 🔎">
                 </div>
               </th>
@@ -75,12 +75,12 @@
             <tr>
               <td>2AB</td>
               <td>4</td>
-              <td class="td-botao"><button class="detalhes">Ver detalhes</button></td>
+              <td class="td-botao"><button class="detalhes" onclick="verDetalhesCamara()">Ver detalhes</button></td>
             </tr>
             <tr>
               <td>7AD</td>
               <td>8</td>
-              <td class="td-botao"><button class="detalhes">Ver detalhes</button></td>
+              <td class="td-botao"><button class="detalhes" onclick="verDetalhesCamara()">Ver detalhes</button></td>
             </tr>
           </tbody>
         </table>
@@ -90,3 +90,8 @@
 </body>
 
 </html>
+<script>
+    function verDetalhesCamara () {
+      window.location.href = 'detalhesCamara.html';
+    }
+</script>
