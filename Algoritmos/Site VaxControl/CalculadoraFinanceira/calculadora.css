@@ -6,6 +6,69 @@
   font-family: 'Inter', sans-serif;
 }
 
+/* ------- INCIO ------  */
+.body_inicio {
+  background-image: url(imagens/Calculadora_Financeira.jpg);
+  /*tamanho da fonte*/
+  font-size: 20px;
+  background-repeat: unset;
+  background-size: cover;
+}
+
+/* alinha a divisoria que contem informações sobre a calculadora  */
+.alinhar-div {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-top: 10vh;
+  margin-bottom: 5vh;
+}
+
+/* conteudo que contem as info da calculadora  */
+.div_inicio {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 50px;
+  text-align: center;
+  width: 50%;
+}
+
+.titulo_inicio {
+  color: black;
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* conteudo dos botoes para calculadora  */
+.container {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* caixa de informações que aparece apos clique no botao de saber mais  */
+.div_informacoes {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  height: 500px;
+  margin-left: 100px;
+  width: 500px;
+  text-align: center;
+
+  .info-titulo {
+    margin: 30px 0px;
+  }
+
+  p {
+    margin-top: 20px;
+  }
+}
+
 
 /* CALCULAOORA CSS */
 
@@ -24,13 +87,6 @@
   /*espaço baixo*/
 }
 
-.titulo_inicio {
-  color: black;
-  font-size: 25px;
-  text-align: center;
-  font-weight: bold;
-}
-
 .conteudo-principal {
   background-image: url(imagens/Calculadora_Financeira.jpg);
   font-size: 20px;
@@ -39,16 +95,6 @@
   /*margem da pagina toda*/
 }
 
-.body_inicio {
-  background-image: url(imagens/logo_vax_control.png);
-  font-size: 20px;
-  /*tamanho da fonte*/
-  margin: 40px;
-  /*margem da pagina toda*/
-  display: flex;
-  justify-content: center;
-  margin-top: 10%;
-}
 
 .input {
   width: 100px;
@@ -80,13 +126,6 @@
   border: solid 2px #008fd3;
 }
 
-.container {
-  margin-top: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-}
-
 .div_textos {
   background-color: white;
   border: 1px solid black;
@@ -94,27 +133,7 @@
   padding: 20px;
 }
 
-.div_inicio {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: 60%;
-}
 
-.div_informacoes {
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 20px;
-  padding: 20px;
-  height: 500px;
-  margin-left: 100px;
-  width: 500px;
-  text-align: center;
-}
 
 p {
   margin-bottom: 0px;
