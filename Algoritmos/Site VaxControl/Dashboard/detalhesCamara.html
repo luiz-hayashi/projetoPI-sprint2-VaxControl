@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VaxControl</title>
+    <link rel="stylesheet" href="./css/detalhesCamara.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="menu-lateral">
+        <img src="vaxcontrol-bg.png" alt="VaxControl" class="logo">
+
+        <p class="titulo-menu">Menu</p>
+        
+        <nav class="navbar">
+
+            <a href="#" class="item-menu">
+
+                <span>▦</span>
+                Dashboard
+
+            </a>
+
+            <a href="#" class="item-menu selecionado">
+
+                <span>▣</span>
+                Câmaras
+
+            </a>
+
+            <a href="#" class="item-menu">
+
+                <span>⌁</span>
+                Sensores
+
+            </a>
+
+            <a href="#" class="item-menu">
+
+                <span>⚠</span>
+                Alertas
+
+            </a>
+
+            <a href="#" class="item-menu sair">
+
+                <span>⇥</span>
+                Sair
+
+            </a>
+
+
+
+
+
+    
+        </nav>
+
+
+
+
+
+
+
+    </div>
+
+    <div class="area-principal">
+
+        <div class="usuario">
+
+            <span>Usuário</span>
+            <img src="perfil.png" alt="">
+
+        </div>
+
+        <div class="cabecalho">
+
+            <button><b>← Voltar<b></button>
+            <h1>2AB</h1>
+            
+
+        </div>
+
+
+    <div class="indicadores">    
+
+        <div class="card">
+            
+            <p>Quantidade de sensores</p>
+            <h2>4</h2>
+
+        </div>
+
+        <div class="card">
+
+            <p>Sensores Ativos</p>
+            <h2>3</h2>
+
+        </div>
+
+        <div class="card">
+
+            <p>Sensores Inativos</p>
+            <h2>1</h2>
+
+        </div>
+
+    </div>
+
+    <div class="conteudo-inferior">
+
+        <div class="tabela-sensores">
+
+            <h2>Sensores</h2>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Identificação</th>
+                        <th>Leitura</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>Sensor 01</td>
+                        <td>5ºC</td>
+
+                    </tr>
+                    <tr>
+
+                        <td>Sensor 02</td>
+                        <td class="sensor-inativo">Inativo</td>
+
+                    </tr>
+                    <tr>
+
+                        <td>Sensor 03</td>
+                        <td>4ºC</td>
+
+                    </tr>
+                    <tr>
+
+                        <td>Sensor 04</td>
+                        <td class="sensor-alerta">8ºC</td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+            
+        </div>
+
+        <div class="grafico">
+
+            <h2>Gráfico de monitoramento</h2>
+
+            <canvas id="graficoTemperatura"></canvas>
+
+        </div>
+
+    </div>
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const canvas = document.getElementById('graficoTemperatura');
+
+    const grafico = new Chart(canvas, {
+        type: 'line',
+        data: {
+
+            labels: ['12:30', '12:35', '12:40', '12:45'],
+            datasets: [{
+                label: 'Sensor 01',
+                data: [5, 5.2, 4.8, 5],
+                borderColor: 'blue',
+                tension: 0.3,
+            },
+
+            {
+                label: 'Sensor 02',
+                data: [null, null, null, null],
+                borderColor: 'gray',
+                spanGaps: false
+            },
+            {
+                label: 'Sensor 03',
+                data: [4.5, 4.7, 4.3, 4.6],
+                borderColor: 'green',
+                tension: 0.3,
+
+            },
+            {
+                label: 'Sensor 04',
+                data: [3.8, 4.1, 4.0, 8.0],
+                borderColor: 'purple',
+                tension: 0.3,
+
+
+            },
+        
+        ]
+        },
+
+        options: {
+            maintainAspectRatio: false,
+            scales: {
+            y: {
+                min: 0,
+                max: 10
+                }
+            },
+
+            }
+        }
+    );
+</script>
+</body>
+</html>
