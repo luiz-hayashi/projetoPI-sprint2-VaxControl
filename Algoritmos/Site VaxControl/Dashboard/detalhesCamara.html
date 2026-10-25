@@ -1,178 +1,158 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VaxControl</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="./css/detalhesCamara.css">
+
+    <!-- importação de fontes  -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="menu-lateral">
-        <img src="vaxcontrol-bg.png" alt="VaxControl" class="logo">
+    <div class="container-body">
+        <nav class="navegacao">
 
-        <p class="titulo-menu">Menu</p>
-        
-        <nav class="navbar">
+            <!-- obs: aqui sera colocado imagem da vaxcontrol  -->
+            <img class="logo-img" src="dashboard-img/vaxcontrol-bg.png" alt="vaxcontrol logo">
+            <p class="menu">MENU</p>
 
-            <a href="#" class="item-menu">
-
-                <span>▦</span>
-                Dashboard
-
+            <!-- O link <a> agora fica por fora, criando uma linha 100% clicável -->
+            <a href="dashboard.html" class="item-menu">
+                <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
+                <span>Dashboard</span>
             </a>
 
-            <a href="#" class="item-menu selecionado">
-
-                <span>▣</span>
-                Câmaras
-
+            <a href="camaras.html" class="item-menu">
+                <img src="dashboard-img/camaras.png" alt="icone de camaras">
+                <span>Câmaras</span>
             </a>
 
-            <a href="#" class="item-menu">
-
-                <span>⌁</span>
-                Sensores
-
+            <a href="sensores.html" class="item-menu">
+                <img src="dashboard-img/sensores.png" alt="icone de sensores">
+                <span>Sensores</span>
             </a>
 
-            <a href="#" class="item-menu">
-
-                <span>⚠</span>
-                Alertas
-
+            <a href="alertas.html" class="item-menu">
+                <img src="dashboard-img/alerta.png" alt="icone de alertas">
+                <span>Alertas</span>
             </a>
-
-            <a href="#" class="item-menu sair">
-
-                <span>⇥</span>
-                Sair
-
-            </a>
-
-
-
-
-
-    
         </nav>
+        <main>
+            <div class="area-principal">
+
+                <div class="usuario">
+
+                    <span>Usuário</span>
+                    <img src="dashboard-img/perfil.png" alt="">
+
+                </div>
+
+                <div class="cabecalho">
+
+                    <button class="botao-voltar"><b>← Voltar<b></button>
+                    <h1>2AB</h1>
+
+
+                </div>
+            </div>
 
 
 
+            <div class="indicadores">
 
+                <div class="card">
 
+                    <p>Quantidade de sensores</p>
+                    <h2>4</h2>
 
+                </div>
 
+                <div class="card">
+
+                    <p>Sensores Ativos</p>
+                    <h2>3</h2>
+
+                </div>
+
+                <div class="card">
+
+                    <p>Sensores Inativos</p>
+                    <h2>1</h2>
+
+                </div>
+
+            </div>
+
+            <div class="conteudo-inferior">
+
+                <div class="tabela-sensores">
+
+                    <h2>Sensores</h2>
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>Identificação</th>
+                                <th>Leitura</th>
+
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Sensor 01</td>
+                                <td>5ºC</td>
+
+                            </tr>
+                            <tr>
+
+                                <td>Sensor 02</td>
+                                <td class="sensor-inativo">Inativo</td>
+
+                            </tr>
+                            <tr>
+
+                                <td>Sensor 03</td>
+                                <td>4ºC</td>
+
+                            </tr>
+                            <tr>
+
+                                <td>Sensor 04</td>
+                                <td class="sensor-alerta">8ºC</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+                <div class="grafico">
+
+                    <h2>Gráfico de monitoramento</h2>
+
+                    <canvas id="graficoTemperatura"></canvas>
+
+                </div>
+
+            </div>
+        </main>
     </div>
-
-    <div class="area-principal">
-
-        <div class="usuario">
-
-            <span>Usuário</span>
-            <img src="perfil.png" alt="">
-
-        </div>
-
-        <div class="cabecalho">
-
-            <button><b>← Voltar<b></button>
-            <h1>2AB</h1>
-            
-
-        </div>
-
-
-    <div class="indicadores">    
-
-        <div class="card">
-            
-            <p>Quantidade de sensores</p>
-            <h2>4</h2>
-
-        </div>
-
-        <div class="card">
-
-            <p>Sensores Ativos</p>
-            <h2>3</h2>
-
-        </div>
-
-        <div class="card">
-
-            <p>Sensores Inativos</p>
-            <h2>1</h2>
-
-        </div>
-
-    </div>
-
-    <div class="conteudo-inferior">
-
-        <div class="tabela-sensores">
-
-            <h2>Sensores</h2>
-
-            <table>
-
-                <thead>
-
-                    <tr>
-
-                        <th>Identificação</th>
-                        <th>Leitura</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    <tr>
-
-                        <td>Sensor 01</td>
-                        <td>5ºC</td>
-
-                    </tr>
-                    <tr>
-
-                        <td>Sensor 02</td>
-                        <td class="sensor-inativo">Inativo</td>
-
-                    </tr>
-                    <tr>
-
-                        <td>Sensor 03</td>
-                        <td>4ºC</td>
-
-                    </tr>
-                    <tr>
-
-                        <td>Sensor 04</td>
-                        <td class="sensor-alerta">8ºC</td>
-
-                    </tr>
-
-                </tbody>
-
-            </table>
-            
-        </div>
-
-        <div class="grafico">
-
-            <h2>Gráfico de monitoramento</h2>
-
-            <canvas id="graficoTemperatura"></canvas>
-
-        </div>
-
-    </div>
-
-    </div>
+</body>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
@@ -211,22 +191,22 @@
 
 
             },
-        
-        ]
+
+            ]
         },
 
         options: {
             maintainAspectRatio: false,
             scales: {
-            y: {
-                min: 0,
-                max: 10
+                y: {
+                    min: 0,
+                    max: 10
                 }
             },
 
-            }
         }
+    }
     );
 </script>
-</body>
+
 </html>
