@@ -7,15 +7,16 @@
   <title>Dashboard | Vaxcontrol</title>
 
   <!-- pagina de estilização css  -->
-  <link rel="stylesheet" href="css/reset.css"/>
-  <link rel="stylesheet" href="css/navbar.css"/>
-  <link rel="stylesheet" href="css/camaras.css"/>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/camaras.css" />
 
   <!-- importa as fontes de texto externas  -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
   <div class="container-body">
     <nav class="navegacao">
@@ -46,7 +47,7 @@
       </a>
 
     </nav>
-     <main>
+    <main>
       <!-- divisoria do nome do usuario e foto  -->
       <div class="box-user">
         <p class="user">Bem vindo(a) Usuario!</p>
@@ -55,6 +56,43 @@
           <img class="user foto-perfil" src="dashboard-img/perfil.png" alt="foto de perfil do usuario">
         </span>
       </div>
-      </main>
-</div>
+
+      <!-- conteudo da pagina camaras  -->
+      <div class="container">
+        <div class="background">
+          <div class="ordenar-titulos">
+            <p>Câmaras</p>
+            <p>Quantidade de sensores</p>
+          </div>
+      </div>
+      <!-- caixa de selecioanr camaras e pesquisar  -->
+      <div class="box-seletor-pesquisa">
+        <!-- seletores de camara  --> 
+        <button class="btn-ordenar-camaras" id="btn_ordenar_cam">Filtrar por A-Z 🡫</button>
+        <!-- caixa de pesquisa  -->
+        <input class="pesquisar-camaras" type="text" placeholder="pesquisar 🔎">
+      </div>
+    </div>
+      
+      
+      <div class="ordenar-dados">
+        <!-- nomes das camaras  -->
+        <ul>
+          <li>2AB</li>
+          <li>4</li>
+          <button class="detalhes">Ver detalhes</button>
+        </ul>
+        
+        <!-- quantidade de sensores  -->
+        <ul>
+          <li>7AD</li>
+          <li>8</li>
+          <button class="detalhes">Ver detalhes</button>
+        </ul>
+      </div>
+
+
+    </main>
+  </div>
+
 </html>
