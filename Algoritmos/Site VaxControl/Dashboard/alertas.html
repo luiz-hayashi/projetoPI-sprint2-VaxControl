@@ -50,6 +50,7 @@
  <main>
   <h1>Alertas</h1>
 
+  <!-- Filtros para escolher a camara -->
   <div class="filtros">
     <select id="camara">
       <option value="Todas">Câmara</option>
@@ -57,6 +58,7 @@
       <option value="3DC">3DC</option>
     </select>
 
+    <!-- Filtros para escolher o horário -->
     <select id="tempo">
       <option value="24">24 Horas</option>
       <option value="12">12 Horas</option>
@@ -64,6 +66,7 @@
     </select>
   </div>
 
+  <!-- Tabela que mostra os alertas -->
   <table>
     <tr>
       <th>Temperatura</th>
@@ -78,6 +81,7 @@
   </table>
 </main>
 
+// lista
 <script>
   let camaras = ["2AB", "3DC"];
   let temperaturas = ["1 C", "10 C"];
@@ -95,6 +99,7 @@
 
     tabela.innerHTML = "";
 
+    // Adiciona uma linha na tabela com os dados do alerta
     for (let i = 0; i < camaras.length; i++) {
       if (camara == "Todas" || camara == camaras[i]) {
         tabela.innerHTML += `
@@ -110,8 +115,10 @@
     }
   }
 
+  // Exeecuta a função quando a pessoa muda a camara selecionada
   document.getElementById("camara").onchange = mostrarAlertas;
 
+  // Mostra os alertas assim que a página abre
   mostrarAlertas();
 </script>
 </body>
