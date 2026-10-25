@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Vaxcontrol</title>
+
+  <!-- pagina de estilização css  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/sensores.css" />
+
+  <!-- importa as fontes de texto externas  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container-body">
+    <nav class="navegacao">
+
+      <!-- obs: aqui sera colocado imagem da vaxcontrol  -->
+      <img class="logo-img" src="dashboard-img/vaxcontrol-bg.png" alt="vaxcontrol logo">
+      <p class="menu">MENU</p>
+
+      <!-- O link <a> agora fica por fora, criando uma linha 100% clicável -->
+      <a href="dashboard.html" class="item-menu">
+        <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
+        <span>Dashboard</span>
+      </a>
+
+      <a href="camaras.html" class="item-menu">
+        <img src="dashboard-img/camaras.png" alt="icone de camaras">
+        <span>Câmaras</span>
+      </a>
+
+      <a href="sensores.html" class="item-menu">
+        <img src="dashboard-img/sensores.png" alt="icone de sensores">
+        <span>Sensores</span>
+      </a>
+
+      <a href="alertas.html" class="item-menu">
+        <img src="dashboard-img/alerta.png" alt="icone de alertas">
+        <span>Alertas</span>
+      </a>
+    </nav>
+    <main>
+      <div class="box-user">
+        <p class="user"></p>
+        <span class="alinhar">
+          <p>Usuario</p>
+          <img class="user foto-perfil" src="dashboard-img/perfil.png" alt="foto de perfil do usuario">
+        </span>
+      </div>
+      <div class="filtros">
+        <button class="botao-filtro">
+          Filtrar por: A-Z
+        </button>
+        <button class="botao-persquisar">
+        </button>
+        <input type="search" placeholder="Pesquisar..." class="pesquisa">
+      </div>
+      <div class="tabela-sensores">
+        <table>
+          <thead>
+            <tr>
+              <th>Sensor</th>
+              <th>Status</th>
+              <th>Câmara</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Sensor1</td>
+              <td>
+                <img class="bolinha-verde"
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR05WzniM2l9nP2sR0rwMC_FsS4nBenf57mNV8gs2bcAg&s=10"
+                  alt="">
+                Ativo
+              </td>
+              <td>2AB</td>
+              <td>
+                <button class="botao-detalhes" type="button">
+                Detalhes
+              </td>
+            </tr> 
+            
+            <tr>
+            <td>Sensor2</td>
+            <td>
+              <img class="bolinha-vermelha"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3TjbgsD6ZbO16zKy4Dq735ohs7Ok8gOmNAoiirPnyNQ&s=10"
+                alt="">
+              Inativo
+            </td>
+            <td>7AD</td>
+            <td>
+              <button class="botao-detalhes" type="button">
+              Detalhes
+            </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+</html>
