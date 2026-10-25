@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+    color: black;
+}
 /* NAVBAR DO SITE  */
 
 .topbar {
@@ -30,7 +34,17 @@
 .alinhar-texto-navbar {
     display: flex;
     margin-top: 15px;
-    gap: 20px;
+    gap: 25px;
+}
+
+.links {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.links:hover {
+    color: blue;
+    transition: 0.5s;
 }
 
 /* TIPOS DE BOTÃO */
@@ -41,4 +55,9 @@
     border-radius: 20px;
     color: white;
     margin: 5px 0px;
+}
+
+.botao-topbar:hover {
+    background-color: rgb(0, 26, 255);
+    transition: 0.5s;
 }
