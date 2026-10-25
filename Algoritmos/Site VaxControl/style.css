@@ -26,13 +26,6 @@ a {
 
 /* TIPOS DE BOTÃO */
 
-.botao-topbar {
-    background-color: #268bdd;
-    padding: 0.6rem 3rem;
-    border-radius: 20px;
-    color: white;
-}
-
 .botao-home {
     background-color: #008fd3;
     text-align: center;
@@ -66,41 +59,6 @@ a {
     color: white;
     border-radius: 0.3rem;
 }
-
-/* CABECALHO DO SITE  */
-
-.topbar {
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-
-    /* ADICIONE ESTAS DUAS LINHAS ABAIXO: */
-    position: relative;
-    z-index: 1;
-}
-
-
-.navegador {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-}
-
-.cabecalho-topbar {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.5rem;
-    max-width: 1200px;
-}
-
-.logo {
-    display: flex;
-    justify-content: flex-start;
-}
-
 
 /* INICIO DO CORPO DO SITE */
 

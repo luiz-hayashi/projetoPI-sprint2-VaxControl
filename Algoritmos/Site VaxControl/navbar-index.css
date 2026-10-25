@@ -1,347 +1,44 @@
-/* CONFIGURAÇẼOS INCIAIS */
-@import url('https://googleapis.com');
+/* NAVBAR DO SITE  */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    border: 0;
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 5px;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
+
+.navegador {
+    padding: 1rem 2rem;
     background-color: #ffffff;
-    color: #333333;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
+
+    /* ADICIONE ESTAS DUAS LINHAS ABAIXO: */
+    position: relative;
+    z-index: 1;
 }
 
-a {
-    text-decoration: none;
-    color: black;
+.logo {
+    display: flex;
+    justify-content: left;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.alinhar-botao-navbar {
+    display: flex;
+    gap: 30px;
+}
+
+.alinhar-texto-navbar {
+    display: flex;
+    margin-top: 15px;
+    gap: 20px;
 }
 
 /* TIPOS DE BOTÃO */
 
 .botao-topbar {
     background-color: #268bdd;
-    padding: 0.6rem 3rem;
+    padding: 0.3rem 4rem;
     border-radius: 20px;
     color: white;
-}
-
-.botao-home {
-    background-color: #008fd3;
-    text-align: center;
-    margin-top: 1.2rem;
-    margin-bottom: 5rem;
-    padding: 1rem 3rem;
-    border-radius: 20px;
-    color: white;
-}
-
-.botao {
-    background-color: #8cbad9;
-    padding: 0.6rem 1.5rem;
-    border-radius: 0.5rem;
-    color: white;
-}
-
-.botao-info {
-    background-color: #008fd3;
-    text-align: center;
-    padding: 1rem 4rem;
-    border-radius: 5px;
-    color: white;
-}
-
-.botao-card {
-    background-color: #000763;
-    padding: 0.6rem 1.5rem;
-    text-align: center;
-    margin-top: 20px;
-    color: white;
-    border-radius: 0.3rem;
-}
-
-/* CABECALHO DO SITE  */
-
-.topbar {
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    
-    /* ADICIONE ESTAS DUAS LINHAS ABAIXO: */
-    position: relative;
-    z-index: 1; 
-}
-
-
-.navegador {
-    display: flex;
-    justify-content: space-around;
-    gap: 2rem;
-}
-
-.cabecalho-topbar {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.5rem;
-    font-family: 'Courier New', Courier, monospace;
-    max-width: 1200px;
-}
-
-.logo {
-    display: flex;
-    justify-content: flex-start;
-}
-
-
-/* INICIO DO CORPO DO SITE */
-
-/* SESSÃO HOME */
-.sessao-home {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 1%;
-    background-color: #f7f7f7;
-}
-
-.imagem {
-    width: 40rem;
-    height: 35rem;
-}
-
-.box-texto-home {
-    padding-left: 10em;
-}
-
-.titulo-home {
-    color: #0090D0;
-    font-size: 20px;
-    max-width: 40em;
-}
-
-.subtitulo-home {
-    margin-top: 10px;
-    color: #000000;
-    font-size: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: lighter;
-    max-width: 13em;
-}
-
-.texto-home {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: lighter;
-    font-size: 1rem;
-    margin-top: 10px;
-    max-width: 28em;
-}
-
-
-
-/* SESSÃO BENEFICIOS */
-.sessao-beneficios {
-    padding: 60px 0;
-}
-
-.botao_body {
-    background-color: #150958;
-    color: white;
-    padding: 1rem 5rem;
-    text-align: center;
-    border-radius: 0.5rem;
-    margin-left: -66rem;
-    margin-top: 3rem;
-    margin-bottom: 5rem;
-}
-
-.subtitulo_main {
-    text-align: center;
-    font-size: 2rem;
-    font-weight: bolder;
-    font-weight: lighter;
-    margin-bottom: 5%;
-}
-
-/* CARTÕES - BENEFICIOS */
-.main_card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 40px;
-    gap: 20px;
-}
-
-.card {
-    background-color: #f5f8fa;
-    border-radius: 10px;
-    padding: 30px 20px;
-    width: 30%;
-    text-align: center;
-}
-
-.card-linha2 {
-    width: 30%
-}
-
-.imagem_card {
-    height: 50px;
-    margin-bottom: 15px;
-}
-
-.card-titulo {
-    font-size: 1.1rem;
-    font-weight: bolder;
-    margin-bottom: 15px;
-    color: black;
-}
-
-.texto {
-    font-size: 0.9rem;
-    font-weight: lighter;
-}
-
-
-/* TECNOLOGIA E INTELIGÊNCIA (parte escura) */
-
-.sessao-tecnologia {
-    display: flex;
-    flex-direction: column;
-    background-color: #150958;
-    color: white;
-    padding: 80px;
-}
-
-.borda {
-    border-left: 2px solid rgb(0, 255, 255);
-    margin-left: 50px;
-}
-
-.alinhar-borda {
-    padding: 30px;
-}
-
-.titulo-fundo {
-    padding-bottom: 2rem;
-    font-weight: lighter;
-    font-size: 2.3rem;
-    margin-left: 80px;
-}
-
-.fundo-lista {
-    display: flex;
-    flex-direction: column;
-    font-size: 1.10rem;
-    max-width: 100em;
-    padding-right: 50px;
-}
-
-li {
-    list-style: none;
-    padding: 20px 0px;
-}
-
-.fundo-imagem {
-    display: flex;
-    margin-right: 50px;
-}
-
-.imagem-medica {
-    max-height: 120%;
-    max-width: 110%;
-}
-
-
-/* SESSAO BANNER */
-.sessao-banner {
-    display: flex;
-    margin: 0;
-    background-color: #008fd3;
-    padding: 40px;
-    flex-direction: column;
-    margin-left: -40px;
-    padding-bottom: 150px;
-}
-
-.banner-container {
-    margin: 3%;
-}
-
-.titulo-banner {
-    text-align: left;
-    margin-left: 10rem;
-    font-size: 2.25rem;
-    color: white;
-}
-
-.imagem-banner {
-    width: 80%;
-}
-
-/* SESSAO PRE FOOTER  */
-.sessao-pre-footer {
-    text-align: center;
-    padding: 80px;
-}
-
-.titulo-pre-footer {
-    font-size: 1.8rem;
-    font-weight: 300;
-    margin-bottom: 50px;
-}
-
-.footer_cards-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.card-footer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 50px;
-    background-color: #EFF5F8;
-    padding: 2rem 2rem;
-    border-radius: 10px;
-    width: 25%;
-    text-align: center;
-}
-
-.titulo-card-footer {
-    font-size: 1.3rem;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-
-/* OUTRO  */
-.footer-principal {
-    padding: 80px;
-    background-color: #37aef3;
-}
-
-.footer-container {
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-texto {
-    text-align:left;
-    font-size: 1rem;
-}
-
-.logo_footer {
-    margin-left: 7px;
-    width: 100px;
+    margin: 5px 0px;
 }

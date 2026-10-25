@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Site institucional | Vaxcontrol</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="navbar-index.css">
 
     <!-- importa as fontes de texto externas  -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,19 +18,22 @@
 
     <!-- CABECALHO DO SITE -->
     <header>
-        <div class="topbar">
-            <img class="logo" src="imagens/logo.png" alt="Vaxcontrol logo">
-
-            <nav class="navegador">
-                <a href="../site-vaxcontrol/sobre.html">Quem nós somos</a>
-                <a href="../Site VaxControl/CalculadoraFinanceira/inicio.html">Calculadora Financeira</a>
-                <a href="../site-vaxcontrol/dashboard.html">Dashboard</a>
-                <a href="../site-vaxcontrol/contato.html">Fale Conosco</a>
-            </nav>
-            <!-- <button class="botao-topbar">Cadastre-se</button> -->
-            <button class="botao-topbar">Entrar</button>
-        </div>
-        </div>
+        <nav class="navegador">
+            <div class="topbar">
+                <img class="logo" src="imagens/logo.png" alt="Vaxcontrol logo">
+                <span class="alinhar-texto-navbar">
+                    <a href="../site-vaxcontrol/sobre.html">Quem nós somos</a>
+                    <a href="../Site VaxControl/CalculadoraFinanceira/inicio.html">Calculadora Financeira</a>
+                    <a href="../site-vaxcontrol/dashboard.html">Dashboard</a>
+                    <a href="../site-vaxcontrol/contato.html">Fale Conosco</a>
+                </span>
+                <!-- <button class="botao-topbar">Cadastre-se</button> -->
+                <span class="alinhar-botao-navbar">
+                    <button class="botao-topbar" onclick="window.location.href='cadastro.login'">Cadastrar</button>
+                    <button class="botao-topbar" onclick="window.location.href='cadastro.login'">Entrar</button>
+                </span>
+            </div>
+        </nav>
     </header>
 
 
