@@ -3,50 +3,7 @@ li {
     list-style: none;
 }
 
-/* conteudo de tudo  */
-.container {
-    display: flex;
-    flex-direction: column;
-    margin: 0px 10px;
-}
 
-/* conteudo de cameras e sensores titulos  */
-.conteudo-camara-sensores {
-    display: flex;
-    flex-direction: row;
-    font-family: 'Inter', sans-serif;
-    font-size: 12px;
-    margin: 0px 50px 10px 0px;
-    gap: 20px;
-}
-
-/* fundo cinza dos titulos  */
-.background {
-    border: #E1E8EF solid 2px;
-    background-color: #cecece;
-    flex: 1;    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px 100px;
-}
-
-/* ordena os titulos  */
-.ordenar-titulos {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    font-size: 20px;
-}
-
-/* container da caixa de botao e pesquisa  */
-.box-seletor-pesquisa {
-    display: flex;
-    flex-direction: row;
-    text-align: center;
-    flex: 1;
-    gap: 20px;
-}
 
 /* botao para filtrar camaras  */
 .btn-filtrar-camaras {
@@ -74,10 +31,3 @@ li {
     border-radius: 20px;
     font-size: 15px;
 }
-
-/* lista de dados de camera e sensores  */
-.ordenar-dados {
-    display: flex;
-    flex-direction: column;
-}
-

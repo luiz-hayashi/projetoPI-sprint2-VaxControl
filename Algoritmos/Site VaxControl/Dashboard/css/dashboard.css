@@ -1,5 +1,6 @@
 /* ----------- PAGINA DASHBOARD  ------------------*/
-/* caixa de info -- "Fixa segura de 8   º graus"*/
+
+/* caixa de info -- "Fixa segura de 8º graus"*/
 .box-info-status {
     margin: 0px 20px;
     background-color: #cdebddbe;
@@ -14,6 +15,7 @@
     margin-top: 8px;
 }
 
+/* caixa de texto de status  */
 .box-texto-status {
     font-family: 'Inter', sans-serif;
     margin-left: 20px;
@@ -241,9 +243,3 @@
     display: flex;
     justify-content: center;
 }
-
-
-
-
-
-/* PAGINA ALERTAS  */

@@ -48,7 +48,7 @@
 
     </nav>
     <main>
-      <!-- divisoria do nome do usuario e foto  -->
+<!-- divisoria do nome do usuario e foto  -->
       <div class="box-user">
         <p class="user">Bem vindo(a) Usuario!</p>
         <span class="alinhar">
@@ -57,46 +57,34 @@
         </span>
       </div>
 
-      <!-- conteudo da pagina camaras  -->
-      <div class="container">
-        <div class="conteudo-camara-sensores">
-          <div class="background">
-            <div class="ordenar-titulos">
-              <p>Câmaras</p>
-              <p>Quantidade de sensores</p>
+     <div class="container">
+  <table class="tabela-camaras">
+    <thead>
+      <tr>
+        <th>Câmaras</th>
+        <th>Quantidade de sensores</th>
+        <th>
+          <div class="box-seletor-pesquisa">
+            <button class="btn-filtrar-camaras" id="btn_ordenar_cam">Filtrar por A-Z 🡫</button>
+            <input class="pesquisar-camaras" type="text" placeholder="Pesquisar 🔎">
           </div>
-        </div>
-        <!-- caixa de selecioanr camaras e pesquisar  -->
-        <div class="box-seletor-pesquisa">
-          <!-- seletores de camara  --> 
-          <button class="btn-filtrar-camaras" id="btn_ordenar_cam">Filtrar por A-Z 🡫</button>
-          <!-- caixa de pesquisa  -->
-          <input class="pesquisar-camaras" type="text" placeholder="Pesquisar 🔎">
-        </div>
-      </div>
-        
-      <div>
-        <div class="dados-camaras">
-          <!-- nomes das camaras  -->
-        <ul>
-          <li>2AB</li>
-          <li>4</li>
-          <button class="detalhes">Ver detalhes</button>
-        </ul>
-      </div>
-
-      <div class="dados-sensores">
-        <!-- quantidade de sensores  -->
-        <ul>
-          <li>7AD</li>
-          <li>8</li>
-          <button class="detalhes">Ver detalhes</button>
-        </ul>
-      </div>
-    </div>
-    </div>
-
-
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2AB</td>
+        <td>4</td>
+        <td class="td-botao"><button class="detalhes">Ver detalhes</button></td>
+      </tr>
+      <tr>
+        <td>7AD</td>
+        <td>8</td>
+        <td class="td-botao"><button class="detalhes">Ver detalhes</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
     </main>
   </div>
 </body>
