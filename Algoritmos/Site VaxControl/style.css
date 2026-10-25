@@ -1,15 +1,14 @@
 /* CONFIGURAÇẼOS INCIAIS */
-@import url('https://googleapis.com');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     border: 0;
+    font-family: 'Inter', sans-serif;
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
     color: #333333;
 }
@@ -77,10 +76,10 @@ a {
     align-items: center;
     background-color: #ffffff;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.5);
-    
+
     /* ADICIONE ESTAS DUAS LINHAS ABAIXO: */
     position: relative;
-    z-index: 1; 
+    z-index: 1;
 }
 
 
@@ -94,7 +93,6 @@ a {
     display: flex;
     justify-content: flex-end;
     gap: 1.5rem;
-    font-family: 'Courier New', Courier, monospace;
     max-width: 1200px;
 }
 
@@ -134,13 +132,11 @@ a {
     margin-top: 10px;
     color: #000000;
     font-size: 2rem;
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: lighter;
     max-width: 13em;
 }
 
 .texto-home {
-    font-family: 'Montserrat', sans-serif;
     font-weight: lighter;
     font-size: 1rem;
     margin-top: 10px;
@@ -337,7 +333,7 @@ li {
 }
 
 .footer-texto {
-    text-align:left;
+    text-align: left;
     font-size: 1rem;
 }
 
