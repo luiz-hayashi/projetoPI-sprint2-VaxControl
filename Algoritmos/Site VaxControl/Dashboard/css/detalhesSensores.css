@@ -342,7 +342,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  border-bottom: 2px solid #53aadb;
+  border-bottom: 5px solid #53aadb;
   padding: 10px 0;
 }
 
@@ -374,14 +374,13 @@ main {
     Ubuntu,
     Cantarell,
     sans-serif;
-  font-size: larger;
+  font-size: 35px;
   color: #102d72;
-  font-weight: bold;
+  font-weight:bolder;
 }
 .conteudo-sensor-detalhes {
   height: 100%;
   display: flex;
-  background-color: red;
 }
 .colunas-kpi {
   width: 40%;
@@ -391,7 +390,6 @@ main {
   align-items: center;
   height: 100%;
   gap: 65px;
-  background-color: #a94d2a;
 }
 
 .colunas-grafico {
@@ -402,7 +400,6 @@ main {
   width: 60%;
   height: 100%;
   gap: 65px;
-  background-color: #00fff2;
 }
 
 .card-kpi-detalhes {
@@ -410,7 +407,8 @@ main {
   width: 350px;
   height: 20%;
   padding: 20px;
-  background: #e1e8ef;
+  background: white;
+  border: #e1e8ef 3px solid;
   border-radius: 20px;
   justify-content: center;
   align-items: center;
@@ -424,16 +422,17 @@ main {
   width: 90%;
   height: 45%;
   padding: 20px;
-  background: #e1e8ef;
+  background-color: white;
   border-radius: 20px;
-  justify-content: center;
-  align-items: center;
+  border: #e1e8ef 3px solid;
   text-align: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .titulo-kpi-detalhes {
   color: #6682ad;
-  font-size: xx-large;
+  font-size: 30px;
   font-family:
     "Inter",
     -apple-system,
@@ -447,8 +446,8 @@ main {
 }
 
 .texto-kpi-detalhes {
-  color: #20354A;
-  font-size: xx-large;
+  color: #20354a;
+  font-size: 30px;
   font-weight: bold;
   font-family:
     "Inter",
@@ -460,4 +459,89 @@ main {
     Ubuntu,
     Cantarell,
     sans-serif;
+}
+
+.alinhar-titulo-grafico-detalhes {
+  display: flex;
+  width: 95%;
+  justify-content: space-between;
+}
+
+.titulo-grafico-detalhes {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+  color: #102d72;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.filtro-grafico-detalhes {
+  background-color: white;
+  border-radius: 7px;
+  bottom: 5px;
+  padding: 5px;
+  border: #8383847a solid 2px;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+}
+.div-tabela-grafico-detalhes {
+  display: flex;
+  width: 80%;
+  justify-content: center;
+  max-height: 90%;
+  overflow-y: auto;
+}
+.tabela-grafico-detalhes {
+  width: 100%;
+  table-layout: auto;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.titulo-coluna-tabela-detalhes {
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+  color: #174a91;
+  background-color: #e1f3ff;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.tabela-grafico-detalhes td {
+  padding: 15px 10px;
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    sans-serif;
+  font-weight: 600;
 }
