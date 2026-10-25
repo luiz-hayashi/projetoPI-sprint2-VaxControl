@@ -59,30 +59,33 @@
 
       <!-- conteudo da pagina camaras  -->
       <div class="container">
-        <div class="background">
-          <div class="ordenar-titulos">
-            <p>Câmaras</p>
-            <p>Quantidade de sensores</p>
+        <div class="conteudo-camara-sensores">
+          <div class="background">
+            <div class="ordenar-titulos">
+              <p>Câmaras</p>
+              <p>Quantidade de sensores</p>
           </div>
+        </div>
+        <!-- caixa de selecioanr camaras e pesquisar  -->
+        <div class="box-seletor-pesquisa">
+          <!-- seletores de camara  --> 
+          <button class="btn-filtrar-camaras" id="btn_ordenar_cam">Filtrar por A-Z 🡫</button>
+          <!-- caixa de pesquisa  -->
+          <input class="pesquisar-camaras" type="text" placeholder="Pesquisar 🔎">
+        </div>
       </div>
-      <!-- caixa de selecioanr camaras e pesquisar  -->
-      <div class="box-seletor-pesquisa">
-        <!-- seletores de camara  --> 
-        <button class="btn-ordenar-camaras" id="btn_ordenar_cam">Filtrar por A-Z 🡫</button>
-        <!-- caixa de pesquisa  -->
-        <input class="pesquisar-camaras" type="text" placeholder="pesquisar 🔎">
-      </div>
-    </div>
-      
-      
-      <div class="ordenar-dados">
-        <!-- nomes das camaras  -->
+        
+      <div>
+        <div class="dados-camaras">
+          <!-- nomes das camaras  -->
         <ul>
           <li>2AB</li>
           <li>4</li>
           <button class="detalhes">Ver detalhes</button>
         </ul>
-        
+      </div>
+
+      <div class="dados-sensores">
         <!-- quantidade de sensores  -->
         <ul>
           <li>7AD</li>
@@ -90,9 +93,12 @@
           <button class="detalhes">Ver detalhes</button>
         </ul>
       </div>
+    </div>
+    </div>
 
 
     </main>
   </div>
+</body>
 
 </html>

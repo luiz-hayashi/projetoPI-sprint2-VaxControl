@@ -1,50 +1,83 @@
-* {
-    font-family: 'Inter', sans-serif;
+li {
+    text-decoration: none;
+    list-style: none;
 }
 
+/* conteudo de tudo  */
 .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 10px;
+}
+
+/* conteudo de cameras e sensores titulos  */
+.conteudo-camara-sensores {
     display: flex;
     flex-direction: row;
     font-family: 'Inter', sans-serif;
     font-size: 12px;
-    margin: 0px 10px;
-    justify-content: space-between;
+    margin: 0px 50px 10px 0px;
+    gap: 20px;
 }
 
+/* fundo cinza dos titulos  */
 .background {
     border: #E1E8EF solid 2px;
     background-color: #cecece;
-    padding: 10px 150px;
-    width: 200px;
-    flex: 1;
-
+    flex: 1;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px 100px;
 }
 
+/* ordena os titulos  */
 .ordenar-titulos {
     display: flex;
     flex-direction: row;
-    text-align: center;
     justify-content: space-between;
+    font-size: 20px;
 }
 
+/* container da caixa de botao e pesquisa  */
 .box-seletor-pesquisa {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    align-items: flex-end;
-    align-self: center;
-    flex: 1;    
+    text-align: center;
+    flex: 1;
+    gap: 20px;
 }
 
-.btn-ordenar-camaras {
+/* botao para filtrar camaras  */
+.btn-filtrar-camaras {
     background-color: white;
-    justify-content: center;
-    padding: 5px 20px;
+    padding: 10px 0px;
     border-radius: 10px;
-    border: 2px solid #E1E8EF;
+    border: 3px solid #E1E8EF;
     box-shadow: 0px 3px 0px 0px #d4d7da;
     font-weight: 700;
+    font-size: 10px;
+    max-width: 200px;
+    flex: 1;
     font-size: 15px;
 }
 
-.pesquisar-camaras {}
+/* caixa de pesquisa  */
+.pesquisar-camaras {
+    flex: 1;
+    padding: 10px 0px;
+    text-align: center;
+    border: 3px solid #E1E8EF;
+    box-shadow: 0px 3px 0px 0px #d4d7da;
+    background-color: white;
+    font-weight: 700;
+    border-radius: 20px;
+    font-size: 15px;
+}
+
+/* lista de dados de camera e sensores  */
+.ordenar-dados {
+    display: flex;
+    flex-direction: column;
+}
+
