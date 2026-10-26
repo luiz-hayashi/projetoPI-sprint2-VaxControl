@@ -1,3 +1,4 @@
+/* Configura a área principal da página */
 main {
   flex: 1;
   min-height: 100vh;
@@ -6,17 +7,20 @@ main {
   font-family: Arial, sans-serif;
 }
 
+/* Estiliza o título Alertas */
 h1 {
   text-align: center;
   color: #193c70;
   margin-bottom: 45px;
 }
 
+/* Posiciona os filtros à direita */
 .filtros {
   text-align: right;
   margin-bottom: 8px;
 }
 
+/* Estiliza os campos de seleção */
 select {
   padding: 6px;
   border: 1px solid #ddd;
@@ -24,6 +28,7 @@ select {
   background: white;
 }
 
+/* Configura a tabela de alertas */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -31,12 +36,14 @@ table {
   text-align: center;
 }
 
+/* Estiliza os títulos das colunas */
 th {
   background: #eee;
   padding: 10px 5px;
   font-weight: normal;
 }
 
+/* Estiliza as células com os dados dos alertas */
 td {
   background: #f6c9cd;
   border: 1px solid #ed9ca5;
