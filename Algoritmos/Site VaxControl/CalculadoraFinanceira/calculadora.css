@@ -6,8 +6,9 @@
   font-family: 'Inter', sans-serif;
 }
 
-/* ------- INCIO ------  */
-.body_inicio {
+
+/* FUNDO DE IMAGEM PARA INCIO E PAGINA CALCULADORA  */
+.fundo {
   background-image: url(imagens/Calculadora_Financeira.jpg);
   /*tamanho da fonte*/
   font-size: 20px;
@@ -15,11 +16,13 @@
   background-size: cover;
 }
 
+
+/* ------- INCIO ------  */
 /* alinha a divisoria que contem informações sobre a calculadora  */
 .alinhar-div {
   display: flex;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: row;  
   margin-top: 10vh;
   margin-bottom: 5vh;
 }
@@ -70,7 +73,7 @@
 }
 
 
-/* CALCULAOORA CSS */
+/* CALCULADORA CSS */
 
 .titulo {
   color: black;
@@ -88,11 +91,9 @@
 }
 
 .conteudo-principal {
-  background-image: url(imagens/Calculadora_Financeira.jpg);
-  font-size: 20px;
+  margin: 50px;
   /*tamanho da fonte*/
-  margin: 40px;
-  /*margem da pagina toda*/
+  font-size: 20px;
 }
 
 
