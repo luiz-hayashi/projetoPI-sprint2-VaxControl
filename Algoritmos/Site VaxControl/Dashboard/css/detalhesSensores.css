@@ -399,7 +399,7 @@ main {
   flex-direction: column;
   width: 60%;
   height: 100%;
-  gap: 65px;
+  gap: 25px;
 }
 
 .card-kpi-detalhes {
@@ -544,4 +544,13 @@ main {
     Cantarell,
     sans-serif;
   font-weight: 600;
+}
+
+.div-grafico-detalhes {
+  flex: 1;          
+  min-height: 0; 
+  width: 100%;
+  position: relative;  
+  justify-content: center;
+  align-items: center;
 }
