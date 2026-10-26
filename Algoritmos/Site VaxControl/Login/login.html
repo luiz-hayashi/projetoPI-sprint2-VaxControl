@@ -5,8 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="../navbar-index.css">
+
+    <!-- importa as fontes de texto externas  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
+<header>
+    <nav class="navegador">
+        <div class="topbar">
+            <img class="logo" src="../imagens/logo.png" alt="Vaxcontrol logo">
+            <span class="alinhar-texto-navbar">
+                <a class="links" href="../sobre.html">Quem nós somos</a>
+                <a class="links" href="../CalculadoraFinanceira/inicio.html">Calculadora Financeira</a>
+                <a class="links" href="../Login/login.html">Dashboard</a>
+                <a class="links" href="../contato.html">Fale Conosco</a>
+            </span>
+            <span class="alinhar-botao-navbar">
+                <button class="botao-topbar"
+                    onclick="window.location.href='../Cadastro/cadastro.html'">Cadastrar</button>
+            </span>
+        </div>
+    </nav>
+</header>
 
 <body>
     <div class="divPrincipal">
