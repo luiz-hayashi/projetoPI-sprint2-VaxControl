@@ -50,78 +50,134 @@
  <main>
   <h1>Alertas</h1>
 
-  <!-- Filtros para escolher a camara -->
   <div class="filtros">
     <select id="camara">
       <option value="Todas">Câmara</option>
       <option value="2AB">2AB</option>
       <option value="3DC">3DC</option>
+      <option value="4EF">4EF</option>
     </select>
 
-    <!-- Filtros para escolher o horário -->
-    <select id="tempo">
+    <select id="horario">
       <option value="24">24 Horas</option>
       <option value="12">12 Horas</option>
-      <option value="1">1 Hora</option>
     </select>
   </div>
 
-  <!-- Tabela que mostra os alertas -->
-  <table>
-    <tr>
-      <th>Temperatura</th>
-      <th>Câmara</th>
-      <th>Sensor</th>
-      <th>Data</th>
-      <th>Horário</th>
-      <th>Descrição</th>
-    </tr>
-
-    <tbody id="alertas"></tbody>
-  </table>
+  <div id="mensagem"></div>
 </main>
 
-
 <script>
+function mostrarAlertas() {
+  let camara = document.getElementById("camara").value;
+  let mensagem = document.getElementById("mensagem");
 
-  // lista
-  let camaras = ["2AB", "3DC"];
-  let temperaturas = ["1 C", "10 C"];
-  let sensores = ["Sensor1", "Sensor2"];
-  let datas = ["10/10/2026", "10/10/2026"];
-  let horarios = ["12:45", "01:20"];
-  let descricoes = [
-    "Sensor mudou para status inativo",
-    "Acima da margem segura"
-  ];
+  if (camara == "Todas") {
+    mensagem.innerHTML = `
+      <table>
+        <tr>
+          <th>Temperatura</th>
+          <th>Câmara</th>
+          <th>Sensor</th>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>1 °C</td>
+          <td>2AB</td>
+          <td>Sensor1</td>
+          <td>10/10/2026</td>
+          <td>12:45</td>
+          <td>Sensor mudou para status inativo</td>
+        </tr>
+        <tr>
+          <td>10 °C</td>
+          <td>3DC</td>
+          <td>Sensor2</td>
+          <td>10/10/2026</td>
+          <td>01:20</td>
+          <td>Acima da margem segura</td>
+        </tr>
+        <tr>
+          <td>10 °C</td>
+          <td>4EF</td>
+          <td>Sensor3</td>
+          <td>10/10/2026</td>
+          <td>02:45</td>
+          <td>Muito Acima da margem segura</td>
+            </tr>
+      </table>
+    `;
+  } else if (camara == "2AB") {
+    mensagem.innerHTML = `
+      <table>
+        <tr>
+          <th>Temperatura</th>
+          <th>Câmara</th>
+          <th>Sensor</th>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>1 °C</td>
+          <td>2AB</td>
+          <td>Sensor1</td>
+          <td>10/10/2026</td>
+          <td>12:45</td>
+          <td>Sensor mudou para status inativo</td>
+        </tr>
+      </table>
+    `;
+  } else if (camara == "3DC") {
+    mensagem.innerHTML = `
+      <table>
+        <tr>
+          <th>Temperatura</th>
+          <th>Câmara</th>
+          <th>Sensor</th>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>10 °C</td>
+          <td>3DC</td>
+          <td>Sensor2</td>
+          <td>10/10/2026</td>
+          <td>01:20</td>
+          <td>Acima da margem segura</td>
+        </tr>
+      </table>
+    `;
+  } else if (camara == "4EF") {
+    mensagem.innerHTML = `
+      <table>
+        <tr>
+          <th>Temperatura</th>
+          <th>Câmara</th>
+          <th>Sensor</th>
+          <th>Data</th>
+          <th>Horário</th>
+          <th>Descrição</th>
+        </tr>
+        <tr>
+          <td>10 °C</td>
+          <td>4EF</td>
+          <td>Sensor3</td>
+          <td>10/10/2026</td>
+          <td>03:45</td>
+          <td>Muito Acima da margem segura</td>
+        </tr>
+      </table>
+      `;
+}
+}
 
-  function mostrarAlertas() {
-    let tabela = document.getElementById("alertas");
-    let camara = document.getElementById("camara").value;
+document.getElementById("camara").onchange = mostrarAlertas;
 
-    tabela.innerHTML = "";
-
-    // Adiciona uma linha na tabela com os dados do alerta
-    for (let i = 0; i < camaras.length; i++) {
-      if (camara == "Todas" || camara == camaras[i]) {
-        tabela.innerHTML += `
-          <tr>
-            <td>${temperaturas[i]}</td>
-            <td>${camaras[i]}</td>
-            <td>${sensores[i]}</td>
-            <td>${datas[i]}</td>
-            <td>${horarios[i]}</td>
-            <td>${descricoes[i]}</td>
-          </tr>`;
-      }
-    }
-  }
-
-  // Exeecuta a função quando a pessoa muda a camara selecionada
-  document.getElementById("camara").onchange = mostrarAlertas;
-
-  // Mostra os alertas assim que a página 
-  mostrarAlertas();
+mostrarAlertas();
 </script>
 </body>
 </html>

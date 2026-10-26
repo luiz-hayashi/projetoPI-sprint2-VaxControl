@@ -1,51 +1,45 @@
-/* Estilo da parte principal da pagina */
 main {
   flex: 1;
+  min-height: 100vh;
   padding: 30px 24px;
   background: #f4f8fb;
   font-family: Arial, sans-serif;
 }
 
-/* Estilo do título alertas */
 h1 {
   text-align: center;
   color: #193c70;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
 }
 
-/* posiciona os filtros do lado direito */
 .filtros {
   text-align: right;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-/* Estilo das listas de opcoes */
 select {
   padding: 6px;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 5px;
   background: white;
 }
 
-/* estilo da tabela inteira */
 table {
   width: 100%;
-  background: white;
   border-collapse: collapse;
+  background: white;
+  text-align: center;
 }
 
-/* Estilo dos titulos das colunas */
 th {
   background: #eee;
   padding: 10px 5px;
   font-weight: normal;
 }
 
-/* Estilo das informacoes dos alertas */
 td {
   background: #f6c9cd;
-  border: 1px solid #d88b91;
+  border: 1px solid #ed9ca5;
   padding: 5px;
-  text-align: center;
   font-size: 12px;
 }
