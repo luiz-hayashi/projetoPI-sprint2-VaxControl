@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAXControl - Fale Conosco</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Cabeçalho / Navbar -->
+        <header class="navbar">
+            <div class="logo">
+                <span class="vax">VAX</span><span class="control">Control</span>
+            </div>
+            
+            <ul class="nav-links">
+                <li><a href="#">Quem nós somos</a></li>
+                <li><a href="#">Calculadora Financeira</a></li>
+                <li><a href="#" class="active">Fale conosco</a></li>
+            </ul>
+
+            <div class="nav-buttons">
+                <button type="button" class="btn-client">Já sou cliente</button>
+                <button type="button" class="btn-register">Cadastre-se</button>
+            </div>
+        </header>
+
+        <!-- Conteúdo Principal -->
+        <main class="content">
+            <h1 class="title">Fale Conosco, Entre em contato</h1>
+            <p class="subtitle">Prencha o formulário abaixo e envie sua mensagem:</p>
+
+            <form class="form-box">
+                <!-- Linha superior de campos -->
+                <div class="form-row-top">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo ✍</label>
+                        <input type="text" id="nome" class="form-input" placeholder="Insira seu Nome">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">E-Mail 📧</label>
+                        <input type="email" id="email" class="form-input" placeholder="seuemail@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="telefone">Telefone 📞</label>
+                        <input type="tel" id="telefone" class="form-input" placeholder="(xx)xxxxx-xxxx">
+                    </div>
+                </div>
+
+                <!-- Linha inferior de campos -->
+                <div class="form-row-bottom">
+                    <!-- Seletor de Assunto -->
+                    <div class="subject-col">
+                        <label>Assunto</label>
+                        <div class="custom-select-container">
+                            <div class="select-header">
+                                <span>Selecione um Assunto</span>
+                                <span class="arrow-icon">&#8595;</span>
+                            </div>
+                            <ul class="select-options">
+                                <li class="option-item">Problemas técnicos</li>
+                                <li class="option-item">Monitoramento de temperatura</li>
+                                <li class="option-item">Problemas com gráficos e relatórios</li>
+                                <li class="option-item">Acesso à conta</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Campo de Mensagem -->
+                    <div class="message-col">
+                        <label for="mensagem">Mensagem 💬</label>
+                        <textarea id="mensagem" class="message-textarea" placeholder="Digite aqui sua mensagem..."></textarea>
+                    </div>
+                </div>
+            </form>
+        </main>
+    </div>
+</body>
+</html>
