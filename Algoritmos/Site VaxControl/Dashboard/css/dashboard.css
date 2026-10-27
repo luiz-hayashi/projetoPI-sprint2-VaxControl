@@ -168,6 +168,9 @@
     border-radius: 10px;
     margin: 10px;
     padding: 10px 30px;
+    border: 1px solid #e0e0e0;
+    position: relative;
+    padding-right: 120px;
 }
 
 /* card de alerta sensor  */
@@ -200,8 +203,12 @@
     font-size: 10px;
     font-family: 'Inter', sans-serif;
     font-weight: lighter;
-    margin: 0;
+    margin: 2px 0px;
     font-size: 0.9rem;
+}
+
+.detalhes {
+    color: #353535;
 }
 
 .alinhar-textos-card {
@@ -210,21 +217,11 @@
     justify-content: center;
 }
 
-.card-alerta {
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 15px;
-    border: 1px solid #e0e0e0;
-    position: relative;
-    padding-right: 120px;
-}
-
 .alinhar-data {
     position: absolute;
     right: 20px;
-    bottom: 20px;
+    bottom: 10px;
 }
-
 
 /* divisoria da dashboard  */
 .box-dashboard {
