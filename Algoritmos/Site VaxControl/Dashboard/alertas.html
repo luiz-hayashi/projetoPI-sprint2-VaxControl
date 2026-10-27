@@ -16,6 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
+
 <body>
   <div class="container-body">
     <nav class="navegacao">
@@ -44,44 +45,49 @@
         <img src="dashboard-img/alerta.png" alt="icone de alertas">
         <span>Alertas</span>
       </a>
+
+      <a class="item-menu opcao-sair" href="../index.html">
+        <img src="dashboard-img/sair.png" alt="icone de sair">
+        <span>Sair</span>
+      </a>
     </nav>
-<main>
+    <main>
 
- <main>
-  <h1>Alertas</h1>
+      <main>
+        <h1>Alertas</h1>
 
-  <div class="filtros">
-    <select id="camara">
-      <option value="Todas">Câmara</option>
-      <option value="2AB">2AB</option>
-      <option value="3DC">3DC</option>
-    </select>
+        <div class="filtros">
+          <select id="camara">
+            <option value="Todas">Câmara</option>
+            <option value="2AB">2AB</option>
+            <option value="3DC">3DC</option>
+          </select>
 
-    <select id="horario">
-      <option value="24">24 Horas</option>
-      <option value="12">12 Horas</option>
-    </select>
-  </div>
+          <select id="horario">
+            <option value="24">24 Horas</option>
+            <option value="12">12 Horas</option>
+          </select>
+        </div>
 
-  <div id="mensagem"></div>
-</main>
+        <div id="mensagem"></div>
+      </main>
 
-</main>
+    </main>
 
-  <script>
-    // Função que mostra os alertas
-    function mostrarAlertas() {
+    <script>
+      // Função que mostra os alertas
+      function mostrarAlertas() {
 
-      // Pega a câmara escolhida no select
-      let camara = document.getElementById("camara").value;
+        // Pega a câmara escolhida no select
+        let camara = document.getElementById("camara").value;
 
-      // Pega a div onde os alertas serão mostrados
-      let mensagem = document.getElementById("mensagem");
+        // Pega a div onde os alertas serão mostrados
+        let mensagem = document.getElementById("mensagem");
 
-      // Se escolher todas as câmaras, mostra os dois alertas
-      if (camara == "Todas") {
+        // Se escolher todas as câmaras, mostra os dois alertas
+        if (camara == "Todas") {
 
-        mensagem.innerHTML = `
+          mensagem.innerHTML = `
           <table>
             <tr>
               <th>Temperatura</th>
@@ -112,10 +118,10 @@
           </table>
         `;
 
-      // Se escolher a câmara 2AB, mostra somente seu alerta
-      } else if (camara == "2AB") {
+          // Se escolher a câmara 2AB, mostra somente seu alerta
+        } else if (camara == "2AB") {
 
-        mensagem.innerHTML = `
+          mensagem.innerHTML = `
           <table>
             <tr>
               <th>Temperatura</th>
@@ -137,10 +143,10 @@
           </table>
         `;
 
-      // Se escolher a câmara 3DC, mostra somente seu alerta
-      } else if (camara == "3DC") {
+          // Se escolher a câmara 3DC, mostra somente seu alerta
+        } else if (camara == "3DC") {
 
-        mensagem.innerHTML = `
+          mensagem.innerHTML = `
           <table>
             <tr>
               <th>Temperatura</th>
@@ -161,18 +167,20 @@
             </tr>
           </table>
         `;
+        }
       }
-    }
 
-    // Executa a função quando a câmara for alterada
-    document.getElementById("camara").onchange = mostrarAlertas;
+      // Executa a função quando a câmara for alterada
+      document.getElementById("camara").onchange = mostrarAlertas;
 
-    // Mostra os alertas assim que a página abrir
-    mostrarAlertas();
-  </script>
+      // Mostra os alertas assim que a página abrir
+      mostrarAlertas();
+    </script>
 
 </body>
+
 </html>
 
 </main>
+
 </html>
