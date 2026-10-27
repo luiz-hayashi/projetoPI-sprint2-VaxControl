@@ -53,7 +53,7 @@
         <img src="dashboard-img/sair.png" alt="icone de sair">
         <span>Sair</span>
       </a>
-      
+
     </nav>
     <main>
       <!-- divisoria do nome do usuario e foto  -->
@@ -131,7 +131,7 @@
           </div>
         </div>
 
-        <!-- divisoria de alertas -->
+        <!-- Divisória de Alertas Recentes -->
         <div class="box-alertas-recentes">
           <p class="titulo-alerta">Alertas recentes</p>
 
@@ -139,20 +139,28 @@
             <p class="titulo-card-camara">Câmara 2AB</p>
             <p class="texto-card">Temperatura: 9.5°C</p>
             <p class="texto-card">Acima da faixa segura</p>
+            <span class="alinhar-data">
+              <p class="texto-card">12/12/2026 - 12:45</p>
+            </span>
           </div>
-
           <div class="card-alerta sensor">
-            <p class="titulo-card-sensor">câmara 2AB | Sensor 01</p>
-            <p class="texto-card">Sensor mudou para status "inativo"</p>
-            <p class="texto-card">Sensor localizado na camâra 2AB</p>
+              <p class="titulo-card-sensor">Câmara 2AB | Sensor 01</p>
+              <p class="texto-card">Sensor mudou para status "inativo"</p>
+              <p class="texto-card">Sensor localizado na câmara 2AB</p>
+              <span class="alinhar-data">
+              <p class="texto-card">12/12/2026 - 12:45</p>
+            </span>
           </div>
-
           <div class="card-alerta camara">
             <p class="titulo-card-camara">Câmara 2AB</p>
-            <p class="texto-card">Temperatura:1,1°C</p>
+            <p class="texto-card">Temperatura: 1,1°C</p>
             <p class="texto-card">Abaixo da faixa segura.</p>
+            <span class="alinhar-data">
+              <p class="texto-card">12/12/2026 - 12:45</p>
+            </span>
           </div>
         </div>
+
       </div>
     </main>
   </div>
@@ -164,13 +172,12 @@
   // vetor que add as metricas do eixo X
   // grafico 1
   const labels = [
+    '12:20',
+    '12:25',
     '12:30',
     '12:35',
     '12:40',
     '12:45',
-    '12:50',
-    '12:55',
-    '13:00'
   ];
 
   // vetores, receber as metricas do eixo X e colocar titulo, além estilizar a cor do grafico e quais dados serão mostrados
@@ -189,7 +196,7 @@
       borderColor: 'rgb(0, 255, 255)',
       data: [4, 3, 5, 6, 3, 1, -1],
     }]
-    
+
   };
 
   // mudança do tipo e recebimento dos dados
