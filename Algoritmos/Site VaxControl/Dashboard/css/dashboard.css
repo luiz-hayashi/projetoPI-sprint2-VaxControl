@@ -5,16 +5,7 @@
 
 /* ----------- PAGINA DASHBOARD  ------------------*/
 
-/* caixa de info -- "Fixa segura de 8º graus"*/
-.box-info-status {
-    margin: 0px 20px;
-    background-color: #cdebddbe;
-    border-radius: 13px;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    border: #b1d6c5 solid 2px;
-}
+/* ----------- CARD DE STATUS ----------- */
 
 .status-info {
     margin-top: 8px;
@@ -32,19 +23,57 @@
     }
 
     .texto-status {
-        color: #718296;
+        color: #424242;
     }
 }
 
 
-/* bolinha de status  */
-.bola-verde {
-    background-color: #28A779;
-    border-radius: 25px;
-    padding: 2px 13px;
-    margin-left: 15px;
+/* card de metricas alertando o limite ultrapassado: menor que 2°C ou maior que 8ºC*/
+.box-info-status.perigo {
+    background-color: #fac9c9be; 
+    border: #fca5a5 solid 2px;  
+}
+/* estado seguro: 2°C a 8°C*/
+.box-info-status.seguro {
+    background-color: #cdebddbe; 
+    border: #b1d6c5 solid 2px;
 }
 
+/* bolinha status */
+.bola-status {
+    border-radius: 25px;
+    padding: 12px;
+    margin: 15px 0px 20px 0px;
+}
+
+/* status bolinhas - CORES  */
+.box-info-status.perigo .bola-status {
+    background-color: #ef4444;   
+}
+
+.box-info-status.seguro .bola-status {
+    background-color: #28A779;  
+}
+
+/* container para juntar as legendas */
+.container-legendas {
+    display: flex;
+    flex-direction: row;  
+    justify-content: space-between;
+    gap: 15px; 
+    margin: 15px 20px;   
+}
+
+/* CAIXA DE STATUS / METRICA */
+.box-info-status {
+    flex: 1;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;  
+    border-radius: 13px;    
+    padding: 5px 15px;
+    margin: 0;   
+}
 
 /* divisoria dos cards kpi */
 .cards-kpi {

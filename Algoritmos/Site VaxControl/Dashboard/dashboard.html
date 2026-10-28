@@ -66,14 +66,42 @@
       </div>
 
       <!-- divisoria onde terá uma caixa de informação -->
-      <div class="box-info-status">
-        <div class="status-info">
-          <span class="bola-verde"></span>
+
+      <div class="container-legendas">
+
+        <!-- Card Frio -->
+        <div class="box-info-status perigo">
+          <div class="status-info">
+            <div class="bola-status"></div>
+          </div>
+          <div class="box-texto-status">
+            <p class="titulo-status">Menor que 2°C</p>
+            <p class="texto-status">Estado de atenção! As vacinas podem estar em perigo</p>
+          </div>
         </div>
-        <div class="box-texto-status">
-          <p class="titulo-status">Faixa segura: 2°C a 8°C</p>
-          <p class="texto-status">O sistema avisa quando a temperatura sai do limite.</p>
+
+        <!-- Card Seguro -->
+        <div class="box-info-status seguro">
+          <div class="status-info">
+            <div class="bola-status"></div>
+          </div>
+          <div class="box-texto-status">
+            <p class="titulo-status">Faixa segura: 2°C a 8°C</p>
+            <p class="texto-status">O sistema avisa quando a temperatura sai do limite.</p>
+          </div>
         </div>
+
+        <!-- Card Calor -->
+        <div class="box-info-status perigo">
+          <div class="status-info">
+            <div class="bola-status"></div>
+          </div>
+          <div class="box-texto-status">
+            <p class="titulo-status">Maior que 8°C</p>
+            <p class="texto-status">Estado de atenção! As vacinas podem estar em perigo</p>
+          </div>
+        </div>
+
       </div>
 
       <!-- divisoria para as kpis  -->
@@ -102,7 +130,7 @@
               <div class="numero-kpi-temp">1°C</div>
               <a class="animacao" onclick="window.location.href='detalhesCamara.html'" class="kpi-info">Câmara 2AB</a>
               <a class="animacao" onclick="window.location.href='detalheSensores.html'" class="kpi-info">Sensor1</a>
-              <div class="kpi-data-hora"> 
+              <div class="kpi-data-hora">
                 <span>10/10/2026</span>
                 <span>12:45</span>
               </div>
@@ -112,10 +140,10 @@
             <!-- divisor / coluna da Direita (MAX) -->
             <div class="kpi-coluna">
               <span class="kpi-subtitulo">MAX</span>
-              <div class="numero-kpi-temp">10°C</div> 
+              <div class="numero-kpi-temp">10°C</div>
               <a class="animacao" onclick="window.location.href='camaras.html'" class="kpi-info">Câmara 3DC</a>
               <a class="animacao" onclick="window.location.href='sensores.html'" class="kpi-info">Sensor2</a>
-              <div class="kpi-data-hora"> 
+              <div class="kpi-data-hora">
                 <span>10/10/2026</span>
                 <span>12:45</span>
               </div>
@@ -147,8 +175,8 @@
             <p class="dashboard-titulo">Quebra de Margem Segura</p>
             <select class="seletor-camara" id="slt_camaras">
               <option value="1">Última Hora ↓</option>
-            <option value="2" selected>Últimas 24 horas ↓</option>
-            <option value="3">Ontem ↓</option>
+              <option value="2" selected>Últimas 24 horas ↓</option>
+              <option value="3">Ontem ↓</option>
             </select>
           </div>
 
