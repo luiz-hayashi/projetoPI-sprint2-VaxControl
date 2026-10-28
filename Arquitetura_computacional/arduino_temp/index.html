@@ -8,14 +8,12 @@
 
 <body>
 
-    <h1>Graphics</h1>
-    <div style="display: flex;">
+    <h1>Gráfico de monitoramento de temperatura</h1>
+    <div style="display: flex; justify-content: center; align-items: center;">
         <div style="width: 50%;">
             <canvas id="sensorAnalogico"></canvas>
         </div>
-        <div style="width: 50%;">
-            <canvas id="sensorDigital"></canvas>
-        </div>
+
     </div>
 
     <script>
@@ -44,31 +42,6 @@
             }
         });
 
-        var sensorDigital = new Chart(document.getElementById('sensorDigital').getContext('2d'), {
-            type: 'line',
-            data: {
-                datasets: [{
-                    label: 'Digital',
-                    borderColor: '#63B1BC',
-                    backgroundColor: '#0762C8'
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        beginAtZero: true
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: '(0-1)'
-                        },
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-
         var paginacao = {};
         var tempo = {};
 
@@ -94,7 +67,7 @@
                         }
 
                         grafico.data.labels.push(tempo[endpoint]++);
-                        grafico.data.datasets[0].data.push(parseFloat(valor));
+                        grafico.data.datasets[0].data.push(parseFloat(valor-19));
                         grafico.update();
                     });
                 })
@@ -103,7 +76,6 @@
 
         setInterval(() => {
             obterDados(sensorAnalogico, 'analogico');
-            obterDados(sensorDigital, 'digital');
         }, 1000);
 
     </script>

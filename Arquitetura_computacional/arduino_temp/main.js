@@ -48,7 +48,7 @@ const serial = async (
 
     // processa os dados recebidos do Arduino
     arduino.pipe(new serialport.ReadlineParser({ delimiter: '\r\n' })).on('data', async (data) => {
-        console.log(data);
+      //  console.log(data-19);
         const valores = data.split(';');
         const sensorAnalogico = parseFloat(valores[0]);
 
@@ -61,9 +61,9 @@ const serial = async (
             // este insert irá inserir os dados na tabela "medida"
             await poolBancoDados.execute(
                 'INSERT INTO leitura (temperatura,idsensor) VALUES (?,?)',
-                [sensorAnalogico, 1]
+                [sensorAnalogico-19, 1]
             );
-            console.log("valores inseridos no banco: " + sensorAnalogico);
+            console.log("valores inseridos no banco: " +( sensorAnalogico-19).toFixed(2));
 
         }
 
