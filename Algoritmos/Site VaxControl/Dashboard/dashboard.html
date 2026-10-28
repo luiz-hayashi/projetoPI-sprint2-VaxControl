@@ -87,18 +87,45 @@
         </div>
 
         <div class="kpi">
-          <p class="kpi-titulo">PICO DE TEMPERATURA</p>
-          <p class="numero-kpi-temp">1° C</p>
-          <div class="kpi-info">
-            <p>10/10/2026</p>
-            <p>Câmara 2AB</p>
-            <p>12:45</p>
+          <h2 class="kpi-titulo">MAIOR VARIAÇÃO</h2>
+          <select class="selecionar-periodo" id="slt_periodo">
+            <option value="1" selected>Última Hora ↓</option>
+            <option value="2">Últimas 24 horas</option>
+            <option value="3">Ontem</option>
+          </select>
+
+          <!-- alinhar as colunas da KPI (do min e do max) -->
+          <div class="kpi-alinhamento">
+            <!-- divisor / coluna da Esquerda (MIN) -->
+            <div class="kpi-coluna">
+              <span class="kpi-subtitulo">MIN</span>
+              <div class="numero-kpi-temp">1°C</div>
+              <span class="kpi-info">Câmara 2AB</span>
+              <span class="kpi-info">Sensor1</span>
+              <div class="kpi-data-hora">
+                <span>10/10/2026</span>
+                <span>12:45</span>
+              </div>
+            </div>
+            <!-- divisor (linha cinza da vertical) -->
+            <span class="kpi-divisor"></span>
+            <!-- divisor / coluna da Direita (MAX) -->
+            <div class="kpi-coluna">
+              <span class="kpi-subtitulo">MAX</span>
+              <div class="numero-kpi-temp">10°C</div> 
+              <span class="kpi-info">Câmara 3DC</span>
+              <span class="kpi-info">Sensor2</span>
+              <div class="kpi-data-hora">
+                <span>10/10/2026</span>
+                <span>12:45</span>
+              </div>
+            </div>
           </div>
         </div>
 
         <div class="kpi">
-          <p class="kpi-titulo">QUANTIDADE DE SENSORES</p>
-          <p class="numero-kpi-sensor">16</p>
+          <p class="kpi-titulo">QUANTIDADE DE ALERTAS</p>
+          <p class="numero-kpi-alertas">16</p>
           <div class="kpi-sensor-footer">
             <div>
               <p>Sensores ativos: 13</p>
@@ -117,11 +144,11 @@
         <!-- aqui está a dashboard  -->
         <div class="box-dashboard">
           <div class="box-alinhar">
-            <p class="dashboard-titulo">Quantidade de alertas por câmara</p>
+            <p class="dashboard-titulo">Quebra de Margem Segura</p>
             <select class="seletor-camara" id="slt_camaras">
-              <option selected value="1">Últimas 24 horas</option>
-              <option value="2">Últimas 4 horas</option>
-              <option value="3">Última hora</option>
+              <option selected value="1">Todas as câmeras</option>
+              <option value="2">Câmara 1AB</option>
+              <option value="3">Câmara 2AB</option>
             </select>
           </div>
 

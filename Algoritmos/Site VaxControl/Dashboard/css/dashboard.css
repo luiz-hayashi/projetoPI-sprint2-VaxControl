@@ -8,7 +8,7 @@
 .box-info-status {
     margin: 0px 20px;
     background-color: #cdebddbe;
-    border-radius: 12px;
+    border-radius: 13px;
     padding: 10px;
     display: flex;
     flex-direction: row;
@@ -69,7 +69,7 @@
 /* titulo de todas as kpis  */
 .kpi-titulo {
     margin: 0 0 15px 0;
-    font-size: 13px;
+    font-size: 20px;
     color: #718096;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
@@ -77,14 +77,6 @@
 
 /* numeros das KPIs  */
 .numero-kpi-camara {
-    font-size: 42px;
-    text-align: center;
-    margin: auto 0;
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-}
-
-.numero-kpi-sensor {
     font-size: 42px;
     text-align: center;
     margin: auto 0;
@@ -101,11 +93,86 @@
     color: #ef4444;
 }
 
+.numero-kpi-alertas {
+    font-size: 42px;
+    text-align: center;
+    margin: auto 0;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    color: blue;
+}
+
+
+
+/* KPI DE VARIAÇÃO MIN E MAX  */
+.selecionar-periodo {
+    background-color: white;
+    padding: 5px 0px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0px 2px 0px 0px #d4d7da;
+    font-weight: 700;
+    font-size: 10px;
+    max-width: 200px;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* alinhamento da KPI  */
+.kpi-alinhamento {
+    display: flex;
+    align-items: center;
+}
+
+.kpi-subtitulo {
+    font-size: 18px;
+    color: #718096;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+}
+
+
+/* Colunas MIN e MAX */
+.kpi-coluna {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.kpi-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 13px;
+    color: #414141;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Linha Divisória Central */
+.kpi-divisor {
+    width: 1px;
+    background-color: #dcdde1;
+    height: 80px;
+    margin: 0 10px;
+}
+
+.kpi-data-hora {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 700px;
+    font-size: 13px;
+    color: #535353;
+    margin-top: 15px;
+}
+
 
 /* informações adicionais de cada kpis  */
 .kpi-camara {
     margin-top: auto;
-    font-size: 11px;
+    font-size: 13px;
 
     a {
         color: #535353;
@@ -114,19 +181,10 @@
     }
 }
 
-.kpi-info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: auto;
-    font-size: 11px;
-    color: #5a5a5a;
-    font-family: 'Inter', sans-serif;
-}
-
 .kpi-sensor-footer {
     display: flex;
     justify-content: space-between;
-    font-size: 11px;
+    font-size: 13px;
     color: #5a5a5a;
     align-items: flex-end;
     font-family: 'Inter', sans-serif;
