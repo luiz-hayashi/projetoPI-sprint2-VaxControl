@@ -89,33 +89,68 @@
 
           mensagem.innerHTML = `
           <table>
-            <tr>
-              <th>Temperatura</th>
-              <th>Câmara</th>
-              <th>Sensor</th>
-              <th>Data</th>
-              <th>Horário</th>
-              <th>Descrição</th>
-            </tr>
+ <tr>
+    <th>Temperatura</th>
+    <th>Câmara</th>
+    <th>Sensor</th>
+    <th>Data</th>
+    <th>Horário</th>
+    <th>Descrição</th>
+  </tr>
 
-            <tr>
-              <td>1 °C</td>
-              <td>2AB</td>
-              <td>Sensor1</td>
-              <td>10/10/2026</td>
-              <td>12:45</td>
-              <td>Sensor mudou para status inativo</td>
-            </tr>
+  <tr>
+    <td>1 °C</td>
+    <td>2AB</td>
+    <td>Sensor01AB</td>
+    <td>10/10/2026</td>
+    <td>12:45</td>
+    <td>Temperatura abaixo da margem segura</td>
+    </tr>
+    
+    <tr>
+      <td>9.5 °C</td>
+      <td>3DC</td>
+      <td>Sensor02DC</td>
+      <td>10/10/2026</td>
+      <td>12:40</td>
+      <td>Temperatura acima da margem segura</td>
+      </tr>
+      
+      <tr>
+        <td>Inativo</td>
+        <td>2AB</td>
+        <td>Sensor04AB</td>
+        <td>10/10/2026</td>
+        <td>12:38</td>
+        <td>Sensor mudou para status "Inativo"</td>
+      </tr>
+      <tr>
+        <td>1 °C</td>
+        <td>4VX</td>
+        <td>Sensor01VX</td>
+    <td>10/10/2026</td>
+    <td>12:35</td>
+    <td>Temperatura abaixo da margem segura</td>
+  </tr>
 
-            <tr>
-              <td>10 °C</td>
-              <td>3DC</td>
-              <td>Sensor2</td>
-              <td>10/10/2026</td>
-              <td>01:20</td>
-              <td>Acima da margem segura</td>
-            </tr>
-          </table>
+  <tr>
+    <td>9 °C</td>
+    <td>1FG</td>
+    <td>Sensor01FG</td>
+    <td>10/10/2026</td>
+    <td>12:30</td>
+    <td>Temperatura acima da margem segura</td>
+  </tr>
+
+  <tr>
+    <td>9 °C</td>
+    <td>3DC</td>
+    <td>Sensor01DC</td>
+    <td>10/10/2026</td>
+    <td>12:30</td>
+    <td>Temperatura acima da margem segura</td>
+  </tr>
+            </table>
         `;
 
           // Se escolher a câmara 2AB, mostra somente seu alerta

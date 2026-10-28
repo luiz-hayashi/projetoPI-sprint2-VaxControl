@@ -110,7 +110,7 @@
           <p class="kpi-titulo">CÂMARAS MONITORADAS</p>
           <p class="numero-kpi-camara">04</p>
           <div class="kpi-camara">
-            <a class="animacao" href="camaras.html">visualizar todas as câmaras</a>
+            <a class="animacao" href="camaras.html">Visualizar câmaras</a>
           </div>
         </div>
 
@@ -129,7 +129,7 @@
               <span class="kpi-subtitulo">MIN</span>
               <div class="numero-kpi-temp">1°C</div>
               <a class="animacao" onclick="window.location.href='detalhesCamara.html'" class="kpi-info">Câmara 2AB</a>
-              <a class="animacao" onclick="window.location.href='detalheSensores.html'" class="kpi-info">Sensor1</a>
+              <a class="animacao" onclick="window.location.href='detalheSensores.html'" class="kpi-info">Sensor01AB</a>
               <div class="kpi-data-hora">
                 <span>10/10/2026</span>
                 <span>12:45</span>
@@ -140,9 +140,9 @@
             <!-- divisor / coluna da Direita (MAX) -->
             <div class="kpi-coluna">
               <span class="kpi-subtitulo">MAX</span>
-              <div class="numero-kpi-temp">10°C</div>
+              <div class="numero-kpi-temp">9.5°C</div>
               <a class="animacao" onclick="window.location.href='camaras.html'" class="kpi-info">Câmara 3DC</a>
-              <a class="animacao" onclick="window.location.href='sensores.html'" class="kpi-info">Sensor2</a>
+              <a class="animacao" onclick="window.location.href='sensores.html'" class="kpi-info">Sensor02DC</a>
               <div class="kpi-data-hora">
                 <span>10/10/2026</span>
                 <span>12:45</span>
@@ -155,12 +155,8 @@
           <p class="kpi-titulo">QUANTIDADE DE ALERTAS</p>
           <p class="numero-kpi-alertas">16</p>
           <div class="kpi-sensor-footer">
-            <div>
-              <p>Sensores ativos: 13</p>
-              <p>Sensores inativos: 3</p>
-            </div>
             <div class="sensor-link">
-              <a class="animacao" href="sensores.html">Visualizar sensores</a>
+              <a class="animacao" href="sensores.html">Visualizar alertas</a>
             </div>
           </div>
         </div>
@@ -172,7 +168,7 @@
         <!-- aqui está a dashboard  -->
         <div class="box-dashboard">
           <div class="box-alinhar">
-            <p class="dashboard-titulo">Quebra de Margem Segura</p>
+            <p class="dashboard-titulo">Quantidade de alertas por câmara</p>
             <select class="seletor-camara" id="slt_camaras">
               <option value="1">Última Hora ↓</option>
               <option value="2" selected>Últimas 24 horas ↓</option>
@@ -185,33 +181,33 @@
             <canvas id="grafico-variacao" class="graficos"></canvas>
           </div>
         </div>
-
+        
         <!-- Divisória de Alertas Recentes -->
         <div class="box-alertas-recentes">
           <p class="titulo-alerta">Alertas recentes</p>
-
+          
           <div class="card-alerta camara">
             <p class="titulo-card-camara">Câmara 2AB</p>
-            <p class="texto-card">Temperatura: 9.5°C</p>
-            <p class="texto-card detalhes ">Acima da faixa segura</p>
-            <span class="alinhar-data">
-              <p class="texto-card detalhes ">12/12/2026 - 12:45</p>
-            </span>
-          </div>
-          <div class="card-alerta sensor">
-            <p class="titulo-card-sensor">Câmara 2AB | Sensor 01</p>
-            <p class="texto-card">Sensor mudou para status "inativo"</p>
-            <p class="texto-card detalhes ">Sensor localizado na câmara 2AB</p>
-            <span class="alinhar-data">
-              <p class="texto-card detalhes">12/12/2026 - 12:45</p>
-            </span>
-          </div>
-          <div class="card-alerta camara">
-            <p class="titulo-card-camara">Câmara 2AB</p>
-            <p class="texto-card">Temperatura: 1,1°C</p>
+            <p class="texto-card">Temperatura: 1°C</p>
             <p class="texto-card detalhes">Abaixo da faixa segura.</p>
             <span class="alinhar-data">
               <p class="texto-card detalhes">12/12/2026 - 12:45</p>
+            </span>
+          </div>
+          <div class="card-alerta camara">
+            <p class="titulo-card-camara">Câmara 3DC</p>
+            <p class="texto-card">Temperatura: 9.5°C</p>
+            <p class="texto-card detalhes ">Acima da faixa segura</p>
+            <span class="alinhar-data">
+              <p class="texto-card detalhes ">12/12/2026 - 12:40</p>
+            </span>
+          </div>
+          <div class="card-alerta sensor">
+            <p class="titulo-card-sensor">Câmara 2AB - Sensor 04AB</p>
+            <p class="texto-card">Sensor mudou para status "inativo"</p>
+            <p class="texto-card detalhes ">Sensor localizado na câmara 2AB</p>
+            <span class="alinhar-data">
+              <p class="texto-card detalhes">12/12/2026 - 12:38</p>
             </span>
           </div>
         </div>
