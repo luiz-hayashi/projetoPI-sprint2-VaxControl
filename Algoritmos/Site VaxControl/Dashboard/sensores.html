@@ -59,62 +59,51 @@
           <img class="user foto-perfil" src="dashboard-img/perfil.png" alt="foto de perfil do usuario">
         </span>
       </div>
-      <div class="filtros">
-        <button class="botao-filtro">
-          Filtrar por: A-Z
-        </button>
-        <button class="botao-persquisar">
-        </button>
-        <input type="search" placeholder="Pesquisar..." class="pesquisa">
-      </div>
-      <div class="tabela-sensores">
-        <table>
+      
+      <div class = "container">
+        <table class="tabela-sensores">
           <thead>
-            <tr>
-              <th>Sensor</th>
-              <th>Status</th>
-              <th>Câmara</th>
-            </tr>
+            <th>Sensor</th>
+            <th>Status</th>
+            <th>Câmara</th>
+            <th>
+              <div class="filtros">
+                <button class="botao-filtro">
+                  Filtrar por: A-Z
+                </button>
+                <input type="search" placeholder="Pesquisar..." class="pesquisa">
+              </div>
+            </th>
           </thead>
 
           <tbody>
             <tr>
               <td>Sensor1</td>
               <td>
-                <img class="bolinha-verde"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR05WzniM2l9nP2sR0rwMC_FsS4nBenf57mNV8gs2bcAg&s=10"
-                  alt="">
+                <span class="status ativo"></span>
                 Ativo
               </td>
               <td>2AB</td>
               <td>
-                <a href="detalheSensores.html">
-                  <button class="botao-detalhes" type="button">
-                    Detalhes
-                </a>
+                <button class="botao-detalhes" onclick="window.location.href='detalheSensores.html'>Detalhes</button>
               </td>
             </tr>
 
-            <tr>
+            <tr>Detalhes
               <td>Sensor2</td>
               <td>
-                <img class="bolinha-vermelha"
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3TjbgsD6ZbO16zKy4Dq735ohs7Ok8gOmNAoiirPnyNQ&s=10"
-                  alt="">
+                <span class="status inativo"></span>
                 Inativo
               </td>
               <td>7AD</td>
               <td>
-                <a href="detalheSensores.html">
-
-                  <button class="botao-detalhes" type="button">
-                    Detalhes
-                </a>
+                  <button class="botao-detalhes" onclick="window.location.href='detalheSensores.html'>Detalhes</button>
               </td>
-            </tr>
+              </tr>
           </tbody>
         </table>
       </div>
+
     </main>
   </div>
 

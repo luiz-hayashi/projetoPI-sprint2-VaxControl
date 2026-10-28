@@ -1,12 +1,13 @@
 .main{
     flex: 1;
-    min-width: 0;
-    min-height: 100vh;
-    padding: 16px 10px;
     box-sizing: border-box;
     background-color: white;
     font-family: 'Inter', sans-serif;
     color: white;
+}
+
+.container {
+    margin: 10px;
 }
 
 .box-user{
@@ -29,66 +30,48 @@
     object-fit: contain;
 }
 
-.filtros{
+.filtros {
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
-    align-items: center;
-    gap: 6px;
-    width: 49%;
-    margin-left: 51%;
-    margin-bottom: 4px;
-    box-sizing: border-box;
-    padding-left: 20px;
+    gap: 30px;
 }
 
-.botao-filtro,
-.botao-pesquisar,
-.pesquisar{
-    height: 24px;
-    box-sizing: border-box;
-    border: 1px solid #d8dfe5;
-    border-radius: 6px;
-    background-color: #fff;
-    font-family: inherit;
+/* botao para filtrar camara  */
+.botao-filtro {
+    background-color: white;
+    padding: 5px 0px;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+    box-shadow: 0px 2px 0px 0px #d4d7da;
+    font-weight: 700;
+    font-size: 10px;
+    max-width: 200px;
+    flex: 1;
+    font-size: 15px;
+    text-align: center;
+}
+
+/* caixa de pesquisa  */
+.pesquisa {
+    flex: 1;
+    padding: 5px 0px;
+    text-align: center;
+    border: 2px solid #ccc;
+    box-shadow: 0px 2px 0px 0px #d4d7da;
+    background-color: white;
+    color: black;
+    font-weight: 700;
+    border-radius: 10px;
     font-size: 15px;
 }
 
-.botao-filtro{
-    height: 24px;
-    padding: 0 20px;
-    border: 1px solid #dce2e8;
-    border-radius: 6px;
-    background-color: #fff;
-    font-family: inherit;
-    font-size: 15px;
-    white-space: nowrap;
-}
 
-.botao-pesquisar{
-    width: 26px;
-    cursor: pointer;
-}
-
-.pesquisa{
-    width: 90px;
-    height: 24x;
-    padding: 0 8px;
-    border: 1px solid #fff;
-    border-radius: 6px;
-    box-sizing: border-box;
-}
-
-.tabela-sensores table{
-width: 100%;
-overflow-x: auto;
-}
-
-.tabela-sensores table{
+.tabela-sensores{
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
-    font-size: 12px;
-    color: #303b45;
+    font-size: 15px;
+    color: black;
 }
 
 .tabela-sensores th,
@@ -100,50 +83,32 @@ overflow-x: auto;
 }
 
 .tabela-sensores th{
-    font-size: 13px;
+    font-size: 20px;
     font-weight: 500;
-    border-bottom: 2px solid #60a3f0;
-    white-space: nowrap;
 }
 
-.tabela-sensores th:nth-child(1),
-.tabela-sensores td:nth-child(1){
-    width: 29%;
+.tabela-sensores tbody {
+    border-top: 2px solid #60a3f0;
 }
 
-.tabela-sensores th:nth-child(2),
-.tabela-sensores td:nth-child(2){
-    width: 22%;
+.status {
+    border-radius: 50px;
+    padding: 0px 11px;
+    margin-right: 10px;
 }
-
-.tabela-sensores th:nth-child(3),
-.tabela-sensores td:nth-child(3){
-    width: 20%;
+.ativo {
+    background-color: green;
 }
-
-.tabela-sensores th:nth-child(4),
-.tabela-sensores td:nth-child(4){
-    width: 29%;
-}
-
-
-.bolinha-verde,
-.bolinha-vermelha{
-    width: 9px;
-    height: 9px;
-    object-fit: contain;
-    vertical-align: middle;
-    margin-right: 3px;
+.inativo {
+    background-color: red;
 }
 
 .botao-detalhes{
-    padding: 3px 8px;
-    border: 1px solid #ddd;
-    border-radius: 5px; 
-    background-color: #fff;
-    color: #333;
-    font-family: inherit;
-    font-size: 9px;
-    cursor: pointer;
-    white-space: nowrap;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 2px solid #ccc;
+    background: white;
+    color: black;
+    font-weight: bold;
+    box-shadow: 0px 2px 0px 0px #d4d7da;
 }
