@@ -117,11 +117,11 @@
         <!-- aqui está a dashboard  -->
         <div class="box-dashboard">
           <div class="box-alinhar">
-            <p class="dashboard-titulo">Quebra de Margem Segura</p>
+            <p class="dashboard-titulo">Quantidade de alertas por câmara</p>
             <select class="seletor-camara" id="slt_camaras">
-              <option selected value="1">Todas as câmeras</option>
-              <option value="2">Câmara 1AB</option>
-              <option value="3">Câmara 2AB</option>
+              <option selected value="1">Últimas 24 horas</option>
+              <option value="2">Últimas 4 horas</option>
+              <option value="3">Última hora</option>
             </select>
           </div>
 
@@ -172,12 +172,10 @@
   // vetor que add as metricas do eixo X
   // grafico 1
   const labels = [
-    '12:20',
-    '12:25',
-    '12:30',
-    '12:35',
-    '12:40',
-    '12:45',
+    'Câmara 2AB',
+    'Câmara 3DC',
+    'Câmara 1FG',
+    'Câmara 4VX'
   ];
 
   // vetores, receber as metricas do eixo X e colocar titulo, além estilizar a cor do grafico e quais dados serão mostrados
@@ -185,16 +183,10 @@
   const data = {
     labels: labels,
     datasets: [{
-      label: 'Camara 1AB',
+      label: 'Alertas',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: [1, 2, 5, 4, 3, 4, 5],
-    },
-    {
-      label: 'Camara 2AB',
-      backgroundColor: 'rgb(0, 255, 255)',
-      borderColor: 'rgb(0, 255, 255)',
-      data: [4, 3, 5, 6, 3, 1, -1],
+      data: [6, 3, 2, 4],
     }]
 
   };
@@ -202,9 +194,9 @@
   // mudança do tipo e recebimento dos dados
   // grafico 1
   const config_line = {
-    type: 'line',
+    type: 'bar',
     data: data,
-    options: {}
+
   };
 
   // mostrar grafico de temperatura em linha
