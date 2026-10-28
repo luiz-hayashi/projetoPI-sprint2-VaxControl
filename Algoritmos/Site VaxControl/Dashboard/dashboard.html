@@ -82,7 +82,7 @@
           <p class="kpi-titulo">CÂMARAS MONITORADAS</p>
           <p class="numero-kpi-camara">04</p>
           <div class="kpi-camara">
-            <a href="camaras.html">visualizar todas as câmaras</a>
+            <a class="animacao" href="camaras.html">visualizar todas as câmaras</a>
           </div>
         </div>
 
@@ -90,8 +90,8 @@
           <h2 class="kpi-titulo">MAIOR VARIAÇÃO</h2>
           <select class="selecionar-periodo" id="slt_periodo">
             <option value="1" selected>Última Hora ↓</option>
-            <option value="2">Últimas 24 horas</option>
-            <option value="3">Ontem</option>
+            <option value="2">Últimas 24 horas ↓</option>
+            <option value="3">Ontem ↓</option>
           </select>
 
           <!-- alinhar as colunas da KPI (do min e do max) -->
@@ -100,9 +100,9 @@
             <div class="kpi-coluna">
               <span class="kpi-subtitulo">MIN</span>
               <div class="numero-kpi-temp">1°C</div>
-              <span class="kpi-info">Câmara 2AB</span>
-              <span class="kpi-info">Sensor1</span>
-              <div class="kpi-data-hora">
+              <a class="animacao" onclick="window.location.href='detalhesCamara.html'" class="kpi-info">Câmara 2AB</a>
+              <a class="animacao" onclick="window.location.href='detalheSensores.html'" class="kpi-info">Sensor1</a>
+              <div class="kpi-data-hora"> 
                 <span>10/10/2026</span>
                 <span>12:45</span>
               </div>
@@ -113,9 +113,9 @@
             <div class="kpi-coluna">
               <span class="kpi-subtitulo">MAX</span>
               <div class="numero-kpi-temp">10°C</div> 
-              <span class="kpi-info">Câmara 3DC</span>
-              <span class="kpi-info">Sensor2</span>
-              <div class="kpi-data-hora">
+              <a class="animacao" onclick="window.location.href='camaras.html'" class="kpi-info">Câmara 3DC</a>
+              <a class="animacao" onclick="window.location.href='sensores.html'" class="kpi-info">Sensor2</a>
+              <div class="kpi-data-hora"> 
                 <span>10/10/2026</span>
                 <span>12:45</span>
               </div>
@@ -132,7 +132,7 @@
               <p>Sensores inativos: 3</p>
             </div>
             <div class="sensor-link">
-              <a href="sensores.html">Visualizar sensores</a>
+              <a class="animacao" href="sensores.html">Visualizar sensores</a>
             </div>
           </div>
         </div>
@@ -146,9 +146,9 @@
           <div class="box-alinhar">
             <p class="dashboard-titulo">Quebra de Margem Segura</p>
             <select class="seletor-camara" id="slt_camaras">
-              <option selected value="1">Todas as câmeras</option>
-              <option value="2">Câmara 1AB</option>
-              <option value="3">Câmara 2AB</option>
+              <option value="1">Última Hora ↓</option>
+            <option value="2" selected>Últimas 24 horas ↓</option>
+            <option value="3">Ontem ↓</option>
             </select>
           </div>
 
