@@ -451,3 +451,9 @@ main {
   justify-content: center;
   align-items: center;
 }
+
+.botao-voltar-detalhes:hover {
+    background-color: rgba(233, 233, 233, 0.281);
+    cursor: pointer;
+    border: 2px solid rgba(119, 119, 119, 0.281);
+}
