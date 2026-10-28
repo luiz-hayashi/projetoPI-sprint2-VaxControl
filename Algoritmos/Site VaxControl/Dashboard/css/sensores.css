@@ -112,3 +112,25 @@
     font-weight: bold;
     box-shadow: 0px 2px 0px 0px #d4d7da;
 }
+
+/* --------- EFEITOS VISUAIS -----  */
+.botao-detalhes:hover {
+    background-color: rgba(233, 233, 233, 0.281);
+    cursor: pointer;
+    border: 2px solid rgba(119, 119, 119, 0.281);
+    box-shadow: 0px 1px 0px 0px rgba(233, 233, 233, 0.281);
+}
+
+.botao-filtro:hover {
+    background-color: rgba(233, 233, 233, 0.281);
+    cursor: pointer;
+    border: 2px solid rgba(119, 119, 119, 0.281);
+    box-shadow: 0px 1px 0px 0px rgba(233, 233, 233, 0.281);
+}
+
+.pesquisa:hover {
+    background-color: rgba(233, 233, 233, 0.281);
+    border: 2px solid rgba(119, 119, 119, 0.281);
+    box-shadow: 0px 1px 0px 0px rgba(233, 233, 233, 0.281);
+    cursor: text;
+}

@@ -1,110 +1,105 @@
 <!doctype html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Vaxcontrol</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dashboard | Vaxcontrol</title>
+    <!-- página de estilização css -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/sensores.css" />
 
-  <!-- pagina de estilização css  -->
-  <link rel="stylesheet" href="css/reset.css" />
-  <link rel="stylesheet" href="css/navbar.css" />
-  <link rel="stylesheet" href="css/sensores.css" />
+    <!-- importa as fontes de texto externas -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container-body">
+      <nav class="navegacao">
+        <!-- obs: aqui será colocado imagem da vaxcontrol -->
+        <img class="logo-img" src="dashboard-img/vaxcontrol-bg.png" alt="vaxcontrol logo" />
+        <p class="menu">MENU</p>
 
-  <!-- importa as fontes de texto externas  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
-</head>
+        <a href="dashboard.html" class="item-menu">
+          <img src="dashboard-img/dashboard.png" alt="ícone de dashboard" />
+          <span>Dashboard</span>
+        </a>
 
-<body>
-  <div class="container-body">
-    <nav class="navegacao">
+        <a href="camaras.html" class="item-menu">
+          <img src="dashboard-img/camaras.png" alt="ícone de câmaras" />
+          <span>Câmaras</span>
+        </a>
 
-      <!-- obs: aqui sera colocado imagem da vaxcontrol  -->
-      <img class="logo-img" src="dashboard-img/vaxcontrol-bg.png" alt="vaxcontrol logo">
-      <p class="menu">MENU</p>
+        <a href="sensores.html" class="item-menu">
+          <img src="dashboard-img/sensores.png" alt="ícone de sensores" />
+          <span>Sensores</span>
+        </a>
 
-      <!-- O link <a> agora fica por fora, criando uma linha 100% clicável -->
-      <a href="dashboard.html" class="item-menu">
-        <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
-        <span>Dashboard</span>
-      </a>
+        <a href="alertas.html" class="item-menu">
+          <img src="dashboard-img/alerta.png" alt="ícone de alertas" />
+          <span>Alertas</span>
+        </a>
 
-      <a href="camaras.html" class="item-menu">
-        <img src="dashboard-img/camaras.png" alt="icone de camaras">
-        <span>Câmaras</span>
-      </a>
+        <a class="item-menu opcao-sair" href="../index.html">
+          <img src="dashboard-img/sair.png" alt="ícone de sair" />
+          <span>Sair</span>
+        </a>
+      </nav>
 
-      <a href="sensores.html" class="item-menu">
-        <img src="dashboard-img/sensores.png" alt="icone de sensores">
-        <span>Sensores</span>
-      </a>
+      <main>
+        <div class="box-user">
+          <p class="user"></p>
+          <span class="alinhar">
+            <p>Usuário</p>
+            <img class="user foto-perfil" src="dashboard-img/perfil.png" alt="foto de perfil do usuário" />
+          </span>
+        </div>
 
-      <a href="alertas.html" class="item-menu">
-        <img src="dashboard-img/alerta.png" alt="icone de alertas">
-        <span>Alertas</span>
-      </a>
-
-      <a class="item-menu opcao-sair" href="../index.html">
-        <img src="dashboard-img/sair.png" alt="icone de sair">
-        <span>Sair</span>
-      </a>
-    </nav>
-    <main>
-      <div class="box-user">
-        <p class="user"></p>
-        <span class="alinhar">
-          <p>Usuario</p>
-          <img class="user foto-perfil" src="dashboard-img/perfil.png" alt="foto de perfil do usuario">
-        </span>
-      </div>
-      
-      <div class = "container">
-        <table class="tabela-sensores">
-          <thead>
-            <th>Sensor</th>
-            <th>Status</th>
-            <th>Câmara</th>
-            <th>
-              <div class="filtros">
-                <button class="botao-filtro">
-                  Filtrar por: A-Z
-                </button>
-                <input type="search" placeholder="Pesquisar..." class="pesquisa">
-              </div>
-            </th>
-          </thead>
-
-          <tbody>
-            <tr>
-              <td>Sensor1</td>
-              <td>
-                <span class="status ativo"></span>
-                Ativo
-              </td>
-              <td>2AB</td>
-              <td>
-                <button class="botao-detalhes" onclick="window.location.href='detalheSensores.html'>Detalhes</button>
-              </td>
-            </tr>
-
-            <tr>Detalhes
-              <td>Sensor2</td>
-              <td>
-                <span class="status inativo"></span>
-                Inativo
-              </td>
-              <td>7AD</td>
-              <td>
-                  <button class="botao-detalhes" onclick="window.location.href='detalheSensores.html'>Detalhes</button>
-              </td>
+        <div class="container">
+          <table class="tabela-sensores">
+            <thead>
+              <tr>
+                <th>Sensor</th>
+                <th>Status</th>
+                <th>Câmara</th>
+                <th>
+                  <div class="filtros">
+                    <button class="botao-filtro">Filtrar por: A-Z</button>
+                    <input type="search" placeholder="Pesquisar..." class="pesquisa" />
+                  </div>
+                </th>
               </tr>
-          </tbody>
-        </table>
-      </div>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sensor1</td>
+                <td>
+                  <span class="status ativo"></span>
+                  Ativo
+                </td>
+                <td>2AB</td>
+                <td>
+                  <button class="botao-detalhes" onclick="window.location.href='detalheSensores.html'">Detalhes</button>
+                </td> 
+              </tr>
 
-    </main>
-  </div>
-
+              <tr>
+                <td>Sensor2</td>
+                <td>
+                  <span class="status inativo"></span>
+                  Inativo
+                </td>
+                <td>7AD</td>
+                <td>
+                  <button class="botao-detalhes" onclick="window.location.href='detalheSensores.html'">Detalhes</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
