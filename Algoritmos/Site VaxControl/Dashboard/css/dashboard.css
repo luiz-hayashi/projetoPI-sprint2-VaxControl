@@ -58,21 +58,39 @@
 /* container para juntar as legendas */
 .container-legendas {
     display: flex;
-    flex-direction: row;  
-    justify-content: space-between;
-    gap: 15px; 
-    margin: 15px 20px;   
+    flex-direction: row;
+    gap: 0;                 /* sem espaço entre as partes */
+    margin: 15px 20px;
 }
 
 /* CAIXA DE STATUS / METRICA */
 .box-info-status {
-    flex: 1;    
+    flex: 1;
     display: flex;
     flex-direction: row;
-    align-items: center;  
-    border-radius: 13px;    
+    text-align: center;
+    align-items: center;
+    border-radius: 0;       /* sem arredondar no meio */
     padding: 5px 15px;
-    margin: 0;   
+    margin: 0;
+}
+
+/* arredonda só as pontas externas da barra */
+.box-info-status:first-child {
+    border-radius: 13px 0 0 13px;
+}
+
+.box-info-status:last-child {
+    border-radius: 0 13px 13px 0;
+}
+
+/* remove as bordas internas para não duplicar a linha entre as partes */
+.box-info-status:not(:last-child) {
+    border-right: none;
+}
+
+.box-info-status:not(:first-child) {
+    border-left: none;
 }
 
 /* divisoria dos cards kpi */
