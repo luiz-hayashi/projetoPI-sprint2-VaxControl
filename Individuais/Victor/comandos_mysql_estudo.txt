@@ -1,0 +1,600 @@
+================================================================================
+GUIA COMPLETO DE COMANDOS MYSQL - PROJETO VAXCONTROL (VM LUBUNTU / APRESENTAÇÃO)
+================================================================================
+Arquivo gerado para estudo e execução na VM Lubuntu / MySQL CLI / Workbench.
+Cobre todos os comandos essenciais: DDL, DML, DQL (SELECTs simples e avançados),
+JOINs, Funções de Agregação, CASE, Subqueries, Views e Operações de Limpeza.
+
+ESTRUTURA DO BANCO UTILIZADA NESTE GUIA:
+- empresa   (id, razao_social, cnpj, codigo_ativacao, endereco, id_matriz)
+- usuario   (id, nome, email, senha, id_empresa)
+- camara    (id, nome, id_empresa)
+- sensor    (id, nome_sensor, status_, id_camara)
+- leitura   (id, temperatura, momento, id_sensor)
+================================================================================
+
+
+--------------------------------------------------------------------------------
+0. COMANDOS DE AMBIENTE E GERENCIAMENTO DO BANCO DE DADOS
+--------------------------------------------------------------------------------
+
+-- Ver quais bancos de dados existem no MySQL:
+SHOW DATABASES;
+
+-- Criar o banco de dados do projeto:
+CREATE DATABASE IF NOT EXISTS vaxcontrol;
+
+-- Selecionar / entrar no banco de dados para executar comandos:
+USE vaxcontrol;
+
+-- Ver qual banco está selecionado no momento:
+SELECT DATABASE();
+
+-- Ver quais tabelas existem no banco selecionado:
+SHOW TABLES;
+
+-- Ver os detalhes e estrutura de uma tabela:
+DESCRIBE empresa;
+DESCRIBE usuario;
+DESCRIBE camara;
+DESCRIBE sensor;
+DESCRIBE leitura;
+
+-- Ver o comando exato que criou a tabela (inclui constraints e índices):
+SHOW CREATE TABLE sensor;
+
+-- Deletar o banco de dados inteiro (CUIDADO - apaga tudo!):
+-- DROP DATABASE vaxcontrol;
+
+
+--------------------------------------------------------------------------------
+1. DDL (DATA DEFINITION LANGUAGE) - CRIAÇÃO DE TABELAS DO PROJETO
+--------------------------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS empresa (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    razao_social VARCHAR(100) NOT NULL,
+    cnpj CHAR(14) UNIQUE NOT NULL,
+    codigo_ativacao CHAR(8) UNIQUE NOT NULL,
+    endereco VARCHAR(150),
+    id_matriz INT,
+    CONSTRAINT fk_empresa_matriz FOREIGN KEY (id_matriz) REFERENCES empresa(id)
+);
+
+CREATE TABLE IF NOT EXISTS usuario (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(70) NOT NULL,
+    email VARCHAR(70) UNIQUE NOT NULL,
+    senha VARCHAR(45) NOT NULL,
+    id_empresa INT NOT NULL,
+    CONSTRAINT fk_empresa_usuario FOREIGN KEY (id_empresa) REFERENCES empresa(id)
+);
+
+CREATE TABLE IF NOT EXISTS camara (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(45) NOT NULL,
+    id_empresa INT NOT NULL,
+    CONSTRAINT fk_empresa_camara FOREIGN KEY (id_empresa) REFERENCES empresa(id)
+);
+
+CREATE TABLE IF NOT EXISTS sensor (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome_sensor VARCHAR(45) NOT NULL,
+    status_ VARCHAR(20) DEFAULT 'ativo',
+    id_camara INT NOT NULL,
+    CONSTRAINT chk_status CHECK (status_ IN ('ativo', 'inativo', 'manutencao')),
+    CONSTRAINT fk_camara_sensor FOREIGN KEY (id_camara) REFERENCES camara(id)
+);
+
+CREATE TABLE IF NOT EXISTS leitura (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    temperatura FLOAT NOT NULL,
+    momento DATETIME DEFAULT CURRENT_TIMESTAMP,
+    id_sensor INT NOT NULL,
+    CONSTRAINT fk_sensor_leitura FOREIGN KEY (id_sensor) REFERENCES sensor(id)
+);
+
+
+--------------------------------------------------------------------------------
+2. ALTER TABLE - TODAS AS VARIAÇÕES POSSÍVEIS (SE O PROFESSOR PEDIR)
+--------------------------------------------------------------------------------
+
+-- Adicionar uma nova coluna na tabela:
+ALTER TABLE empresa ADD COLUMN telefone VARCHAR(15);
+
+-- Adicionar coluna em uma posição específica (após uma coluna existente):
+ALTER TABLE usuario ADD COLUMN cargo VARCHAR(30) AFTER nome;
+
+-- Adicionar coluna na primeira posição da tabela:
+ALTER TABLE camara ADD COLUMN codigo_interno INT FIRST;
+
+-- Modificar o tipo de dado de uma coluna existente:
+ALTER TABLE empresa MODIFY COLUMN endereco VARCHAR(200);
+
+-- Renomear uma coluna e alterar o tipo dela ao mesmo tempo (Sintaxe clássica):
+ALTER TABLE empresa CHANGE COLUMN telefone tel_contato VARCHAR(20);
+
+-- Renomear apenas o nome da coluna (MySQL 8.0+):
+ALTER TABLE usuario RENAME COLUMN cargo TO funcao;
+
+-- Excluir (remover) uma coluna:
+ALTER TABLE camara DROP COLUMN codigo_interno;
+ALTER TABLE usuario DROP COLUMN funcao;
+ALTER TABLE empresa DROP COLUMN tel_contato;
+
+-- Adicionar uma chave estrangeira após a tabela criada:
+-- ALTER TABLE leitura ADD CONSTRAINT fk_teste FOREIGN KEY (id_sensor) REFERENCES sensor(id);
+
+-- Remover uma chave estrangeira:
+-- ALTER TABLE leitura DROP FOREIGN KEY fk_teste;
+
+-- Adicionar restrição UNIQUE em coluna existente:
+ALTER TABLE usuario ADD CONSTRAINT uq_email UNIQUE (email);
+
+-- Adicionar valor padrão (DEFAULT) para uma coluna:
+ALTER TABLE sensor ALTER COLUMN status_ SET DEFAULT 'ativo';
+
+-- Renomear a tabela inteira:
+-- RENAME TABLE camara TO camara_frigorifica;
+-- RENAME TABLE camara_frigorifica TO camara;
+
+
+--------------------------------------------------------------------------------
+3. DML - INSERÇÃO DE DADOS (INSERT)
+--------------------------------------------------------------------------------
+
+-- Inserindo empresas (Matriz e Filial com auto-relacionamento):
+INSERT INTO empresa (razao_social, cnpj, codigo_ativacao, endereco, id_matriz) VALUES
+('Farmacêutica Vacinas Brasil Matriz Ltda', '01987652000101', 'BR000101', 'Av. Paulista, 1000 - São Paulo/SP', NULL),
+('Farmacêutica Vacinas Brasil Filial SP',  '01987652000202', 'BR000202', 'Rua Augusta, 500 - São Paulo/SP', 1),
+('Laboratório Saúde & Vida S.A.',          '98765432000199', 'SV000199', 'Rua das Flores, 500 - Rio de Janeiro/RJ', NULL),
+('Merck Sharp & Dohme Farmacêutica Ltda',  '03560974000118', 'MS000118', 'Av. Dr. Chucri Zaidan, 296 - São Paulo/SP', NULL);
+
+-- Inserindo usuários associados às empresas:
+INSERT INTO usuario (nome, email, senha, id_empresa) VALUES
+('Carlos Silva', 'carlos.silva@farmavacina.com', 'senha123', 1),
+('Mariana Costa', 'mariana.costa@farmavacina.com', 'senha456', 2),
+('Ana Souza', 'ana.souza@saudevida.com', 'saude2026', 3),
+('Brian Duran', 'brian.duran@msd.com', 'msd@pass', 4),
+('Victor Hugo', 'victor.hugo@vaxcontrol.com', 'admin123', 1);
+
+-- Inserindo câmaras frias:
+INSERT INTO camara (nome, id_empresa) VALUES
+('Câmara Alfa - Pfizer', 1),
+('Câmara Beta - Coronavac', 1),
+('Câmara Filial SP - 01', 2),
+('Câmara Fria RJ 01', 3),
+('Câmara Ultrafreezer MSD', 4);
+
+-- Inserindo sensores instalados nas câmaras:
+INSERT INTO sensor (nome_sensor, status_, id_camara) VALUES
+('LM35-A1', 'ativo', 1),
+('DHT11-A2', 'ativo', 1),
+('LM35-B1', 'manutencao', 2),
+('LM35-F1', 'ativo', 3),
+('DHT11-RJ1', 'inativo', 4),
+('DHT11-MSD1', 'ativo', 5);
+
+-- Inserindo leituras de temperatura (incluindo temperaturas fora do padrão 2°C a 8°C):
+INSERT INTO leitura (temperatura, momento, id_sensor) VALUES
+(4.5, '2026-10-28 08:00:00', 1),
+(5.2, '2026-10-28 08:05:00', 1),
+(8.8, '2026-10-28 08:10:00', 1), -- Alerta alta temperatura
+(1.5, '2026-10-28 08:15:00', 1), -- Alerta baixa temperatura
+(3.8, '2026-10-28 08:20:00', 1),
+(6.0, '2026-10-28 08:00:00', 2),
+(6.4, '2026-10-28 08:05:00', 2),
+(7.1, '2026-10-28 08:10:00', 2),
+(12.5, '2026-10-28 08:00:00', 3), -- Câmara em manutenção / aquecida
+(4.0, '2026-10-28 08:00:00', 4),
+(4.2, '2026-10-28 08:05:00', 4),
+(-20.5, '2026-10-28 08:00:00', 6), -- Ultrafreezer
+(-21.2, '2026-10-28 08:05:00', 6);
+
+
+--------------------------------------------------------------------------------
+4. DQL - SELECTS BÁSICOS E FILTROS (WHERE, OPERADORES, STRINGS)
+--------------------------------------------------------------------------------
+
+-- 4.1 Selecionar todas as colunas de uma tabela:
+SELECT * FROM empresa;
+SELECT * FROM usuario;
+SELECT * FROM camara;
+SELECT * FROM sensor;
+SELECT * FROM leitura;
+
+-- 4.2 Selecionar colunas específicas com Alias (apelidos):
+SELECT nome_sensor AS 'Sensor', status_ AS 'Situação Atual' FROM sensor;
+SELECT razao_social AS 'Nome da Empresa', cnpj AS 'Documento CNPJ' FROM empresa;
+
+-- 4.3 Filtro simples com WHERE:
+SELECT * FROM sensor WHERE status_ = 'ativo';
+SELECT * FROM sensor WHERE status_ = 'manutencao';
+SELECT * FROM leitura WHERE temperatura > 8.0;
+
+-- 4.4 Filtro composto com AND, OR, NOT:
+SELECT * FROM leitura WHERE temperatura >= 2.0 AND temperatura <= 8.0;
+SELECT * FROM sensor WHERE status_ = 'manutencao' OR status_ = 'inativo';
+SELECT * FROM sensor WHERE NOT status_ = 'ativo';
+
+-- 4.5 Filtro com BETWEEN (faixa de valores):
+-- Leituras na faixa ideal de conservação de vacinas (2°C a 8°C):
+SELECT * FROM leitura WHERE temperatura BETWEEN 2.0 AND 8.0;
+
+-- Leituras fora da faixa ideal (alertas):
+SELECT * FROM leitura WHERE temperatura NOT BETWEEN 2.0 AND 8.0;
+
+-- 4.6 Filtro com IN (lista de opções aceitas):
+SELECT * FROM sensor WHERE status_ IN ('manutencao', 'inativo');
+SELECT * FROM camara WHERE id_empresa IN (1, 2);
+
+-- 4.7 Filtro de strings com LIKE (padrões de busca):
+-- Começa com determinado texto (ex: 'Farmacêutica%'):
+SELECT * FROM empresa WHERE razao_social LIKE 'Farmacêutica%';
+
+-- Termina com determinado texto (ex: '%Ltda'):
+SELECT * FROM empresa WHERE razao_social LIKE '%Ltda';
+
+-- Contém a palavra em qualquer posição:
+SELECT * FROM usuario WHERE email LIKE '%@farmavacina.com%';
+
+-- Caractere curinga sublinhado '_' (representa exatamente 1 caractere):
+SELECT * FROM sensor WHERE nome_sensor LIKE 'LM35-__';
+
+-- 4.8 Tratamento de valores Nulos (IS NULL e IS NOT NULL):
+-- Empresas que são Matrizes (não têm id_matriz):
+SELECT * FROM empresa WHERE id_matriz IS NULL;
+
+-- Empresas que são Filiais (possuem id_matriz):
+SELECT * FROM empresa WHERE id_matriz IS NOT NULL;
+
+-- 4.9 Ordenação de resultados (ORDER BY ASC / DESC):
+-- Ordenar por temperatura da maior para a menor:
+SELECT * FROM leitura ORDER BY temperatura DESC;
+
+-- Ordenar por momento mais recente primeiro:
+SELECT * FROM leitura ORDER BY momento DESC;
+
+-- Ordenar usuários por nome em ordem alfabética:
+SELECT * FROM usuario ORDER BY nome ASC;
+
+-- 4.10 Limitar quantidade de resultados (LIMIT e OFFSET):
+-- Trazer apenas os 3 primeiros registros:
+SELECT * FROM leitura LIMIT 3;
+
+-- Trazer o último registro de leitura feito:
+SELECT * FROM leitura ORDER BY id DESC LIMIT 1;
+
+-- Paginação: pular os 2 primeiros e trazer os próximos 3:
+SELECT * FROM leitura LIMIT 3 OFFSET 2;
+
+-- 4.11 Remover duplicatas com DISTINCT:
+SELECT DISTINCT status_ FROM sensor;
+SELECT DISTINCT id_empresa FROM camara;
+
+
+--------------------------------------------------------------------------------
+5. FUNÇÕES DE AGREGAÇÃO E AGRUPAMENTO (COUNT, SUM, AVG, MIN, MAX, GROUP BY)
+--------------------------------------------------------------------------------
+
+-- Quantidade total de registros:
+SELECT COUNT(*) AS total_leituras FROM leitura;
+SELECT COUNT(*) AS total_sensores_ativos FROM sensor WHERE status_ = 'ativo';
+
+-- Maior e Menor temperatura registrada:
+SELECT MAX(temperatura) AS temp_maxima, MIN(temperatura) AS temp_minima FROM leitura;
+
+-- Média de temperatura com arredondamento (ROUND):
+SELECT ROUND(AVG(temperatura), 2) AS media_temperatura FROM leitura;
+
+-- Soma de valores (exemplo geral):
+SELECT SUM(temperatura) AS soma_temperaturas FROM leitura;
+
+-- 5.1 Agrupamento com GROUP BY:
+-- Média, Máxima e Mínima de temperatura por Sensor:
+SELECT 
+    id_sensor,
+    COUNT(*) AS total_registros,
+    ROUND(AVG(temperatura), 2) AS media_temp,
+    MIN(temperatura) AS min_temp,
+    MAX(temperatura) AS max_temp
+FROM leitura
+GROUP BY id_sensor;
+
+-- Quantidade de sensores por Status:
+SELECT status_, COUNT(*) AS quantidade FROM sensor GROUP BY status_;
+
+-- Quantidade de câmaras por Empresa:
+SELECT id_empresa, COUNT(*) AS total_camaras FROM camara GROUP BY id_empresa;
+
+-- 5.2 Filtro após agrupamento com HAVING:
+-- Exibir apenas sensores que tenham mais de 2 leituras registradas:
+SELECT id_sensor, COUNT(*) AS total_leituras
+FROM leitura
+GROUP BY id_sensor
+HAVING COUNT(*) > 2;
+
+-- Sensores cuja média de temperatura ultrapassou 5°C:
+SELECT id_sensor, ROUND(AVG(temperatura), 2) AS media_temp
+FROM leitura
+GROUP BY id_sensor
+HAVING AVG(temperatura) > 5.0;
+
+
+--------------------------------------------------------------------------------
+6. JOINS - RELACIONAMENTO ENTRE TABELAS (O QUE O PROFESSOR MAIS COBRA)
+--------------------------------------------------------------------------------
+
+-- 6.1 INNER JOIN: Apenas registros que possuem correspondência em ambas as tabelas
+-- Usuário e a Razão Social da Empresa dele:
+SELECT 
+    u.id AS id_usuario,
+    u.nome AS nome_usuario,
+    u.email,
+    e.razao_social AS empresa
+FROM usuario AS u
+INNER JOIN empresa AS e ON u.id_empresa = e.id;
+
+-- Câmaras e seus respectivos Sensores:
+SELECT 
+    c.nome AS camara,
+    s.nome_sensor,
+    s.status_
+FROM camara AS c
+INNER JOIN sensor AS s ON s.id_camara = c.id;
+
+-- Leituras com nome do Sensor e data formatada:
+SELECT 
+    l.id AS id_leitura,
+    s.nome_sensor,
+    l.temperatura,
+    DATE_FORMAT(l.momento, '%d/%m/%Y %H:%i:%s') AS momento_formatado
+FROM leitura AS l
+INNER JOIN sensor AS s ON l.id_sensor = s.id;
+
+-- 6.2 INNER JOIN MULTIPLO (Cruzando todas as tabelas: Empresa -> Câmara -> Sensor -> Leitura):
+SELECT 
+    e.razao_social AS empresa,
+    c.nome AS camara,
+    s.nome_sensor,
+    l.temperatura,
+    l.momento
+FROM empresa AS e
+INNER JOIN camara AS c ON c.id_empresa = e.id
+INNER JOIN sensor AS s ON s.id_camara = c.id
+INNER JOIN leitura AS l ON l.id_sensor = s.id
+ORDER BY l.momento DESC;
+
+-- 6.3 LEFT JOIN: Traz todos da tabela da esquerda, mesmo se não tiver correspondente na direita
+-- Trazer todas as câmaras, inclusive aquelas que ainda não têm nenhum sensor cadastrado:
+SELECT 
+    c.id AS id_camara,
+    c.nome AS camara,
+    s.nome_sensor,
+    s.status_
+FROM camara AS c
+LEFT JOIN sensor AS s ON s.id_camara = c.id;
+
+-- Trazer todos os sensores e suas leituras (mesmo sensores que ainda não tiveram nenhuma leitura):
+SELECT 
+    s.nome_sensor,
+    s.status_,
+    l.temperatura,
+    l.momento
+FROM sensor AS s
+LEFT JOIN leitura AS l ON l.id_sensor = s.id;
+
+-- Descobrir câmaras sem nenhum sensor (técnica de auditoria / anti-join):
+SELECT 
+    c.nome AS camara_sem_sensor
+FROM camara AS c
+LEFT JOIN sensor AS s ON s.id_camara = c.id
+WHERE s.id IS NULL;
+
+-- 6.4 RIGHT JOIN: Traz todos da tabela da direita, mesmo se não tiver correspondente na esquerda
+SELECT 
+    s.nome_sensor,
+    c.nome AS camara
+FROM camara AS c
+RIGHT JOIN sensor AS s ON s.id_camara = c.id;
+
+-- 6.5 SELF JOIN (Auto-relacionamento): Empresa Filial e sua respectiva Matriz:
+SELECT 
+    filial.razao_social AS 'Nome Filial',
+    filial.cnpj AS 'CNPJ Filial',
+    matriz.razao_social AS 'Nome Matriz',
+    matriz.cnpj AS 'CNPJ Matriz'
+FROM empresa AS filial
+INNER JOIN empresa AS matriz ON filial.id_matriz = matriz.id;
+
+-- Trazer todas as empresas mostrando quem é a matriz (usando LEFT JOIN para a matriz aparecer com NULL):
+SELECT 
+    e.razao_social AS empresa,
+    IFNULL(m.razao_social, 'MATRIZ PRINCIPAL') AS matriz_vinculada
+FROM empresa AS e
+LEFT JOIN empresa AS m ON e.id_matriz = m.id;
+
+
+--------------------------------------------------------------------------------
+7. CONDICIONAIS E ESTATÍSTICAS AVANÇADAS (CASE WHEN, IFNULL, CONCAT)
+--------------------------------------------------------------------------------
+
+-- Classificação de temperatura de acordo com as normas da Anvisa para vacinas:
+SELECT 
+    l.id,
+    s.nome_sensor,
+    l.temperatura,
+    l.momento,
+    CASE 
+        WHEN l.temperatura < 2.0 THEN 'ALERTA: Congelamento (Abaixo de 2°C)'
+        WHEN l.temperatura > 8.0 THEN 'ALERTA: Superaquecimento (Acima de 8°C)'
+        ELSE 'TEMPERATURA IDEAL (2°C a 8°C)'
+    END AS status_temperatura
+FROM leitura AS l
+INNER JOIN sensor AS s ON l.id_sensor = s.id;
+
+-- Concatenar textos com CONCAT:
+SELECT 
+    CONCAT(nome, ' - Contato: ', email) AS info_usuario 
+FROM usuario;
+
+SELECT 
+    CONCAT(temperatura, ' °C') AS temp_com_unidade 
+FROM leitura;
+
+-- Tratamento de campos nulos com IFNULL ou COALESCE:
+SELECT 
+    razao_social, 
+    IFNULL(id_matriz, 'Sem Matriz') AS status_matriz 
+FROM empresa;
+
+
+--------------------------------------------------------------------------------
+8. SUBQUERIES (SUB-CONSULTAS)
+--------------------------------------------------------------------------------
+
+-- Leituras com temperatura acima da média geral do sistema:
+SELECT * 
+FROM leitura 
+WHERE temperatura > (SELECT AVG(temperatura) FROM leitura);
+
+-- Encontrar sensores que pertencem à empresa 1:
+SELECT * 
+FROM sensor 
+WHERE id_camara IN (
+    SELECT id FROM camara WHERE id_empresa = 1
+);
+
+-- Sensores que registraram temperatura crítica acima de 8 graus:
+SELECT DISTINCT nome_sensor 
+FROM sensor 
+WHERE id IN (
+    SELECT id_sensor FROM leitura WHERE temperatura > 8.0
+);
+
+
+--------------------------------------------------------------------------------
+9. DML - ATUALIZAÇÃO DE DADOS (UPDATE)
+--------------------------------------------------------------------------------
+
+-- IMPORTANTE NO MYSQL WORKBENCH / CLI:
+-- Se der o erro: Error Code: 1175. You are using safe update mode...
+-- Execute este comando para desativar:
+SET SQL_SAFE_UPDATES = 0;
+
+-- Atualizar o status de um sensor específico pelo ID:
+UPDATE sensor SET status_ = 'ativo' WHERE id = 3;
+
+-- Atualizar múltiplos campos de um usuário:
+UPDATE usuario 
+SET nome = 'Carlos Alberto da Silva', email = 'carlos.alberto@farmavacina.com' 
+WHERE id = 1;
+
+-- Atualizar status de vários sensores:
+UPDATE sensor SET status_ = 'manutencao' WHERE id IN (2, 5);
+
+-- Para reativar o safe updates:
+SET SQL_SAFE_UPDATES = 1;
+
+
+--------------------------------------------------------------------------------
+10. DML - EXCLUSÃO DE DADOS (DELETE)
+--------------------------------------------------------------------------------
+
+-- Desativar safe mode para permitir deleções filtradas por outras colunas se necessário:
+SET SQL_SAFE_UPDATES = 0;
+
+-- Deletar leituras antigas ou testes específicos:
+DELETE FROM leitura WHERE id = 1;
+
+-- Deletar leituras de um determinado sensor:
+DELETE FROM leitura WHERE id_sensor = 6;
+
+-- Deletar usuário específico:
+DELETE FROM usuario WHERE id = 5;
+
+-- ATENÇÃO COM CHAVES ESTRANGEIRAS (FOREIGN KEY CONSTRAINT):
+-- Se você tentar fazer: DELETE FROM empresa WHERE id = 1;
+-- O MySQL vai acusar erro porque existem usuários, câmaras e sensores atrelados a ela.
+-- Ordem correta de exclusão se precisar apagar um fluxo:
+-- 1º: leitura -> 2º: sensor -> 3º: camara -> 4º: usuario -> 5º: empresa.
+
+
+--------------------------------------------------------------------------------
+11. LIMPEZA TOTAL DE TABELAS (TRUNCATE TABLE vs DELETE)
+--------------------------------------------------------------------------------
+
+-- DIFERENÇA EXPLICADA PARA O PROFESSOR:
+-- DELETE FROM tabela; -> Apaga linha por linha, gera log, mantém o AUTO_INCREMENT de onde parou.
+-- TRUNCATE TABLE tabela; -> Recria a tabela vazia, é DDL, muito mais rápido, reseta o AUTO_INCREMENT para 1.
+
+-- Para truncar tabelas com Foreign Keys sem erro de constraint no MySQL:
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- Resetar a tabela de leituras zerando o AUTO_INCREMENT:
+TRUNCATE TABLE leitura;
+
+-- Resetar a tabela de sensores zerando o AUTO_INCREMENT:
+TRUNCATE TABLE sensor;
+
+-- Reativar a verificação de chaves estrangeiras:
+SET FOREIGN_KEY_CHECKS = 1;
+
+
+--------------------------------------------------------------------------------
+12. VIEWS (VISÕES) - TABELAS VIRTUAIS EXCELENTES PARA DASHBOARDS
+--------------------------------------------------------------------------------
+
+-- Criar uma View que junta todo o monitoramento para o front-end:
+CREATE OR REPLACE VIEW vw_monitoramento_geral AS
+SELECT 
+    e.razao_social AS empresa,
+    c.nome AS camara,
+    s.nome_sensor AS sensor,
+    s.status_ AS status_sensor,
+    l.temperatura,
+    l.momento,
+    CASE 
+        WHEN l.temperatura < 2.0 THEN 'CRÍTICO BAIXO'
+        WHEN l.temperatura > 8.0 THEN 'CRÍTICO ALTO'
+        ELSE 'NORMAL'
+    END AS situacao
+FROM empresa AS e
+INNER JOIN camara AS c ON c.id_empresa = e.id
+INNER JOIN sensor AS s ON s.id_camara = c.id
+INNER JOIN leitura AS l ON l.id_sensor = s.id;
+
+-- Como consultar a View (funciona exatamente como se fosse uma tabela!):
+SELECT * FROM vw_monitoramento_geral;
+
+-- Filtrar alertas usando a View:
+SELECT * FROM vw_monitoramento_geral WHERE situacao <> 'NORMAL';
+
+-- Excluir a View:
+-- DROP VIEW vw_monitoramento_geral;
+
+
+--------------------------------------------------------------------------------
+13. COMANDOS ÚTEIS PARA EXECUTAR NO TERMINAL DA VM LUBUNTU
+--------------------------------------------------------------------------------
+/*
+No terminal do Lubuntu (Bash), execute:
+
+1. Entrar no MySQL:
+   mysql -u root -p
+
+2. Executar um arquivo de script diretamente pelo terminal:
+   mysql -u root -p vaxcontrol < /caminho/do/arquivo.sql
+
+3. Exportar (backup / dump) do banco de dados:
+   mysqldump -u root -p vaxcontrol > backup_vaxcontrol.sql
+
+4. Importar o backup de volta:
+   mysql -u root -p vaxcontrol < backup_vaxcontrol.sql
+
+5. Sair do MySQL CLI:
+   exit; ou quit;
+*/
+================================================================================
+FIM DO ARQUIVO - BOA APRESENTAÇÃO!
+================================================================================

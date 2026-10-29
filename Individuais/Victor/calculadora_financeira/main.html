@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Financeira VaxControl</title>
+</head>
+
+<body>
+
+    <h1>Calculadora Financeira de Câmaras</h1>
+    <h2>VaxControl</h2>
+
+    <h3>Dados Financeiros</h3>
+
+    <label>Informe o preço de referência por dose:</label>
+    <input type="text" id="ipt_valor_dose"><br><br>
+
+    <h3>Dados dos Produtos</h3>
+
+    <label>Informe a quantidade de doses por lote:</label>
+    <input type="text" id="ipt_doses_lote"><br><br>
+
+    <label>Informe a quantidade de lotes na câmara:</label>
+    <input type="text" id="ipt_lotes_camara"><br><br>
+
+    <h3>Dados da Estrutura</h3>
+
+    <label>Informe a capacidade da câmara em m³:</label>
+    <input type="text" id="ipt_capacidade"><br><br>
+
+    <h3>Dados da Ocorrência</h3>
+
+    <label>Informe a quantidade de doses expostas:</label>
+    <input type="text" id="ipt_doses_risco"><br><br>
+
+    <button onclick="vaxcontrol()">Calcular</button><br><br>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+<script>
+    function vaxcontrol() {
+        let ax_valor_dose = Number(ipt_valor_dose.value);
+        let ax_doses_lote = Number(ipt_doses_lote.value);
+        let ax_lotes_camara = Number(ipt_lotes_camara.value);
+        let ax_capacidade = Number(ipt_capacidade.value);
+        let ax_doses_risco = Number(ipt_doses_risco.value);
+
+        let ax_total_doses = ax_doses_lote * ax_lotes_camara;
+
+        div_mensagem.innerHTML = "";
+
+        if (ipt_valor_dose.value == "" || ax_valor_dose <= 50) {
+            alert("Informe um preço por dose maior que R$ 50,00.");
+        } else if (ipt_doses_lote.value == "" || ax_doses_lote <= 0 || ax_doses_lote % 1 != 0) {
+            alert("Informe uma quantidade inteira de doses por lote.");
+        } else if (ipt_lotes_camara.value == "" || ax_lotes_camara <= 0 || ax_lotes_camara % 1 != 0) {
+            alert("Informe uma quantidade inteira de lotes.");
+        } else if (ipt_capacidade.value == "" || ax_capacidade <= 0) {
+            alert("Informe uma capacidade de câmara maior que 0.");
+        } else if (ipt_doses_risco.value == "" || ax_doses_risco < 0 || ax_doses_risco > ax_total_doses || ax_doses_risco % 1 != 0) {
+            alert("Informe uma quantidade inteira de doses expostas entre 0 e o total armazenado.");
+        } else {
+
+            let ax_beneficio = 50;
+            let ax_preco_liquido = ax_valor_dose - ax_beneficio;
+
+            let ax_patrimonio_bruto = ax_total_doses * ax_valor_dose;
+            let ax_patrimonio_liquido = ax_total_doses * ax_preco_liquido;
+
+            let ax_valor_risco_bruto = ax_doses_risco * ax_valor_dose;
+            let ax_valor_risco_liquido = ax_doses_risco * ax_preco_liquido;
+
+            let ax_doses_preservadas = ax_total_doses - ax_doses_risco;
+
+            let ax_capacidade_litros = ax_capacidade * 1000;
+            let ax_litros_armazenamento = ax_capacidade_litros * 0.5;
+
+            let ax_litros_ocupados = (ax_total_doses / 10) * 0.04;
+
+            let ax_percentual_ocupacao = (ax_litros_ocupados / ax_litros_armazenamento) * 100;
+
+            div_mensagem.innerHTML =
+                `<h3>Relatório Analítico da Câmara</h3>
+
+                Preço de referência por dose: R$ ${ax_valor_dose.toFixed(2)}<br>
+
+                Benefício considerado por dose: R$ ${ax_beneficio.toFixed(2)}<br>
+
+                Custo líquido estimado por dose: R$ ${ax_preco_liquido.toFixed(2)}<br><br>
+
+                Total de doses armazenadas: ${ax_total_doses}<br>
+
+                Patrimônio pelo preço de referência: R$ ${ax_patrimonio_bruto.toFixed(2)}<br>
+
+                Patrimônio estimado após benefício: R$ ${ax_patrimonio_liquido.toFixed(2)}<br><br>
+
+                <h3>Relatório de Ocupação Física</h3>
+
+                Capacidade total da câmara: ${ax_capacidade} m³<br>
+
+                Capacidade total em litros: ${ax_capacidade_litros.toFixed(2)} litros<br>
+
+                Volume reservado para armazenamento: ${ax_litros_armazenamento.toFixed(2)} litros<br>
+
+                Volume estimado ocupado pelos produtos: ${ax_litros_ocupados.toFixed(2)} litros<br>
+
+                Ocupação do volume reservado: ${ax_percentual_ocupacao.toFixed(2)}%<br><br>
+
+                <h3>Relatório de Exposição Financeira</h3>
+
+                Doses informadas como expostas: ${ax_doses_risco}<br>
+
+                Valor de referência das doses expostas: R$ ${ax_valor_risco_bruto.toFixed(2)}<br>
+
+                Exposição financeira estimada após benefício: R$ ${ax_valor_risco_liquido.toFixed(2)}<br>
+
+                Doses não informadas como expostas: ${ax_doses_preservadas}<br><br>
+
+                <strong>Observação:</strong> o valor apresentado representa uma estimativa financeira das doses expostas. A ocorrência não significa que todas essas doses devam ser descartadas.`;
+
+            if (ax_percentual_ocupacao > 100) {
+                div_mensagem.innerHTML += `<br><br><strong>Atenção:</strong> o volume estimado dos produtos ultrapassa o espaço reservado para armazenamento.`;
+            }
+
+            if (ax_lotes_camara > 4) {
+                div_mensagem.innerHTML += `<br><strong>Atenção:</strong> confira a capacidade física da câmara, pois foram informados mais de 4 lotes.`;
+            }
+        }
+    }
+</script>
+
+</html>

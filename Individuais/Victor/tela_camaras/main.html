@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard | Vaxcontrol</title>
+
+  <!-- pagina de estilização css  -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/navbar.css" />
+  <link rel="stylesheet" href="css/camaras.css" />
+
+  <!-- importa as fontes de texto externas  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container-body">
+    <nav class="navegacao">
+
+      <!--  imagem da vaxcontrol  -->
+      <img class="logo-img" src="dashboard-img/vaxcontrol-bg.png" alt="vaxcontrol logo">
+      <p class="menu">MENU</p>
+
+      <!-- O link agora fica por fora, criando uma linha clicável -->
+      <a href="dashboard.html" class="item-menu">
+        <img src="dashboard-img/dashboard.png" alt="icone de dashboard">
+        <span>Dashboard</span>
+      </a>
+
+      <a href="camaras.html" class="item-menu">
+        <img src="dashboard-img/camaras.png" alt="icone de camaras">
+        <span>Câmaras</span>
+      </a>
+
+      <a href="sensores.html" class="item-menu">
+        <img src="dashboard-img/sensores.png" alt="icone de sensores">
+        <span>Sensores</span>
+      </a>
+
+      <a href="alertas.html" class="item-menu">
+        <img src="dashboard-img/alerta.png" alt="icone de alertas">
+        <span>Alertas</span>
+      </a>
+
+    </nav>
+    <main>
+      <!-- div para nome a foto do usuarioo  -->
+      <div class="box-user">
+        <p class="user">Bem vindo(a) Usuario!</p>
+        <span class="alinhar">
+          <p>Usuario</p>
+          <img class="user foto-perfil" src="dashboard-img/perfil.png" alt="foto de perfil do usuario">
+        </span>
+      </div>
+
+      <div class="container">
+        <table class="tabela-camara">
+          <thead>
+            <tr>
+              <th>Câmaras</th>
+              <th>Quantidade de sensores</th>
+              <th>
+                <div class="box-seletor-pesquisa">
+<button class="btn-filtrar-camara" id="btn_ordenar_cam" >Filtrar por A-Z 🡫</button>
+<input class="pesquisar-camara" type="text" placeholder="Pesquisar 🔎">
+                </div>
+            </th>
+        </tr>
+                            </thead>
+          <tbody>
+    <tr>
+        <td>2AB</td>  
+    <td>4</td>
+    <td class="td-botao"><button class="detalhes" onclick="verDetalhesCamara()">Ver detalhes</button></td>
+        </tr>
+        <tr>
+        <td>7AD</td>
+        <td>8</td>
+    <td class="td-botao"><button class="detalhes" onclick="verDetalhesCamara()">Ver detalhes</button></td>
+         </tr>
+         </tbody>
+    </table>
+    </div>
+</main>
+</div>
+</body>
+
+</html>
+<script>
+    function verDetalhesCamara () {
+      window.location.href = 'detalhesCamara.html';
+    }
+</script>
