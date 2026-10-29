@@ -58,9 +58,9 @@
     <main>
       <!-- divisoria do nome do usuario e foto  -->
       <div class="box-user">
-        <p class="user">Bem vindo(a) Usuario!</p>
+        <p class="user">Bem vindo(a) Admin!</p>
         <span class="alinhar">
-          <p>Usuario</p>
+          <p>Admin</p>
           <img class="user foto-perfil" src="dashboard-img/perfil.png" alt="foto de perfil do usuario">
         </span>
       </div>
@@ -126,9 +126,9 @@
             <!-- divisor / coluna da Esquerda (MIN) -->
             <div class="kpi-coluna">
               <span class="kpi-subtitulo">MIN</span>
-              <div class="numero-kpi-temp">1°C</div>
-              <a class="animacao" onclick="window.location.href='detalhesCamara.html'" class="kpi-info">Câmara 2AB</a>
-              <a class="animacao" onclick="window.location.href='detalheSensores.html'" class="kpi-info">Sensor01AB</a>
+              <div class="numero-kpi-temp fora-limite">1°C</div>
+              <a class="animacao" onclick="window.location.href='detalhesCamara.html'" class="kpi-info">Câmara A</a>
+              <a class="animacao" onclick="window.location.href='detalheSensores.html'" class="kpi-info">Sensor01-A</a>
               <div class="kpi-data-hora">
                 <span>10/10/2026</span>
                 <span>12:45</span>
@@ -139,9 +139,9 @@
             <!-- divisor / coluna da Direita (MAX) -->
             <div class="kpi-coluna">
               <span class="kpi-subtitulo">MAX</span>
-              <div class="numero-kpi-temp">9.5°C</div>
-              <a class="animacao" onclick="window.location.href='camaras.html'" class="kpi-info">Câmara 3DC</a>
-              <a class="animacao" onclick="window.location.href='sensores.html'" class="kpi-info">Sensor02DC</a>
+              <div class="numero-kpi-temp fora-limite">10°C</div>
+              <a class="animacao" onclick="window.location.href='camaras.html'" class="kpi-info">Câmara A</a>
+              <a class="animacao" onclick="window.location.href='sensores.html'" class="kpi-info">Sensor02A</a>
               <div class="kpi-data-hora">
                 <span>10/10/2026</span>
                 <span>12:45</span>
@@ -152,7 +152,13 @@
 
         <div class="kpi">
           <p class="kpi-titulo">QUANTIDADE DE ALERTAS</p>
-          <p class="numero-kpi-alertas">16</p>
+          <div>
+            <select class="seletor-camara" id="slt_camaras">
+              <option value="1">Última Hora </option>
+              <option value="2" selected>Últimas 24 horas </option>
+            </select>
+          </div>
+          <p class="numero-kpi-alertas">10</p>
           <div class="kpi-sensor-footer">
             <div class="sensor-link">
               <a class="animacao" href="sensores.html">Visualizar alertas</a>
@@ -185,27 +191,27 @@
           <p class="titulo-alerta">Alertas recentes</p>
           
           <div class="card-alerta camara">
-            <p class="titulo-card-camara">Câmara 2AB</p>
+            <p class="titulo-card-camara">Câmara A</p>
             <p class="texto-card">Temperatura: 1°C</p>
             <p class="texto-card detalhes">Abaixo da faixa segura.</p>
             <span class="alinhar-data">
-              <p class="texto-card detalhes">12/12/2026 - 12:45</p>
+              <p class="texto-card detalhes">10/10/2026 - 12:45</p>
             </span>
           </div>
           <div class="card-alerta camara">
-            <p class="titulo-card-camara">Câmara 3DC</p>
-            <p class="texto-card">Temperatura: 9.5°C</p>
+            <p class="titulo-card-camara">Câmara A</p>
+            <p class="texto-card">Temperatura: 10°C</p>
             <p class="texto-card detalhes ">Acima da faixa segura</p>
             <span class="alinhar-data">
-              <p class="texto-card detalhes ">12/12/2026 - 12:40</p>
+              <p class="texto-card detalhes ">10/10/2026 - 12:45</p>
             </span>
           </div>
           <div class="card-alerta sensor">
-            <p class="titulo-card-sensor">Câmara 2AB - Sensor 04AB</p>
+            <p class="titulo-card-sensor">Câmara B - Sensor 04-B</p>
             <p class="texto-card">Sensor mudou para status "inativo"</p>
-            <p class="texto-card detalhes ">Sensor localizado na câmara 2AB</p>
+            <p class="texto-card detalhes ">Sensor localizado na câmara B</p>
             <span class="alinhar-data">
-              <p class="texto-card detalhes">12/12/2026 - 12:38</p>
+              <p class="texto-card detalhes">10/10/2026 - 12:40</p>
             </span>
           </div>
         </div>
@@ -221,10 +227,10 @@
   // vetor que add as metricas do eixo X
   // grafico 1
   const labels = [
-    'Câmara 2AB',
-    'Câmara 3DC',
-    'Câmara 1FG',
-    'Câmara 4VX'
+    'Câmara A',
+    'Câmara B',
+    'Câmara C',
+    'Câmara D'
   ];
 
   // vetores, receber as metricas do eixo X e colocar titulo, além estilizar a cor do grafico e quais dados serão mostrados

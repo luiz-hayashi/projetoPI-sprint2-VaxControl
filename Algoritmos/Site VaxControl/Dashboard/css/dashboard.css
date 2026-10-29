@@ -376,3 +376,12 @@
     display: flex;
     justify-content: center;
 }
+
+/* cor normal da card  */
+.normal {
+    color: black;
+}
+
+.fora-limite {
+    color: red;
+}

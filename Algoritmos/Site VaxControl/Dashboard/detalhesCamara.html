@@ -53,7 +53,7 @@
 
                 <div class="usuario">
 
-                    <span>Usuário</span>
+                    <span>Admin</span>
                     <img src="dashboard-img/perfil.png" alt="">
 
                 </div>
@@ -62,7 +62,7 @@
 
                     <button class="botao-voltar" onclick="window.location.href = 'camaras.html';"><b>←
                             Voltar<b></button>
-                    <h1>2AB</h1>
+                    <h1>Câmara A</h1>
 
 
                 </div>
@@ -118,25 +118,25 @@
 
                             <tr>
 
-                                <td>Sensor01AB</td>
+                                <td>Sensor01A</td>
                                 <td class="sensor-alerta">1ºC</td>
 
                             </tr>
                             <tr>
 
-                                <td>Sensor02AB</td>
+                                <td>Sensor02A</td>
                                 <td >8ºC</td>
                                 
                             </tr>
                             <tr>
 
-                                <td>Sensor03AB</td>
-                                <td>4ºC</td>
+                                <td>Sensor03A</td>
+                                <td>4,6ºC</td>
                                 
                             </tr>
                             <tr>
 
-                                <td>Sensor04AB</td>
+                                <td>Sensor04A</td>
                                 <td class="sensor-inativo">Inativo</td>
 
                             </tr>
@@ -170,32 +170,30 @@
 
             labels: ['12:30', '12:35', '12:40', '12:45'],
             datasets: [{
-                label: 'Sensor01AB',
+                label: 'Sensor01A',
                 data: [5, 5.2, 4.8, 1],
                 borderColor: 'blue',
                 tension: 0.3,
             },
 
             {
-                label: 'Sensor02AB',
-                data: [null, null, null, null],
-                borderColor: 'gray',
-                spanGaps: false
+                label: 'Sensor02A',
+                data: [3.8, 4.1, 4.0, 8.0],
+                borderColor: 'purple',
+                tension: 0.3,
             },
             {
-                label: 'Sensor03AB',
+                label: 'Sensor03A',
                 data: [4.5, 4.7, 4.3, 4.6],
                 borderColor: 'green',
                 tension: 0.3,
 
             },
             {
-                label: 'Sensor04AB',
-                data: [3.8, 4.1, 4.0, 8.0],
-                borderColor: 'purple',
-                tension: 0.3,
-
-
+                label: 'Sensor04A',
+                data: [null, null, null, null],
+                borderColor: 'gray',
+                spanGaps: false 
             },
 
             ]
