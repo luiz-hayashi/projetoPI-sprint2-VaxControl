@@ -140,8 +140,8 @@
             <div class="kpi-coluna">
               <span class="kpi-subtitulo">MAX</span>
               <div class="numero-kpi-temp fora-limite">10°C</div>
-              <a class="animacao" onclick="window.location.href='camaras.html'" class="kpi-info">Câmara A</a>
-              <a class="animacao" onclick="window.location.href='sensores.html'" class="kpi-info">Sensor02-A</a>
+              <a class="animacao" onclick="window.location.href='detalhesCamara.html'" class="kpi-info">Câmara A</a>
+              <a class="animacao" onclick="window.location.href='detalheSensores.html'" class="kpi-info">Sensor02-A</a>
               <div class="kpi-data-hora">
                 <span>10/10/2026</span>
                 <span>12:45</span>
@@ -185,13 +185,13 @@
             <canvas id="grafico-variacao" class="graficos"></canvas>
           </div>
         </div>
-        
+
         <!-- Divisória de Alertas Recentes -->
         <div class="box-alertas-recentes">
           <p class="titulo-alerta">Alertas recentes</p>
-          
+
           <div class="card-alerta camara">
-            <p class="titulo-card-camara">Câmara A</p>
+            <p class="texto-card"> <a class="animacao" onclick="window.location.href='detalhesCamara.html'" class="kpi-info"> Câmara A </a> </p>
             <p class="texto-card">Temperatura: 1°C</p>
             <p class="texto-card detalhes">Abaixo da faixa segura.</p>
             <span class="alinhar-data">
@@ -199,7 +199,7 @@
             </span>
           </div>
           <div class="card-alerta camara">
-            <p class="titulo-card-camara">Câmara A</p>
+            <p class="texto-card"> <a class="animacao" onclick="window.location.href='detalhesCamara.html'" class="kpi-info"> Câmara A </a> </p>
             <p class="texto-card">Temperatura: 10°C</p>
             <p class="texto-card detalhes ">Acima da faixa segura</p>
             <span class="alinhar-data">
@@ -207,8 +207,8 @@
             </span>
           </div>
           <div class="card-alerta sensor">
-            <p class="titulo-card-sensor">Câmara B - Sensor 04-B</p>
-            <p class="texto-card">Sensor mudou para status "inativo"</p>
+            <p class="titulo-card-sensor"> <a class="animacao" onclick="window.location.href='detalhesCamara.html'"> Câmara B </a> -  <a class="animacao" onclick="window.location.href='detalheSensores.html'"> Sensor 04-B </a></p>
+            <p class="texto-card">Sensor mudou para status "Inativo"</p>
             <p class="texto-card detalhes ">Sensor localizado na câmara B</p>
             <span class="alinhar-data">
               <p class="texto-card detalhes">10/10/2026 - 12:40</p>

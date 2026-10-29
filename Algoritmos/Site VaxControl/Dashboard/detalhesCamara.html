@@ -109,6 +109,7 @@
 
                                 <th>Identificação</th>
                                 <th>Leitura</th>
+                                <th>Data e Hora</th>
 
                             </tr>
 
@@ -118,27 +119,28 @@
 
                             <tr>
 
-                                <td>Sensor01A</td>
+                                <td>Sensor01-A</td>
                                 <td class="sensor-alerta">1ºC</td>
+                                <td class="sensor-alerta"> 10/10/2026 12:45</td>
 
                             </tr>
                             <tr>
 
-                                <td>Sensor02A</td>
+                                <td>Sensor02-A</td>
                                 <td class="sensor-alerta">10ºC</td>
-                                
+                                <td class="sensor-alerta"> 10/10/2026 12:45</td>
                             </tr>
                             <tr>
 
-                                <td>Sensor03A</td>
+                                <td>Sensor03-A</td>
                                 <td>4,6ºC</td>
-                                
+                                <td> 10/10/2026 12:45</td>
                             </tr>
                             <tr>
 
-                                <td>Sensor04A</td>
+                                <td>Sensor04-A</td>
                                 <td class="sensor-inativo">Inativo</td>
-
+                                <td> 10/10/2026 11:30</td>
                             </tr>
 
                         </tbody>
@@ -170,30 +172,30 @@
 
             labels: ['12:30', '12:35', '12:40', '12:45'],
             datasets: [{
-                label: 'Sensor01A',
+                label: 'Sensor01-A',
                 data: [5, 5.2, 4.8, 1],
                 borderColor: 'blue',
                 tension: 0.3,
             },
 
             {
-                label: 'Sensor02A',
-                data: [3.8, 4.1, 4.0, 8.0],
+                label: 'Sensor02-A',
+                data: [3.8, 4.1, 4.0, 10],
                 borderColor: 'purple',
                 tension: 0.3,
             },
             {
-                label: 'Sensor03A',
+                label: 'Sensor03-A',
                 data: [4.5, 4.7, 4.3, 4.6],
                 borderColor: 'green',
                 tension: 0.3,
 
             },
             {
-                label: 'Sensor04A',
+                label: 'Sensor04-A',
                 data: [null, null, null, null],
                 borderColor: 'gray',
-                spanGaps: false 
+                spanGaps: false
             },
 
             ]

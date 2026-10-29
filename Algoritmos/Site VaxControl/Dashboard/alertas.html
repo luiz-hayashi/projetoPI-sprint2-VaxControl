@@ -58,14 +58,18 @@
 
         <div class="filtros">
           <select id="camara">
-            <option value="Todas">Câmara</option>
-            <option value="2AB">2AB</option>
-            <option value="3DC">3DC</option>
+            <option value="Todas">Todas as câmaras</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+
           </select>
 
           <select id="horario">
             <option value="24">24 Horas</option>
             <option value="12">12 Horas</option>
+            <option value="ultimaHora">Última Hora</option>
           </select>
         </div>
 
@@ -101,7 +105,7 @@
   <tr>
     <td>1 °C</td>
     <td>A</td>
-    <td>Sensor01-B</td>
+    <td>Sensor01-A</td>
     <td>10/10/2026</td>
     <td>12:45</td>
     <td>Temperatura abaixo da margem segura</td>
@@ -125,16 +129,16 @@
         <td>Sensor mudou para status "Inativo"</td>
       </tr>
       <tr>
-        <td>2 °C</td>
-        <td>A</td>
-        <td>Sensor01-A</td>
+        <td>1 °C</td>
+        <td>B</td>
+        <td>Sensor02-B</td>
     <td>10/10/2026</td>
     <td>12:40</td>
     <td>Temperatura abaixo da margem segura</td>
   </tr>
 
   <tr>
-    <td>2 °C</td>
+    <td>-1 °C</td>
     <td>A</td>
     <td>Sensor01-A</td>
     <td>10/10/2026</td>
@@ -143,54 +147,46 @@
     </tr>
 
     <tr>
-      <td>9 °C</td>
+      <td>10 °C</td>
       <td>D</td>
-      <td>Sensor01-D</td>
+      <td>Sensor02-D</td>
       <td>10/10/2026</td>
       <td>12:30</td>
       <td>Temperatura acima da margem segura</td>
     </tr>
-  
-    <tr>
-      <td>9 °C</td>
-      <td>D</td>
-      <td>Sensor01-D</td>
-      <td>10/10/2026</td>
-      <td>12:30</td>
-      <td>Temperatura acima da margem segura</td>
-    </tr>
+
+    
     
     <tr>
-        <td>Inativo</td>
-        <td>A</td>
-        <td>Sensor04-A</td>
-        <td>10/10/2026</td>
-        <td>12:00</td>
-        <td>Sensor mudou para status "Inativo"</td>
+      <td>Inativo</td>
+      <td>C</td>
+      <td>Sensor04-C</td>
+      <td>10/10/2026</td>
+      <td>12:00</td>
+      <td>Sensor mudou para status "Inativo"</td>
       </tr>
-
-  <tr>
-        <td>Inativo</td>
-        <td>C</td>
-        <td>Sensor04-C</td>
-        <td>10/10/2026</td>
-        <td>12:00</td>
-        <td>Sensor mudou para status "Inativo"</td>
-      </tr>
-
-    <tr>
+      
+      <tr>
         <td>Inativo</td>
         <td>D</td>
         <td>Sensor04-D</td>
         <td>10/10/2026</td>
         <td>12:00</td>
         <td>Sensor mudou para status "Inativo"</td>
+        </tr>
+      <tr>
+        <td>Inativo</td>
+        <td>A</td>
+        <td>Sensor04-A</td>
+        <td>10/10/2026</td>
+        <td>11:30</td>
+        <td>Sensor mudou para status "Inativo"</td>
       </tr>
-            </table>
+        </table>
         `;
-
-          // Se escolher a câmara 2AB, mostra somente seu alerta
-        } else if (camara == "2AB") {
+        
+        // Se escolher a câmara 2AB, mostra somente seu alerta
+      } else if (camara == "2AB") {
 
           mensagem.innerHTML = `
           <table>

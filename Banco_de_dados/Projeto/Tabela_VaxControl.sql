@@ -1,5 +1,5 @@
-CREATE DATABASE vaxcontrol;
-
+CREATE DATABASE VaxControl;
+DROP DATABASE VaxControl;
 USE VaxControl;
 
 CREATE TABLE empresa(
@@ -28,7 +28,7 @@ id_empresa INT,
 
 CREATE TABLE sensor (
 id INT PRIMARY KEY AUTO_INCREMENT,
-nome_sensor VARCHAR(45),
+nome VARCHAR(45),
 status VARCHAR(20),
 id_camara INT,
 	CONSTRAINT fk_camara FOREIGN KEY (id_camara) REFERENCES camara(id)
@@ -62,31 +62,31 @@ INSERT INTO usuario (nome, email, senha, id_empresa) VALUES
 ('Ana Souza', 'ana.souza@saudevida.com', 'senha456', 2);
 
 INSERT INTO camara (nome, id_empresa) VALUES 
-('Câmara 2AB', 1),
-('Câmera 3DC', 1),
-('Câmara 1FG', 1),
-('Câmara 4VX', 1);
+('Câmara A', 1),
+('Câmera B', 1),
+('Câmara C', 1),
+('Câmara D', 1);
 
-INSERT INTO sensor (nome_sensor, status_, id_camara) VALUES 
-('Sensor01AB', 'Ativo', 1),
-('Sensor02AB', 'Ativo', 1),
-('Sensor03AB', 'Ativo', 1),
-('Sensor04AB', 'Inativo', 1),
-('Sensor01DC', 'Ativo', 2),
-('Sensor02DC', 'Ativo', 2),
-('Sensor03DC', 'Ativo', 2),
-('Sensor04DC', 'Inativo', 2),
-('Sensor01FG', 'Ativo', 3),
-('Sensor02FG', 'Ativo', 3),
-('Sensor03FG', 'Ativo', 3),
-('Sensor04FG', 'Inativo', 3),
-('Sensor01VX', 'Ativo', 4),
-('Sensor02VX', 'Ativo', 4),
-('Sensor03VX', 'Ativo', 4),
-('Sensor02VX', 'Inativo', 4);
+INSERT INTO sensor (nome, status, id_camara) VALUES 
+('Sensor01-A', 'Ativo', 1),
+('Sensor02-A', 'Ativo', 1),
+('Sensor03-A', 'Ativo', 1),
+('Sensor04-A', 'Inativo', 1),
+('Sensor01-B', 'Ativo', 2),
+('Sensor02-B', 'Ativo', 2),
+('Sensor03-B', 'Ativo', 2),
+('Sensor04-B', 'Inativo', 2),
+('Sensor01-C', 'Ativo', 3),
+('Sensor02-C', 'Ativo', 3),
+('Sensor03-C', 'Ativo', 3),
+('Sensor04-C', 'Inativo', 3),
+('Sensor01-D', 'Ativo', 4),
+('Sensor02-D', 'Ativo', 4),
+('Sensor03-D', 'Ativo', 4),
+('Sensor04-D', 'Inativo', 4);
 
 INSERT INTO leitura (temperatura, id_sensor) VALUES
--- Sensor 1: Sensor01AB
+-- Sensor 1: Sensor01-A
 (4.5, 1),
 (5.2, 1),
 (3.8, 1),
@@ -94,7 +94,7 @@ INSERT INTO leitura (temperatura, id_sensor) VALUES
 (1.5, 1),
 (4.9, 1),
 
--- Sensor 2: Sensor02AB
+-- Sensor 2: Sensor02-A
 (3.2, 2),
 (4.7, 2),
 (5.5, 2),
@@ -102,7 +102,7 @@ INSERT INTO leitura (temperatura, id_sensor) VALUES
 (7.1, 2),
 (8.5, 2),
 
--- Sensor 3: Sensor03AB
+-- Sensor 3: Sensor03-A
 (4.1, 3),
 (3.7, 3),
 (5.8, 3),
@@ -110,106 +110,18 @@ INSERT INTO leitura (temperatura, id_sensor) VALUES
 (2.4, 3),
 (1.8, 3),
 
--- Sensor 4: Sensor04AB
+-- Sensor 4: Sensor04-A
 (5.0, 4),
 (4.3, 4),
 (6.2, 4),
 (7.4, 4),
 (8.7, 4),
-(5.6, 4),
+(5.6, 4);
 
--- Sensor 5: Sensor01DC
-(3.5, 5),
-(4.8, 5),
-(5.1, 5),
-(6.7, 5),
-(7.3, 5),
-(4.2, 5),
-
--- Sensor 6: Sensor02DC
-(5.4, 6),
-(6.1, 6),
-(4.6, 6),
-(3.9, 6),
-(1.2, 6),
-(5.7, 6),
-
--- Sensor 7: Sensor03DC
-(2.8, 7),
-(3.6, 7),
-(4.9, 7),
-(5.5, 7),
-(6.4, 7),
-(9.1, 7),
-
--- Sensor 8: Sensor04DC
-(4.4, 8),
-(5.3, 8),
-(6.2, 8),
-(7.0, 8),
-(3.7, 8),
-(5.8, 8),
-
--- Sensor 9: Sensor01FG
-(3.1, 9),
-(4.5, 9),
-(5.7, 9),
-(6.3, 9),
-(7.6, 9),
-(4.8, 9),
-
--- Sensor 10: Sensor02FG
-(5.2, 10),
-(6.4, 10),
-(4.1, 10),
-(3.5, 10),
-(1.7, 10),
-(5.9, 10),
-
--- Sensor 11: Sensor03FG
-(2.5, 11),
-(3.8, 11),
-(4.6, 11),
-(5.4, 11),
-(6.7, 11),
-(8.9, 11),
-
--- Sensor 12: Sensor04FG
-(4.3, 12),
-(5.6, 12),
-(6.1, 12),
-(3.9, 12),
-(7.2, 12),
-(4.7, 12),
-
--- Sensor 13: Sensor01VX
-(3.4, 13),
-(4.8, 13),
-(5.5, 13),
-(6.2, 13),
-(7.1, 13),
-(5.0, 13),
-
--- Sensor 14: Sensor02VX
-(4.6, 14),
-(5.3, 14),
-(6.5, 14),
-(3.7, 14),
-(1.4, 14),
-(5.8, 14),
-
--- Sensor 15: Sensor03VX
-(2.9, 15),
-(3.8, 15),
-(4.7, 15),
-(5.6, 15),
-(6.3, 15),
-(9.4, 15),
-
--- Sensor 16: Sensor02VX
-(4.2, 16),
-(5.1, 16),
-(6.0, 16),
-(3.6, 16),
-(7.4, 16),
-(5.5, 16);
+SELECT temperatura AS 'Temperatura',  DATE_FORMAT(momento, '%d/%m/%Y %H:%i:%s') AS 'Data e hora da leitura', 
+s.nome AS 'Identificação do sensor', c.nome AS 'Identificação da câmara',
+e.razao_social AS 'Empresa '
+FROM leitura AS l
+INNER JOIN sensor AS s ON l.id_sensor = s.id
+INNER JOIN camara AS c ON c.id = s.id_camara
+INNER JOIN empresa AS e ON e.id = c.id_empresa;
