@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href="./css/cadastro.css">
+    <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="./css/navbar-index.css">
 
     <!-- importa as fontes de texto externas  -->
@@ -15,6 +15,7 @@
 </head>
 
 <body>
+
     <header>
         <nav class="navegador">
             <div class="topbar">
@@ -26,36 +27,39 @@
                 </span>
                 <!-- <button class="botao-topbar">Cadastre-se</button> -->
                 <span class="alinhar-botao-navbar">
-                    <button class="botao-topbar"
-                        onclick="window.location.href='cadastro.html'">Cadastrar</button>
+                    <button class="botao-topbar" onclick="window.location.href='cadastro.html'">Cadastrar</button>
                     <button class="botao-topbar" onclick="window.location.href='login.html'">Entrar</button>
                 </span>
             </div>
         </nav>
     </header>
-    <div class="divPrincipal">
-        <div class="divImagem">
-            <img src="./imagens/imgCadastro.png" alt="" class="imgCadastro">
-        </div>
-        <div class="divCaixa">
-            <div class="divConteudo">
-                <p class="titulo">Cadastre-se</p>
-                <div class="divFormularioCadastro">
-                    <div class="divInputs">
-                        <label class="textoLabel" for="inputNome">Nome completo:</label>
-                        <input type="text" class="inputs" id="inputNome" placeholder="Digite o seu nome...">
-                        <label class="textoLabel" for="inputEmail">E-mail profissional:</label>
-                        <input type="text" class="inputs" id="inputEmail" placeholder="Digite o seu email...">
-                        <label class="textoLabel" for="inputSenha">Senha:</label>
-                        <input class="inputs" type="password" name="" class="inputSenha" placeholder="Digite sua senha...">
-                        <label class="textoLabel" for="inputCodigoEmpresa">Código único da empresa:</label>
-                        <input class="inputs" type="password" name="" class="inputCodigoEmpresa"placeholder="Digite o código de sua empresa...">
+    <main>
+        <div class="divPrincipal">
+            <div class="divImagem">
+                <img src="./imagens/imgCadastro.png" alt="" class="imgCadastro">
+            </div>
+            <div class="divCaixa">
+                <div class="divConteudo">
+                    <p class="titulo">Cadastre-se</p>
+                    <div class="divFormularioCadastro">
+                        <div class="divInputs">
+                            <label class="textoLabel" for="inputNome">Nome completo:</label>
+                            <input type="text" class="inputs" id="inputNome" placeholder="Digite o seu nome...">
+                            <label class="textoLabel" for="inputEmail">E-mail profissional:</label>
+                            <input type="text" class="inputs" id="inputEmail" placeholder="Digite o seu email...">
+                            <label class="textoLabel" for="inputSenha">Senha:</label>
+                            <input class="inputs" type="password" name="" class="inputSenha"
+                                placeholder="Digite sua senha...">
+                            <label class="textoLabel" for="inputCodigoEmpresa">Código único da empresa:</label>
+                            <input class="inputs" type="password" name="" class="inputCodigoEmpresa"
+                                placeholder="Digite o código de sua empresa...">
+                        </div>
+                        <button class="botaoCadastro">FAZER CADASTRO</button>
                     </div>
-                    <button class="botaoCadastro">FAZER CADASTRO</button>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
 </body>
 
 </html>

@@ -6,14 +6,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-body {
-  margin: 0;
-  background-image: url("./imagens/Teladelogin.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  min-height: 100vh;
-}
 
 .divPrincipal {
   display: flex;
@@ -37,7 +29,8 @@ body {
 }
 
 .divCaixa {
-  width: 90vh;
+  margin-bottom: 100px;
+  width: 40%;
   height: auto;
   border-radius: 8px;
   box-sizing: border-box;
@@ -47,9 +40,6 @@ body {
 }
 
 .divConteudo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100%;
   box-sizing: border-box;
   padding: 0px 30px;  
@@ -69,6 +59,14 @@ body {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  width: 100%;         
+}
+
+.divFormularioCadastro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 100%;         
 }
 
@@ -94,7 +92,7 @@ body {
   font-size: 13px;
 }
 
-.botaoLogin{
+.botaoLogin, .botaoCadastro{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -102,5 +100,10 @@ body {
   width: 85%; 
   height: 40px;
   background-color: #150958;
-  border-radius: 4px;
+  border-radius: 10px;
+}
+
+.botaoLogin:hover, .botaoCadastro:hover {
+    background-color: #0090D0;
+    transition: background-color 0.5s ease-out;
 }
