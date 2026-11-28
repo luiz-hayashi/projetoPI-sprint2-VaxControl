@@ -42,9 +42,9 @@
                     <p class="titulo">Faça login</p>
                     <div class="divFormularioLogin">
                         <div class="divInputs">
-                            <label class="textoLabel" for="inputEmail">E-mail profissional:</label>
+                            <label class="textoLabel" for="ipt_Email">E-mail profissional:</label>
                             <input type="text" class="inputs" placeholder="Digite o seu email..." id="ipt_email">
-                            <label class="textoLabel" for="inputSenha">Senha:</label>
+                            <label class="textoLabel" for="ipt_senha">Senha:</label>
                             <input class="inputs" type="password" id="ipt_senha" name="" class="inputSenha"
                                 placeholder="Digite sua senha...">
                         </div>
@@ -58,26 +58,104 @@
 
 </html>
 <script>
-    let tentativasLogar = 0;
-    function login() {
+    // IDEIA: tentativas ser um cooldown de 1 minuto caso seja bloqueado
+
+    function verificarLogin() {
+        let tentativasLogar = 0;
+
+        var emailVar = ipt_email.value;
+        var senhaVar = ipt_senha.value;
+
         if (tentativasLogar != 2) {
-            let email = ipt_email.value;
-            let senha = ipt_senha.value;
-            if (email == 'admin@gmail.com' && senha == '12345') {
-                alert('Login efetuado com sucesso!');
-                window.location.href = './dashboard/dashboard.html';
+
+            if (emailVar == "") {
+                mensagemCard('O campo de email está vazio!');
+            }
+            else if (senhaVar == "") {
+                mensagemCard('O campo de senha está vazio!');
+            }
+            else if (!emailVar.includes('.com').includes('@')) {
+                mensagemCard('O email não consta "@" e ".com"');
+            }
+            else if ((emailVar.indexOf('.com')) < (email.indexOf('@'))) {
+                mensagemCard('O caractere "@" está alocado antes do ".com"');
             }
             else {
-                alert('Verifique se seu email ou sua senha está correta!');
-                tentativasLogar++;
+                mensagemCard('Login efetuado com sucesso!');
+                entrar();
+                finalizarAguardar();
+                return false;
             }
         }
         else {
-            alert("Login bloqueado! Por favor, tente fazer login novamente mais tarde.")
-            window.location.href = '../index.html';
-
+            mensagemCard("Login bloqueado! Por favor, tente fazer login novamente mais tarde.")
+            setInterval(sumirMensagem, 5000)
+            // window.location.href = '../index.html';
         }
+        tentativasLogar++;
     }
 
+    function mensagemCard(msg) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = msg;
+    }
+
+
+    function entrar() {
+        aguardar();
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+                    // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                    setTimeout(function () {
+                        window.location.href = './dashboard/dashboard.html';
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    // modal de aviso
+    function sumirMensagem() {
+        cardErro.style.display = "none"
+    }
 
 </script>
