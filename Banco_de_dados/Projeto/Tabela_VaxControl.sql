@@ -1,5 +1,4 @@
 CREATE DATABASE VaxControl;
-DROP DATABASE VaxControl;
 USE VaxControl;
 
 CREATE TABLE empresa(
